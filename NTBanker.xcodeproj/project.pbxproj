@@ -15,6 +15,8 @@
 		303D814C2A79504F0043B6C4 /* NTBankerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D814B2A79504F0043B6C4 /* NTBankerUITests.swift */; };
 		303D814E2A79504F0043B6C4 /* NTBankerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D814D2A79504F0043B6C4 /* NTBankerUITestsLaunchTests.swift */; };
 		306B3E5D2A7954A200B86060 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 306B3E5C2A7954A200B86060 /* ComposableArchitecture */; };
+		306B3E632A79579F00B86060 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E622A79579F00B86060 /* WelcomeView.swift */; };
+		306B3E6E2A79708800B86060 /* StringButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E6D2A79708800B86060 /* StringButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		303D81472A79504F0043B6C4 /* NTBankerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NTBankerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		303D814B2A79504F0043B6C4 /* NTBankerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTBankerUITests.swift; sourceTree = "<group>"; };
 		303D814D2A79504F0043B6C4 /* NTBankerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTBankerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		306B3E622A79579F00B86060 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		306B3E6D2A79708800B86060 /* StringButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 		303D812F2A79504D0043B6C4 /* NTBanker */ = {
 			isa = PBXGroup;
 			children = (
+				306B3E6C2A79707400B86060 /* Styles */,
+				306B3E682A795EF500B86060 /* Features */,
 				303D81302A79504D0043B6C4 /* NTBankerApp.swift */,
 				303D81322A79504D0043B6C4 /* ContentView.swift */,
 				303D81342A79504F0043B6C4 /* Assets.xcassets */,
@@ -127,6 +133,22 @@
 				303D814D2A79504F0043B6C4 /* NTBankerUITestsLaunchTests.swift */,
 			);
 			path = NTBankerUITests;
+			sourceTree = "<group>";
+		};
+		306B3E682A795EF500B86060 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				306B3E622A79579F00B86060 /* WelcomeView.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		306B3E6C2A79707400B86060 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				306B3E6D2A79708800B86060 /* StringButtonStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +289,8 @@
 			files = (
 				303D81332A79504D0043B6C4 /* ContentView.swift in Sources */,
 				303D81312A79504D0043B6C4 /* NTBankerApp.swift in Sources */,
+				306B3E6E2A79708800B86060 /* StringButtonStyle.swift in Sources */,
+				306B3E632A79579F00B86060 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
