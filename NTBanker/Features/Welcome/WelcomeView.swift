@@ -36,7 +36,7 @@ struct WelcomeView: View {
                         .frame(height: 125)
                     
                     Group {
-                        NavigationLink(destination: Text("Hello World")) {
+                        NavigationLink(destination: LoginView()) {
                             Text("Login")
                                 .stringButtonStyle()
                         }
@@ -49,6 +49,7 @@ struct WelcomeView: View {
                         .padding(.top, 15)
                     }
                     .buttonStyle(.borderedProminent)
+                    .controlSize(.large)
                 }
                 .padding()
             }

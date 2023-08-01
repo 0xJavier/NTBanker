@@ -10,7 +10,6 @@ import SwiftUI
 struct ButtonStringModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .frame(height: 50)
             .frame(maxWidth: .infinity)
             .bold()
     }
