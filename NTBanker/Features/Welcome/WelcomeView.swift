@@ -42,7 +42,7 @@ struct WelcomeView: View {
                         }
                         .buttonStyle(.borderedProminent)
                         
-                        NavigationLink(destination: Text("Hello World")) {
+                        NavigationLink(destination: SignupView()) {
                             Text("Sign Up")
                                 .stringButtonStyle()
                         }
