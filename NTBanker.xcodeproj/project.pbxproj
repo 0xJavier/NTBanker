@@ -24,6 +24,7 @@
 		306B3E7E2A7985A800B86060 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E7D2A7985A800B86060 /* SignupView.swift */; };
 		306B3E812A79914E00B86060 /* SignupFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E802A79914E00B86060 /* SignupFeature.swift */; };
 		30A7FEBC2A79A03600912327 /* NTCardColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FEBB2A79A03600912327 /* NTCardColorPickerView.swift */; };
+		30A7FEC52A7B3E2200912327 /* LoginFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FEC42A7B3E2200912327 /* LoginFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		306B3E7D2A7985A800B86060 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		306B3E802A79914E00B86060 /* SignupFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFeature.swift; sourceTree = "<group>"; };
 		30A7FEBB2A79A03600912327 /* NTCardColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTCardColorPickerView.swift; sourceTree = "<group>"; };
+		30A7FEC42A7B3E2200912327 /* LoginFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				306B3E712A79713F00B86060 /* LoginView.swift */,
+				30A7FEC42A7B3E2200912327 /* LoginFeature.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			files = (
 				306B3E7E2A7985A800B86060 /* SignupView.swift in Sources */,
 				303D81332A79504D0043B6C4 /* ContentView.swift in Sources */,
+				30A7FEC52A7B3E2200912327 /* LoginFeature.swift in Sources */,
 				303D81312A79504D0043B6C4 /* NTBankerApp.swift in Sources */,
 				306B3E752A79717900B86060 /* NTLogoHeaderView.swift in Sources */,
 				306B3E812A79914E00B86060 /* SignupFeature.swift in Sources */,

@@ -37,7 +37,7 @@ struct WelcomeView: View {
                         .frame(height: 125)
                     
                     Group {
-                        NavigationLink(destination: LoginView()) {
+                        NavigationLink(destination: loginView) {
                             Text("Login")
                                 .stringButtonStyle()
                         }
@@ -68,6 +68,14 @@ struct WelcomeView: View {
             Text("Welcome to NTBank. Speed up game banking with our easy to use Balance cards.")
                 .font(.system(size: 20, weight: .bold))
         }
+    }
+    
+    var loginView: some View {
+        LoginView(
+            store: Store(initialState: LoginFeature.State()) {
+                LoginFeature()
+            }
+        )
     }
     
     var signupView: some View {

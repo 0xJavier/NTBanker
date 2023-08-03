@@ -5,14 +5,14 @@
 //  Created by Javier Munoz on 8/1/23.
 //
 
+import ComposableArchitecture
 import SwiftUI
 
 struct LoginView: View {
-    @State private var emailQuery = ""
-    @State private var passwordQuery = ""
+    let store: StoreOf<LoginFeature>
     
     var body: some View {
-        NavigationView {
+        WithViewStore(self.store, observe: { $0 }) { viewStore in
             VStack {
                 NTLogoHeaderView()
                     .padding(.top, 20)
@@ -24,11 +24,11 @@ struct LoginView: View {
                 
                 VStack(spacing: 10) {
                     Group {
-                        TextField("Email", text: $emailQuery)
+                        TextField("Email", text: viewStore.$emailQuery)
                             .keyboardType(.emailAddress)
                             .autocorrectionDisabled(true)
                         
-                        SecureField("Password", text: $passwordQuery)
+                        SecureField("Password", text: viewStore.$passwordQuery)
                     }
                     .textFieldStyle(NTTextfieldStyle())
                     
@@ -52,5 +52,9 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    LoginView(
+        store: Store(initialState: LoginFeature.State()) {
+            LoginFeature()
+        }
+    )
 }
