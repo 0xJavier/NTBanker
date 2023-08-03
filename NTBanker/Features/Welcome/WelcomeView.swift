@@ -36,20 +36,19 @@ struct WelcomeView: View {
                     Spacer()
                         .frame(height: 125)
                     
-                    Group {
+                    VStack(spacing: 20) {
                         NavigationLink(destination: loginView) {
                             Text("Login")
-                                .stringButtonStyle()
+                                .frame(maxWidth: .infinity)
                         }
-                        .buttonStyle(.borderedProminent)
                         
                         NavigationLink(destination: signupView) {
                             Text("Sign Up")
-                                .stringButtonStyle()
+                                .frame(maxWidth: .infinity)
                         }
-                        .padding(.top, 15)
                     }
-                    .buttonStyle(.borderedProminent)
+                    .buttonStyle(.bordered)
+                    .tint(.blue)
                     .controlSize(.large)
                 }
                 .padding()
@@ -59,7 +58,7 @@ struct WelcomeView: View {
     
     var headerView: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Image(systemName: "dollarsign.circle.fill")
+            Image(systemName: SFSymbols.dollarSignCircle.imageString)
                 .font(.system(size: 60))
                 .foregroundStyle(.blue)
             

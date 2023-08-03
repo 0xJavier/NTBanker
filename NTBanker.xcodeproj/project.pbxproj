@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		302159692A7C33B2008C92A3 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302159682A7C33B2008C92A3 /* SFSymbols.swift */; };
 		303D81312A79504D0043B6C4 /* NTBankerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D81302A79504D0043B6C4 /* NTBankerApp.swift */; };
 		303D81332A79504D0043B6C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D81322A79504D0043B6C4 /* ContentView.swift */; };
 		303D81352A79504F0043B6C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 303D81342A79504F0043B6C4 /* Assets.xcassets */; };
@@ -16,15 +17,18 @@
 		303D814E2A79504F0043B6C4 /* NTBankerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D814D2A79504F0043B6C4 /* NTBankerUITestsLaunchTests.swift */; };
 		306B3E5D2A7954A200B86060 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 306B3E5C2A7954A200B86060 /* ComposableArchitecture */; };
 		306B3E632A79579F00B86060 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E622A79579F00B86060 /* WelcomeView.swift */; };
-		306B3E6E2A79708800B86060 /* StringButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E6D2A79708800B86060 /* StringButtonStyle.swift */; };
 		306B3E722A79713F00B86060 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E712A79713F00B86060 /* LoginView.swift */; };
 		306B3E752A79717900B86060 /* NTLogoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E742A79717900B86060 /* NTLogoHeaderView.swift */; };
 		306B3E792A79754500B86060 /* NTTextfieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E782A79754500B86060 /* NTTextfieldStyle.swift */; };
-		306B3E7B2A797F5600B86060 /* NTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E7A2A797F5600B86060 /* NTButton.swift */; };
+		306B3E7B2A797F5600B86060 /* NTLoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E7A2A797F5600B86060 /* NTLoadingButton.swift */; };
 		306B3E7E2A7985A800B86060 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E7D2A7985A800B86060 /* SignupView.swift */; };
 		306B3E812A79914E00B86060 /* SignupFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E802A79914E00B86060 /* SignupFeature.swift */; };
 		30A7FEBC2A79A03600912327 /* NTCardColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FEBB2A79A03600912327 /* NTCardColorPickerView.swift */; };
 		30A7FEC52A7B3E2200912327 /* LoginFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FEC42A7B3E2200912327 /* LoginFeature.swift */; };
+		30A7FECD2A7B582400912327 /* LoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FECC2A7B582400912327 /* LoginClient.swift */; };
+		30A7FECF2A7BECFF00912327 /* SignupClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FECE2A7BECFF00912327 /* SignupClient.swift */; };
+		30A7FED22A7BEE4C00912327 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FED12A7BEE4C00912327 /* User.swift */; };
+		30A7FED52A7BEE6400912327 /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FED42A7BEE6400912327 /* CardColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		302159682A7C33B2008C92A3 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
 		303D812D2A79504D0043B6C4 /* NTBanker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTBanker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		303D81302A79504D0043B6C4 /* NTBankerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTBankerApp.swift; sourceTree = "<group>"; };
 		303D81322A79504D0043B6C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,15 +61,18 @@
 		303D814B2A79504F0043B6C4 /* NTBankerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTBankerUITests.swift; sourceTree = "<group>"; };
 		303D814D2A79504F0043B6C4 /* NTBankerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTBankerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		306B3E622A79579F00B86060 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		306B3E6D2A79708800B86060 /* StringButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringButtonStyle.swift; sourceTree = "<group>"; };
 		306B3E712A79713F00B86060 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		306B3E742A79717900B86060 /* NTLogoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTLogoHeaderView.swift; sourceTree = "<group>"; };
 		306B3E782A79754500B86060 /* NTTextfieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTTextfieldStyle.swift; sourceTree = "<group>"; };
-		306B3E7A2A797F5600B86060 /* NTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTButton.swift; sourceTree = "<group>"; };
+		306B3E7A2A797F5600B86060 /* NTLoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTLoadingButton.swift; sourceTree = "<group>"; };
 		306B3E7D2A7985A800B86060 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		306B3E802A79914E00B86060 /* SignupFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFeature.swift; sourceTree = "<group>"; };
 		30A7FEBB2A79A03600912327 /* NTCardColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTCardColorPickerView.swift; sourceTree = "<group>"; };
 		30A7FEC42A7B3E2200912327 /* LoginFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
+		30A7FECC2A7B582400912327 /* LoginClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginClient.swift; sourceTree = "<group>"; };
+		30A7FECE2A7BECFF00912327 /* SignupClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupClient.swift; sourceTree = "<group>"; };
+		30A7FED12A7BEE4C00912327 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		30A7FED42A7BEE6400912327 /* CardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +127,8 @@
 				303D81302A79504D0043B6C4 /* NTBankerApp.swift */,
 				303D81322A79504D0043B6C4 /* ContentView.swift */,
 				306B3E682A795EF500B86060 /* Features */,
+				30A7FED02A7BEE2A00912327 /* Models */,
+				30A7FED32A7BEE5100912327 /* Types */,
 				306B3E6C2A79707400B86060 /* Styles */,
 				306B3E732A79716700B86060 /* Components */,
 				303D81342A79504F0043B6C4 /* Assets.xcassets */,
@@ -165,7 +175,6 @@
 		306B3E6C2A79707400B86060 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				306B3E6D2A79708800B86060 /* StringButtonStyle.swift */,
 				306B3E782A79754500B86060 /* NTTextfieldStyle.swift */,
 			);
 			path = Styles;
@@ -184,6 +193,7 @@
 			children = (
 				306B3E712A79713F00B86060 /* LoginView.swift */,
 				30A7FEC42A7B3E2200912327 /* LoginFeature.swift */,
+				30A7FECC2A7B582400912327 /* LoginClient.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -192,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				306B3E742A79717900B86060 /* NTLogoHeaderView.swift */,
-				306B3E7A2A797F5600B86060 /* NTButton.swift */,
+				306B3E7A2A797F5600B86060 /* NTLoadingButton.swift */,
 				30A7FEBB2A79A03600912327 /* NTCardColorPickerView.swift */,
 			);
 			path = Components;
@@ -203,8 +213,26 @@
 			children = (
 				306B3E7D2A7985A800B86060 /* SignupView.swift */,
 				306B3E802A79914E00B86060 /* SignupFeature.swift */,
+				30A7FECE2A7BECFF00912327 /* SignupClient.swift */,
 			);
 			path = Signup;
+			sourceTree = "<group>";
+		};
+		30A7FED02A7BEE2A00912327 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				30A7FED12A7BEE4C00912327 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		30A7FED32A7BEE5100912327 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				30A7FED42A7BEE6400912327 /* CardColor.swift */,
+				302159682A7C33B2008C92A3 /* SFSymbols.swift */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,17 +372,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				306B3E7E2A7985A800B86060 /* SignupView.swift in Sources */,
+				30A7FECD2A7B582400912327 /* LoginClient.swift in Sources */,
+				30A7FECF2A7BECFF00912327 /* SignupClient.swift in Sources */,
+				30A7FED52A7BEE6400912327 /* CardColor.swift in Sources */,
 				303D81332A79504D0043B6C4 /* ContentView.swift in Sources */,
 				30A7FEC52A7B3E2200912327 /* LoginFeature.swift in Sources */,
 				303D81312A79504D0043B6C4 /* NTBankerApp.swift in Sources */,
 				306B3E752A79717900B86060 /* NTLogoHeaderView.swift in Sources */,
 				306B3E812A79914E00B86060 /* SignupFeature.swift in Sources */,
-				306B3E6E2A79708800B86060 /* StringButtonStyle.swift in Sources */,
+				30A7FED22A7BEE4C00912327 /* User.swift in Sources */,
 				30A7FEBC2A79A03600912327 /* NTCardColorPickerView.swift in Sources */,
 				306B3E792A79754500B86060 /* NTTextfieldStyle.swift in Sources */,
+				302159692A7C33B2008C92A3 /* SFSymbols.swift in Sources */,
 				306B3E722A79713F00B86060 /* LoginView.swift in Sources */,
 				306B3E632A79579F00B86060 /* WelcomeView.swift in Sources */,
-				306B3E7B2A797F5600B86060 /* NTButton.swift in Sources */,
+				306B3E7B2A797F5600B86060 /* NTLoadingButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,10 +8,6 @@
 import ComposableArchitecture
 import SwiftUI
 
-enum CardColor: String, CaseIterable {
-    case red, blue, green, pink, purple, orange
-}
-
 struct SignupView: View {
     let store: StoreOf<SignupFeature>
     
@@ -29,6 +25,7 @@ struct SignupView: View {
                     TextField("Name", text: viewStore.$name)
                     
                     TextField("Email", text: viewStore.$email)
+                        .keyboardType(.emailAddress)
                     
                     NTCardColorPickerView(selectedColor: viewStore.$selectedCardColor)
                     
@@ -36,9 +33,23 @@ struct SignupView: View {
                     
                     SecureField("Confirm Password", text: viewStore.$confirmPasswordQuery)
                     
-                    NTButton(title: "Create") {
-                        print("Create Button Tapped")
-                    }
+                    Button(action: {
+                        viewStore.send(.createButtonTapped)
+                    }, label: {
+                        if viewStore.isLoading {
+                            ProgressView()
+                                .tint(.primary)
+                                .controlSize(.regular)
+                                .frame(maxWidth: .infinity)
+                        } else {
+                            Text("Sign Up")
+                                .frame(maxWidth: .infinity)
+                        }
+                    })
+                    .disabled(viewStore.shouldDisableLoginButton)
+                    .buttonStyle(.bordered)
+                    .tint(.blue)
+                    .controlSize(.large)
                 }
                 .textFieldStyle(NTTextfieldStyle())
                 .padding()

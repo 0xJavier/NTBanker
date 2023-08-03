@@ -31,17 +31,33 @@ struct LoginView: View {
                         SecureField("Password", text: viewStore.$passwordQuery)
                     }
                     .textFieldStyle(NTTextfieldStyle())
+
                     
-                    NTButton(title: "Login") {
-                        print("Login button tapped")
-                    }
+                    
+                    Button(action: {
+                        viewStore.send(.loginButtonTapped)
+                    }, label: {
+                        if viewStore.isLoading {
+                            ProgressView()
+                                .tint(.primary)
+                                .controlSize(.regular)
+                                .frame(maxWidth: .infinity)
+                        } else {
+                            Text("Sign Up")
+                                .frame(maxWidth: .infinity)
+                        }
+                    })
+                    .disabled(viewStore.shouldDisableLoginButton)
+                    .buttonStyle(.bordered)
+                    .tint(.blue)
+                    .controlSize(.large)
                 }
                 .padding()
                 
                 Divider()
                 
                 Button("Forgot your password?") {
-                    
+                    viewStore.send(.forgotPasswordButtonTapped)
                 }
                 .padding()
                 
