@@ -5,6 +5,7 @@
 //  Created by Javier Munoz on 8/1/23.
 //
 
+import ComposableArchitecture
 import SwiftUI
 
 enum CardColor: String, CaseIterable {
@@ -12,62 +13,44 @@ enum CardColor: String, CaseIterable {
 }
 
 struct SignupView: View {
-    @State private var nameQuery = ""
-    @State private var emailQuery = ""
-    @State private var selectedCardColor: CardColor = .blue
-    @State private var passwordQuery = ""
-    @State private var confirmPasswordQuery = ""
+    let store: StoreOf<SignupFeature>
     
     var body: some View {
-        ScrollView {
-            NTLogoHeaderView()
-                .padding(.top, 20)
-            
-            Text("Create an account")
-                .font(.system(size: 28, weight: .bold))
-                .padding(.bottom, 10)
-            
-            VStack(spacing: 10) {
-                TextField("Name", text: $nameQuery)
+        WithViewStore(self.store, observe: { $0 }) { viewStore in
+            ScrollView {
+                NTLogoHeaderView()
+                    .padding(.top, 20)
                 
-                TextField("Email", text: $emailQuery)
+                Text("Create an account")
+                    .font(.system(size: 28, weight: .bold))
+                    .padding(.bottom, 10)
                 
-                cardColorPickerView
-                
-                SecureField("Password", text: $passwordQuery)
-                
-                SecureField("Confirm Password", text: $confirmPasswordQuery)
-                
-                NTButton(title: "Create") {
-                    print("Create Button Tapped")
+                VStack(spacing: 10) {
+                    TextField("Name", text: viewStore.$name)
+                    
+                    TextField("Email", text: viewStore.$email)
+                    
+                    NTCardColorPickerView(selectedColor: viewStore.$selectedCardColor)
+                    
+                    SecureField("Password", text: viewStore.$passwordQuery)
+                    
+                    SecureField("Confirm Password", text: viewStore.$confirmPasswordQuery)
+                    
+                    NTButton(title: "Create") {
+                        print("Create Button Tapped")
+                    }
                 }
+                .textFieldStyle(NTTextfieldStyle())
+                .padding()
             }
-            .textFieldStyle(NTTextfieldStyle())
-            .padding()
-        }
-    }
-    
-    var cardColorPickerView: some View {
-        HStack {
-            Text("Card Color")
-            
-            Spacer()
-            
-            Picker("Card Color", selection: $selectedCardColor) {
-                ForEach(CardColor.allCases, id: \.self) {
-                    Text($0.rawValue.capitalized)
-                }
-            }
-        }
-        .padding(.horizontal)
-        .frame(height: 50)
-        .background {
-            RoundedRectangle(cornerRadius: 10)
-                .foregroundStyle(Color(uiColor: .secondarySystemBackground))
         }
     }
 }
 
 #Preview {
-    SignupView()
+    SignupView(
+        store: Store(initialState: SignupFeature.State()) {
+            SignupFeature()
+        }
+    )
 }

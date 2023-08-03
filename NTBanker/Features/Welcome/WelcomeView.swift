@@ -5,6 +5,7 @@
 //  Created by Javier Munoz on 8/1/23.
 //
 
+import ComposableArchitecture
 import SwiftUI
 
 struct WelcomeView: View {
@@ -42,7 +43,7 @@ struct WelcomeView: View {
                         }
                         .buttonStyle(.borderedProminent)
                         
-                        NavigationLink(destination: SignupView()) {
+                        NavigationLink(destination: signupView) {
                             Text("Sign Up")
                                 .stringButtonStyle()
                         }
@@ -67,6 +68,14 @@ struct WelcomeView: View {
             Text("Welcome to NTBank. Speed up game banking with our easy to use Balance cards.")
                 .font(.system(size: 20, weight: .bold))
         }
+    }
+    
+    var signupView: some View {
+        SignupView(
+            store: Store(initialState: SignupFeature.State()) {
+                SignupFeature()
+            }
+        )
     }
 }
 
