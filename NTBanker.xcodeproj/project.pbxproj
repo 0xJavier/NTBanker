@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		302159692A7C33B2008C92A3 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302159682A7C33B2008C92A3 /* SFSymbols.swift */; };
+		3021596D2A7D8145008C92A3 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3021596C2A7D8145008C92A3 /* Localizable.xcstrings */; };
 		303D81312A79504D0043B6C4 /* NTBankerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D81302A79504D0043B6C4 /* NTBankerApp.swift */; };
 		303D81332A79504D0043B6C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D81322A79504D0043B6C4 /* ContentView.swift */; };
 		303D81352A79504F0043B6C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 303D81342A79504F0043B6C4 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		302159682A7C33B2008C92A3 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
+		3021596C2A7D8145008C92A3 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		303D812D2A79504D0043B6C4 /* NTBanker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTBanker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		303D81302A79504D0043B6C4 /* NTBankerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTBankerApp.swift; sourceTree = "<group>"; };
 		303D81322A79504D0043B6C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				306B3E6C2A79707400B86060 /* Styles */,
 				306B3E732A79716700B86060 /* Components */,
 				303D81342A79504F0043B6C4 /* Assets.xcassets */,
+				3021596C2A7D8145008C92A3 /* Localizable.xcstrings */,
 				303D81362A79504F0043B6C4 /* Preview Content */,
 			);
 			path = NTBanker;
@@ -324,6 +327,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 303D81242A79504D0043B6C4;
 			packageReferences = (
@@ -347,6 +351,7 @@
 			files = (
 				303D81382A79504F0043B6C4 /* Preview Assets.xcassets in Resources */,
 				303D81352A79504F0043B6C4 /* Assets.xcassets in Resources */,
+				3021596D2A7D8145008C92A3 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

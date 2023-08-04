@@ -10,15 +10,15 @@ import SwiftUI
 
 struct WelcomeView: View {
     private var welcomeString: AttributedString {
-        var attributedString = AttributedString("Enhance Family Game Nights")
-        attributedString.font = UIFont.systemFont(ofSize: 40, weight: .bold)
-        attributedString.foregroundColor = .black
+        var enhanceAttributedString = AttributedString(localized: "Enhance ")
+        enhanceAttributedString.font = UIFont.systemFont(ofSize: 40, weight: .bold)
+        enhanceAttributedString.foregroundColor = .black
         
-        if let range = attributedString.range(of: "Family Game Nights") {
-            attributedString[range].foregroundColor = .blue
-        }
-        
-        return attributedString
+        var familyAttributedString = AttributedString(localized: "Family Game Nights")
+        familyAttributedString.font = UIFont.systemFont(ofSize: 40, weight: .bold)
+        familyAttributedString.foregroundColor = .blue
+                
+        return enhanceAttributedString + familyAttributedString
     }
     
     var body: some View {
