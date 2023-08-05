@@ -48,4 +48,10 @@ extension User {
         balance: 1500,
         color: CardColor.blue.rawValue
     )
+    
+    static let mockUserList = [
+        User(userID: "1", name: "Player1", email: "a@b.com", balance: 2750, color: CardColor.blue.rawValue),
+        User(userID: "2", name: "Player2", email: "b@c.com", balance: 1500, color: CardColor.red.rawValue),
+        User(userID: "3", name: "Player3", email: "c@d.com", balance: 750, color: CardColor.green.rawValue),
+    ]
 }

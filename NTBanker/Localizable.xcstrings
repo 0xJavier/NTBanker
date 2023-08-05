@@ -80,9 +80,6 @@
     "Free Parking Lottery" : {
 
     },
-    "Hello, world!" : {
-
-    },
     "Hello, World!" : {
 
     },
@@ -138,6 +135,9 @@
           }
         }
       }
+    },
+    "Ranking" : {
+
     },
     "Sign Up" : {
       "localizations" : {
