@@ -43,7 +43,7 @@ struct User: Hashable, Codable {
 extension User {
     static let placeholder = User(
         userID: "123",
-        name: "Placeholder User",
+        name: "Player",
         email: "test@banker.com",
         balance: 1500,
         color: CardColor.blue.rawValue

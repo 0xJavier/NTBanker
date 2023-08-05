@@ -36,6 +36,7 @@
 		30A7FED52A7BEE6400912327 /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FED42A7BEE6400912327 /* CardColor.swift */; };
 		30DE664D2A7EDF6100B2525B /* RankingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DE664C2A7EDF6100B2525B /* RankingFeature.swift */; };
 		30DE664F2A7EE04200B2525B /* RankingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DE664E2A7EE04200B2525B /* RankingClient.swift */; };
+		30DE66512A7EE7EE00B2525B /* NTCreditCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DE66502A7EE7EE00B2525B /* NTCreditCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		30A7FED42A7BEE6400912327 /* CardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardColor.swift; sourceTree = "<group>"; };
 		30DE664C2A7EDF6100B2525B /* RankingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeature.swift; sourceTree = "<group>"; };
 		30DE664E2A7EE04200B2525B /* RankingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingClient.swift; sourceTree = "<group>"; };
+		30DE66502A7EE7EE00B2525B /* NTCreditCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTCreditCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 				306B3E742A79717900B86060 /* NTLogoHeaderView.swift */,
 				30A7FEBB2A79A03600912327 /* NTCardColorPickerView.swift */,
 				302159772A7EB41B008C92A3 /* NTLoadingButton.swift */,
+				30DE66502A7EE7EE00B2525B /* NTCreditCardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				3021597C2A7EC3D7008C92A3 /* LotteryClient.swift in Sources */,
 				30A7FECD2A7B582400912327 /* LoginClient.swift in Sources */,
 				30A7FECF2A7BECFF00912327 /* SignupClient.swift in Sources */,
+				30DE66512A7EE7EE00B2525B /* NTCreditCardView.swift in Sources */,
 				30A7FED52A7BEE6400912327 /* CardColor.swift in Sources */,
 				303D81332A79504D0043B6C4 /* ContentView.swift in Sources */,
 				30A7FEC52A7B3E2200912327 /* LoginFeature.swift in Sources */,
