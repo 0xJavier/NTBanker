@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "$%lld" : {
+
+    },
     "Card Color" : {
       "localizations" : {
         "es" : {
@@ -10,6 +13,9 @@
           }
         }
       }
+    },
+    "Collect" : {
+
     },
     "Confirm Password" : {
       "localizations" : {
@@ -71,6 +77,9 @@
         }
       }
     },
+    "Free Parking Lottery" : {
+
+    },
     "Hello, world!" : {
 
     },
@@ -96,6 +105,9 @@
           }
         }
       }
+    },
+    "Lottery" : {
+
     },
     "Name" : {
       "localizations" : {

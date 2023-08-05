@@ -2,38 +2,38 @@
 //  NTLoadingButton.swift
 //  NTBanker
 //
-//  Created by Javier Munoz on 8/1/23.
+//  Created by Javier Munoz on 8/5/23.
 //
 
+import ComposableArchitecture
 import SwiftUI
 
 struct NTLoadingButton: View {
-    let title: String
-    @Binding var isLoading: Bool
-    let action: () -> Void
+    var title: LocalizedStringResource
+    @BindingState var isLoading: Bool
+    var action: () -> Void
     
     var body: some View {
         Button(action: self.action, label: {
             if isLoading {
                 ProgressView()
-                    .controlSize(.regular)
                     .frame(maxWidth: .infinity)
+                    .controlSize(.regular)
             } else {
-                Text(self.title)
+                Text(title)
                     .frame(maxWidth: .infinity)
             }
         })
-        .buttonStyle(.bordered)
         .tint(.blue)
+        .buttonStyle(.bordered)
         .controlSize(.large)
     }
 }
 
 #Preview {
     VStack {
-        NTLoadingButton(title: "Hello, World!", isLoading: .constant(false), action: {})
-        
-        NTLoadingButton(title: "Loading", isLoading: .constant(true), action: {})
+        NTLoadingButton(title: "Hello, World!", isLoading: false, action: {})
+        NTLoadingButton(title: "Hello, World!", isLoading: true, action: {})
     }
-    .padding(.horizontal)
+    .padding()
 }
