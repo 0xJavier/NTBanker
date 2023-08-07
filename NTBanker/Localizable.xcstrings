@@ -4,6 +4,9 @@
     "$%lld" : {
 
     },
+    "Balance:" : {
+
+    },
     "Card Color" : {
       "localizations" : {
         "es" : {
@@ -83,6 +86,12 @@
     "Hello, World!" : {
 
     },
+    "Home" : {
+
+    },
+    "Latest Transactions" : {
+
+    },
     "Log in to your account" : {
       "localizations" : {
         "es" : {
@@ -135,6 +144,9 @@
           }
         }
       }
+    },
+    "Quick Actions" : {
+
     },
     "Ranking" : {
 

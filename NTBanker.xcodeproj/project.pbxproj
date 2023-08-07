@@ -28,6 +28,13 @@
 		306B3E792A79754500B86060 /* NTTextfieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E782A79754500B86060 /* NTTextfieldStyle.swift */; };
 		306B3E7E2A7985A800B86060 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E7D2A7985A800B86060 /* SignupView.swift */; };
 		306B3E812A79914E00B86060 /* SignupFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E802A79914E00B86060 /* SignupFeature.swift */; };
+		306FF8DC2A7F2D7200A913E5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306FF8DB2A7F2D7200A913E5 /* HomeView.swift */; };
+		306FF8DE2A7F340200A913E5 /* QuickActionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306FF8DD2A7F340200A913E5 /* QuickActionCardView.swift */; };
+		309E50BA2A8138FE00C5A4F2 /* QuickActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309E50B92A8138FE00C5A4F2 /* QuickActionView.swift */; };
+		309E50BC2A813AC300C5A4F2 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309E50BB2A813AC300C5A4F2 /* TransactionView.swift */; };
+		309E50BE2A813E9000C5A4F2 /* NTSymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309E50BD2A813E9000C5A4F2 /* NTSymbolView.swift */; };
+		309E50C02A813F2900C5A4F2 /* QuickAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309E50BF2A813F2900C5A4F2 /* QuickAction.swift */; };
+		309E50C22A81400700C5A4F2 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309E50C12A81400700C5A4F2 /* Transaction.swift */; };
 		30A7FEBC2A79A03600912327 /* NTCardColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FEBB2A79A03600912327 /* NTCardColorPickerView.swift */; };
 		30A7FEC52A7B3E2200912327 /* LoginFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FEC42A7B3E2200912327 /* LoginFeature.swift */; };
 		30A7FECD2A7B582400912327 /* LoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FECC2A7B582400912327 /* LoginClient.swift */; };
@@ -37,6 +44,10 @@
 		30DE664D2A7EDF6100B2525B /* RankingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DE664C2A7EDF6100B2525B /* RankingFeature.swift */; };
 		30DE664F2A7EE04200B2525B /* RankingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DE664E2A7EE04200B2525B /* RankingClient.swift */; };
 		30DE66512A7EE7EE00B2525B /* NTCreditCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DE66502A7EE7EE00B2525B /* NTCreditCardView.swift */; };
+		30ED62BD2A829BAF0016A880 /* HomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62BC2A829BAF0016A880 /* HomeFeature.swift */; };
+		30ED62BF2A829BDC0016A880 /* HomeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62BE2A829BDC0016A880 /* HomeClient.swift */; };
+		30ED62C12A829C6F0016A880 /* HomeClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62C02A829C6F0016A880 /* HomeClient+Live.swift */; };
+		30ED62C32A829CB90016A880 /* HomeClient+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62C22A829CB90016A880 /* HomeClient+Mock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +91,13 @@
 		306B3E782A79754500B86060 /* NTTextfieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTTextfieldStyle.swift; sourceTree = "<group>"; };
 		306B3E7D2A7985A800B86060 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		306B3E802A79914E00B86060 /* SignupFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFeature.swift; sourceTree = "<group>"; };
+		306FF8DB2A7F2D7200A913E5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		306FF8DD2A7F340200A913E5 /* QuickActionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionCardView.swift; sourceTree = "<group>"; };
+		309E50B92A8138FE00C5A4F2 /* QuickActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionView.swift; sourceTree = "<group>"; };
+		309E50BB2A813AC300C5A4F2 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		309E50BD2A813E9000C5A4F2 /* NTSymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTSymbolView.swift; sourceTree = "<group>"; };
+		309E50BF2A813F2900C5A4F2 /* QuickAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAction.swift; sourceTree = "<group>"; };
+		309E50C12A81400700C5A4F2 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		30A7FEBB2A79A03600912327 /* NTCardColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTCardColorPickerView.swift; sourceTree = "<group>"; };
 		30A7FEC42A7B3E2200912327 /* LoginFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
 		30A7FECC2A7B582400912327 /* LoginClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginClient.swift; sourceTree = "<group>"; };
@@ -89,6 +107,10 @@
 		30DE664C2A7EDF6100B2525B /* RankingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeature.swift; sourceTree = "<group>"; };
 		30DE664E2A7EE04200B2525B /* RankingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingClient.swift; sourceTree = "<group>"; };
 		30DE66502A7EE7EE00B2525B /* NTCreditCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTCreditCardView.swift; sourceTree = "<group>"; };
+		30ED62BC2A829BAF0016A880 /* HomeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
+		30ED62BE2A829BDC0016A880 /* HomeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeClient.swift; sourceTree = "<group>"; };
+		30ED62C02A829C6F0016A880 /* HomeClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeClient+Live.swift"; sourceTree = "<group>"; };
+		30ED62C22A829CB90016A880 /* HomeClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeClient+Mock.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +227,7 @@
 				306B3E6F2A79712200B86060 /* Welcome */,
 				306B3E702A79713300B86060 /* Login */,
 				306B3E7C2A79859B00B86060 /* Signup */,
+				306FF8DA2A7F2D6400A913E5 /* Home */,
 				3021597D2A7ED476008C92A3 /* Ranking */,
 				302159742A7EA8CE008C92A3 /* Lottery */,
 			);
@@ -244,6 +267,8 @@
 				30A7FEBB2A79A03600912327 /* NTCardColorPickerView.swift */,
 				302159772A7EB41B008C92A3 /* NTLoadingButton.swift */,
 				30DE66502A7EE7EE00B2525B /* NTCreditCardView.swift */,
+				306FF8DD2A7F340200A913E5 /* QuickActionCardView.swift */,
+				309E50BD2A813E9000C5A4F2 /* NTSymbolView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -258,10 +283,25 @@
 			path = Signup;
 			sourceTree = "<group>";
 		};
+		306FF8DA2A7F2D6400A913E5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				30ED62C42A829D450016A880 /* Components */,
+				306FF8DB2A7F2D7200A913E5 /* HomeView.swift */,
+				30ED62BC2A829BAF0016A880 /* HomeFeature.swift */,
+				30ED62BE2A829BDC0016A880 /* HomeClient.swift */,
+				30ED62C02A829C6F0016A880 /* HomeClient+Live.swift */,
+				30ED62C22A829CB90016A880 /* HomeClient+Mock.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		30A7FED02A7BEE2A00912327 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				30A7FED12A7BEE4C00912327 /* User.swift */,
+				309E50BF2A813F2900C5A4F2 /* QuickAction.swift */,
+				309E50C12A81400700C5A4F2 /* Transaction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -273,6 +313,15 @@
 				302159682A7C33B2008C92A3 /* SFSymbols.swift */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		30ED62C42A829D450016A880 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				309E50B92A8138FE00C5A4F2 /* QuickActionView.swift */,
+				309E50BB2A813AC300C5A4F2 /* TransactionView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +462,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				309E50BE2A813E9000C5A4F2 /* NTSymbolView.swift in Sources */,
+				309E50C02A813F2900C5A4F2 /* QuickAction.swift in Sources */,
 				306B3E7E2A7985A800B86060 /* SignupView.swift in Sources */,
 				30DE664F2A7EE04200B2525B /* RankingClient.swift in Sources */,
 				3021597C2A7EC3D7008C92A3 /* LotteryClient.swift in Sources */,
@@ -421,20 +472,29 @@
 				30DE66512A7EE7EE00B2525B /* NTCreditCardView.swift in Sources */,
 				30A7FED52A7BEE6400912327 /* CardColor.swift in Sources */,
 				303D81332A79504D0043B6C4 /* ContentView.swift in Sources */,
+				309E50BC2A813AC300C5A4F2 /* TransactionView.swift in Sources */,
 				30A7FEC52A7B3E2200912327 /* LoginFeature.swift in Sources */,
 				3021597A2A7EC3C3008C92A3 /* LotteryFeature.swift in Sources */,
 				302159782A7EB41B008C92A3 /* NTLoadingButton.swift in Sources */,
+				309E50C22A81400700C5A4F2 /* Transaction.swift in Sources */,
 				303D81312A79504D0043B6C4 /* NTBankerApp.swift in Sources */,
 				30DE664D2A7EDF6100B2525B /* RankingFeature.swift in Sources */,
 				306B3E752A79717900B86060 /* NTLogoHeaderView.swift in Sources */,
 				306B3E812A79914E00B86060 /* SignupFeature.swift in Sources */,
+				30ED62BF2A829BDC0016A880 /* HomeClient.swift in Sources */,
 				30A7FED22A7BEE4C00912327 /* User.swift in Sources */,
 				30A7FEBC2A79A03600912327 /* NTCardColorPickerView.swift in Sources */,
 				306B3E792A79754500B86060 /* NTTextfieldStyle.swift in Sources */,
+				306FF8DE2A7F340200A913E5 /* QuickActionCardView.swift in Sources */,
 				302159692A7C33B2008C92A3 /* SFSymbols.swift in Sources */,
 				306B3E722A79713F00B86060 /* LoginView.swift in Sources */,
 				3021597F2A7ED4C9008C92A3 /* RankingView.swift in Sources */,
+				30ED62C32A829CB90016A880 /* HomeClient+Mock.swift in Sources */,
+				306FF8DC2A7F2D7200A913E5 /* HomeView.swift in Sources */,
 				306B3E632A79579F00B86060 /* WelcomeView.swift in Sources */,
+				309E50BA2A8138FE00C5A4F2 /* QuickActionView.swift in Sources */,
+				30ED62BD2A829BAF0016A880 /* HomeFeature.swift in Sources */,
+				30ED62C12A829C6F0016A880 /* HomeClient+Live.swift in Sources */,
 				302159762A7EA8E1008C92A3 /* LotteryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
