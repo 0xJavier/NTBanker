@@ -48,6 +48,7 @@
 		30ED62BF2A829BDC0016A880 /* HomeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62BE2A829BDC0016A880 /* HomeClient.swift */; };
 		30ED62C12A829C6F0016A880 /* HomeClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62C02A829C6F0016A880 /* HomeClient+Live.swift */; };
 		30ED62C32A829CB90016A880 /* HomeClient+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62C22A829CB90016A880 /* HomeClient+Mock.swift */; };
+		30ED62C82A82C4DD0016A880 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62C72A82C4DD0016A880 /* HomeTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		30ED62BE2A829BDC0016A880 /* HomeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeClient.swift; sourceTree = "<group>"; };
 		30ED62C02A829C6F0016A880 /* HomeClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeClient+Live.swift"; sourceTree = "<group>"; };
 		30ED62C22A829CB90016A880 /* HomeClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeClient+Mock.swift"; sourceTree = "<group>"; };
+		30ED62C72A82C4DD0016A880 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 		306B3E682A795EF500B86060 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				30ED62C62A82C49A0016A880 /* HomeTab */,
 				306B3E6F2A79712200B86060 /* Welcome */,
 				306B3E702A79713300B86060 /* Login */,
 				306B3E7C2A79859B00B86060 /* Signup */,
@@ -322,6 +325,14 @@
 				309E50BB2A813AC300C5A4F2 /* TransactionView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		30ED62C62A82C49A0016A880 /* HomeTab */ = {
+			isa = PBXGroup;
+			children = (
+				30ED62C72A82C4DD0016A880 /* HomeTabView.swift */,
+			);
+			path = HomeTab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,6 +505,7 @@
 				306B3E632A79579F00B86060 /* WelcomeView.swift in Sources */,
 				309E50BA2A8138FE00C5A4F2 /* QuickActionView.swift in Sources */,
 				30ED62BD2A829BAF0016A880 /* HomeFeature.swift in Sources */,
+				30ED62C82A82C4DD0016A880 /* HomeTabView.swift in Sources */,
 				30ED62C12A829C6F0016A880 /* HomeClient+Live.swift in Sources */,
 				302159762A7EA8E1008C92A3 /* LotteryView.swift in Sources */,
 			);
