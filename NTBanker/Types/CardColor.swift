@@ -8,8 +8,8 @@
 import SwiftUI
 
 enum CardColor: String, CaseIterable {
-    case red
     case blue
+    case red
     case green
     case pink
     case purple

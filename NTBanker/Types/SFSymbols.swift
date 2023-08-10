@@ -13,6 +13,9 @@ enum SFSymbols {
     case house
     case personGroup
     case gear
+    case person
+    case buildingColumn
+    case car
     
     var imageString: String {
         switch self {
@@ -26,6 +29,12 @@ enum SFSymbols {
             return "person.2"
         case .gear:
             return "gear"
+        case .person:
+            return "person.fill"
+        case .buildingColumn:
+            return "building.columns.fill"
+        case .car:
+            return "car.fill"
         }
     }
 }

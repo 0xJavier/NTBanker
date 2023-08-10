@@ -10,14 +10,15 @@ import ComposableArchitecture
 struct HomeFeature: Reducer {
     struct State: Equatable {
         var user = User.placeholder
-        var quickActions = QuickActionType.actionList
-        var transactions = Transaction.mockList
+        var quickActions = QuickActionFeature.State()
+        var transactions = TransactionFeature.State()
     }
     
     enum Action {
         case streamUser
-        case streamTransactions
-        case actionButtonTapped(QuickActionType)
+        case userResponse(TaskResult<User>)
+        case quickActions(QuickActionFeature.Action)
+        case transactions(TransactionFeature.Action)
     }
     
     @Dependency(\.homeClient) var homeClient
@@ -26,34 +27,33 @@ struct HomeFeature: Reducer {
         Reduce { state, action in
             switch action {
             case .streamUser:
-                return .none
-                
-            case .streamTransactions:
-                return .none
-                
-            case .actionButtonTapped(let action):
-                switch action {
-                case .sendMoney:
-                    print("Send Money Tapped")
-                    return .none
-                    
-                case .collect200:
-                    print("Collect 200 Tapped")
-                    return .none
-                    
-                case .payBank:
-                    print("Pay Bank Tapped")
-                    return .none
-                    
-                case .payLottery:
-                    print("Pay Lottery Tapped")
-                    return .none
-                    
-                case .receiveMoney:
-                    print("Receive Money Tapped")
-                    return .none
+                return .run { send in
+                    for try await user in await self.homeClient.streamUser() {
+                        await send(.userResponse(.success(user)))
+                    }
+                } catch: { error, send in
+                    await send(.userResponse(.failure(error)))
                 }
+                
+            case .userResponse(.success(let user)):
+                state.user = user
+                return .none
+                
+            case .userResponse(.failure(let error)):
+                print("ERROR: \(error.localizedDescription)")
+                return .none
+                
+            default:
+                return .none
             }
+        }
+        
+        Scope(state: \.quickActions, action: /Action.quickActions) {
+            QuickActionFeature()
+        }
+        
+        Scope(state: \.transactions, action: /Action.transactions) {
+            TransactionFeature()
         }
     }
 }

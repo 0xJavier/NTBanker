@@ -10,19 +10,15 @@ import ComposableArchitecture
 extension HomeClient {
     static let previewValue = Self(
         streamUser: {
-            try await Task.sleep(for: .milliseconds(1_100))
-            return User.placeholder
-        },
-        streamTransactions: {
-            try await Task.sleep(for: .milliseconds(1_100))
-            return Transaction.mockList
+            AsyncThrowingStream { continuation in
+                continuation.yield(User.placeholder)
+            }
         }
     )
 }
 
 extension HomeClient {
     static let testValue = Self(
-        streamUser: unimplemented("\(Self.self).streamUser"),
-        streamTransactions: unimplemented("\(Self.self).streamTransactions")
+        streamUser: unimplemented("\(Self.self).streamUser")
     )
 }

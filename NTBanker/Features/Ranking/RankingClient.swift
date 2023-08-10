@@ -7,32 +7,10 @@
 
 import ComposableArchitecture
 
+/// Main interface for the Ranking Feature.
 struct RankingClient: DependencyKey {
+    /// Reach out to firebase and return a ordered list of all current users in descending order based on a player's balance.
     var fetchUsers: @Sendable () async throws -> [User]
-}
-
-extension RankingClient {
-    static let liveValue = Self(
-        fetchUsers: {
-            try await Task.sleep(for: .milliseconds(1_100))
-            return User.mockUserList
-        }
-    )
-}
-
-extension RankingClient {
-    static let previewValue = Self(
-        fetchUsers: {
-            try await Task.sleep(for: .milliseconds(1_100))
-            return User.mockUserList
-        }
-    )
-}
-
-extension RankingClient {
-    static let testValue = Self(
-        fetchUsers: unimplemented("\(Self.self).fetchUsers")
-    )
 }
 
 extension DependencyValues {

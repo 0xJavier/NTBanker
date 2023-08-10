@@ -33,12 +33,16 @@ struct LotteryView: View {
                     NTLoadingButton(title: "Collect", isLoading: viewStore.isLoading) {
                         viewStore.send(.collectButtonTapped)
                     }
+                    .disabled(viewStore.shouldDisableCollectButton)
                     
                     Spacer()
                 }
                 .navigationTitle("Lottery")
                 .navigationBarTitleDisplayMode(.inline)
                 .padding(.horizontal)
+                .onAppear {
+                    self.store.send(.retrieveLotteryAmount)
+                }
             }
         }
     }

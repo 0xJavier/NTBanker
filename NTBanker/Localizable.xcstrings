@@ -30,6 +30,9 @@
         }
       }
     },
+    "Could not get current user's UID." : {
+
+    },
     "Create an account" : {
       "localizations" : {
         "es" : {
@@ -126,6 +129,7 @@
       }
     },
     "NTBank" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -134,6 +138,9 @@
           }
         }
       }
+    },
+    "NTBanker" : {
+
     },
     "Password" : {
       "localizations" : {

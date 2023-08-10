@@ -9,8 +9,8 @@ import ComposableArchitecture
 
 /// Client responsible for handling user/account creation with Firebase
 struct HomeClient: DependencyKey {
-    var streamUser: @Sendable () async throws -> User
-    var streamTransactions: @Sendable () async throws -> [Transaction]
+    var streamUser: @Sendable () async -> AsyncThrowingStream<User, Error>
+    
 }
 
 // Configure out `SignupClient` to be registered to TCA's dependency injection system.

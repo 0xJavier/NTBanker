@@ -11,9 +11,9 @@ struct NTLogoHeaderView: View {
     var body: some View {
         HStack {
             Image(.miniLogo)
-            Text("NTBank")
+            Text("NTBanker")
         }
-        .frame(width: 110, height: 28)
+        .frame(width: 115, height: 28)
     }
 }
 

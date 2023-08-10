@@ -33,23 +33,10 @@ struct SignupView: View {
                     
                     SecureField("Confirm Password", text: viewStore.$confirmPasswordQuery)
                     
-                    Button(action: {
+                    NTLoadingButton(title: "Sign Up", isLoading: viewStore.isLoading) {
                         viewStore.send(.createButtonTapped)
-                    }, label: {
-                        if viewStore.isLoading {
-                            ProgressView()
-                                .tint(.primary)
-                                .controlSize(.regular)
-                                .frame(maxWidth: .infinity)
-                        } else {
-                            Text("Sign Up")
-                                .frame(maxWidth: .infinity)
-                        }
-                    })
+                    }
                     .disabled(viewStore.shouldDisableLoginButton)
-                    .buttonStyle(.bordered)
-                    .tint(.blue)
-                    .controlSize(.large)
                 }
                 .textFieldStyle(NTTextfieldStyle())
                 .padding()

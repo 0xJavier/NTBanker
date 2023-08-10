@@ -7,6 +7,7 @@
 
 import ComposableArchitecture
 import Foundation
+import OSLog
 
 /// Object that holds the Login feature's state, actions, and logic in the form of a reducer.
 struct LoginFeature: Reducer {
@@ -16,7 +17,7 @@ struct LoginFeature: Reducer {
         /// User password that is entered in the textfield
         @BindingState var passwordQuery = ""
         /// Flag used to show a progress indicator when reaching out to Firebase
-        var isLoading = false
+        @BindingState var isLoading = false
         /// Flag used to disable the login button depending if the form is filled out completely
         var shouldDisableLoginButton = true
     }
@@ -27,9 +28,9 @@ struct LoginFeature: Reducer {
         /// Action for when a user wants to reset their password
         case forgotPasswordButtonTapped
         /// Action for the response from the client when logging a user in
-        case loginResponse(Bool)
+        case loginResponse(Error?)
         /// Action for the response from the client when resetting a user's password
-        case forgotPasswordResponse(Bool)
+        case forgotPasswordResponse(Error?)
         /// Action for binding state variables with `BindingState`
         case binding(BindingAction<State>)
     }
@@ -49,11 +50,18 @@ struct LoginFeature: Reducer {
                 }
                 
             case .forgotPasswordButtonTapped:
+                //TODO: Present Alert with textfield to reset password
                 return .none
                 
-            case .loginResponse(_):
+            case .loginResponse(let error):
                 state.isLoading = false
                 state.shouldDisableLoginButton = false
+                if let error {
+                    Logger.login.error("Could not login current user: \(error.localizedDescription)")
+                    return .none
+                }
+                
+                print("SUCESS")
                 return .none
                 
             case .forgotPasswordResponse(_):

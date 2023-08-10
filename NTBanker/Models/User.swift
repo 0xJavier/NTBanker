@@ -14,8 +14,12 @@ struct User: Hashable, Codable {
     var userID: String = ""
     var name: String = ""
     var email: String = ""
-    var balance: Int = 0
+    var balance: Int = 1500
     var color: String = CardColor.blue.rawValue
+    
+    enum CodingKeys: String, CodingKey {
+        case userID, name, email, balance, color
+    }
     
     var colorLiteral: Color {
         guard let colorType = CardColor.init(rawValue: color) else {
