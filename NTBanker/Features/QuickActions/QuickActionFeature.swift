@@ -10,14 +10,20 @@ import ComposableArchitecture
 struct QuickActionFeature: Reducer {
     struct State: Equatable {
         var quickActions = QuickActionType.actionList
+        @PresentationState var alert: AlertState<Action.Alert>?
     }
     
     enum Action {
+        case alert(PresentationAction<Alert>)
+        enum Alert: Equatable {}
+        
         case actionButtonTapped(QuickActionType)
         case collect200
         case collect200Response(Error?)
         case payBank(Int)
         case payBankResponse(Error?)
+        case payLottery(Int)
+        case payLotteryResponse(Error?)
         case receiveMoney(Int)
         case receiveMoneyResponse(Error?)
     }
@@ -27,6 +33,9 @@ struct QuickActionFeature: Reducer {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+            case .alert:
+                return .none
+                
             case .actionButtonTapped(let action):
                 switch action {
                 case .sendMoney:
@@ -44,6 +53,9 @@ struct QuickActionFeature: Reducer {
                     }
                     
                 case .payLottery:
+                    return .run { send in
+                        await send(.payLottery(500))
+                    }
                     print("Pay Lottery Tapped")
                     return .none
                     
@@ -65,7 +77,10 @@ struct QuickActionFeature: Reducer {
                     return .none
                 }
                 
-                print("SUCCESS")
+                state.alert = AlertState {
+                    TextState("Successfully collected $200")
+                }
+                
                 return .none
                 
             case .payBank(let amount):
@@ -80,7 +95,28 @@ struct QuickActionFeature: Reducer {
                     return .none
                 }
                 
-                print("SUCCESS")
+                state.alert = AlertState {
+                    TextState("Successfully paid bank")
+                }
+                
+                return .none
+                
+            case .payLottery(let amount):
+                return .run { send in
+                    let response = try await self.quickActionClient.payLottery(amount)
+                    await send(.payLotteryResponse(response))
+                }
+                
+            case .payLotteryResponse(let error):
+                if let error {
+                    print("ERROR: \(error.localizedDescription)")
+                    return .none
+                }
+                
+                state.alert = AlertState {
+                    TextState("Successfully paid lottery")
+                }
+                
                 return .none
                 
             case .receiveMoney(let amount):
@@ -95,10 +131,14 @@ struct QuickActionFeature: Reducer {
                     return .none
                 }
                 
-                print("SUCCESS")
+                state.alert = AlertState {
+                    TextState("Successfully received money")
+                }
+                
                 return .none
                 
             }
         }
+        .ifLet(\.$alert, action: /Action.alert)
     }
 }

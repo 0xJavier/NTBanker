@@ -171,6 +171,18 @@
         }
       }
     },
+    "Successfully collected $200" : {
+
+    },
+    "Successfully paid bank" : {
+
+    },
+    "Successfully paid lottery" : {
+
+    },
+    "Successfully received money" : {
+
+    },
     "Welcome to NTBank. Speed up game banking with our easy to use Balance cards." : {
       "localizations" : {
         "es" : {

@@ -32,6 +32,7 @@ struct QuickActionView: View {
                     }
                 }
                 .scrollIndicators(.hidden)
+                .alert(store: self.store.scope(state: \.$alert, action: QuickActionFeature.Action.alert))
             }
         }
     }
