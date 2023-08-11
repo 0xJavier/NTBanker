@@ -19,6 +19,7 @@ struct LotteryFeature: Reducer {
         var shouldDisableCollectButton: Bool {
             isLoading || lotteryAmount <= 0
         }
+        @PresentationState var alert: AlertState<Action.Alert>?
     }
     
     enum Action {
@@ -28,8 +29,12 @@ struct LotteryFeature: Reducer {
         case retrieveLotteryAmountResponse(TaskResult<Int>)
         /// Action for when a user taps the collect button.
         case collectButtonTapped
-        ///
         case collectButtonTappedResponse(Error?)
+        case alert(PresentationAction<Alert>)
+        
+        enum Alert: Equatable {
+            case collectButtonTapped
+        }
     }
     
     @Dependency(\.lotteryClient) var lotteryClient
@@ -37,6 +42,16 @@ struct LotteryFeature: Reducer {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+            case .alert(.presented(.collectButtonTapped)):
+                state.isLoading = true
+                return .run { [amount = state.lotteryAmount] send in
+                    let response = try await self.lotteryClient.collectLottery(amount)
+                    await send(.collectButtonTappedResponse(response))
+                }
+                
+            case .alert:
+                return .none
+                
             case .retrieveLotteryAmount:
                 state.isLoading = true
                 return .run { send in
@@ -55,11 +70,21 @@ struct LotteryFeature: Reducer {
                 return .none
                 
             case .collectButtonTapped:
-                state.isLoading = true
-                return .run { [amount = state.lotteryAmount] send in
-                    let response = try await self.lotteryClient.collectLottery(amount)
-                    await send(.collectButtonTappedResponse(response))
+                state.alert = AlertState {
+                    TextState("Collect lottery")
+                } actions: {
+                    ButtonState(role: .cancel) {
+                        TextState("Cancel")
+                    }
+                    
+                    ButtonState(action: .collectButtonTapped) {
+                        TextState("Collect")
+                    }
+                } message: {
+                    TextState("Are you sure you want to collect lottery?")
                 }
+                
+                return .none
                 
             case .collectButtonTappedResponse(let error):
                 state.isLoading = false
@@ -68,10 +93,14 @@ struct LotteryFeature: Reducer {
                     return .none
                 }
                 
-                Logger.lottery.info("Successfully collected lottery")
+                state.alert = AlertState {
+                    TextState("Success!")
+                }
+                
                 state.lotteryAmount = 0
                 return .none
             }
         }
+        .ifLet(\.$alert, action: /Action.alert)
     }
 }
