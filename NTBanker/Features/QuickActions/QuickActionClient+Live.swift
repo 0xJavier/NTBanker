@@ -65,6 +65,32 @@ extension QuickActionClient {
                 try await batch.commit()
                 
                 return nil
+            },
+            
+            receiveMoney: { amount in
+                guard let userID = Auth.auth().currentUser?.uid else {
+                    throw NTError.noUserID
+                }
+                
+                let batch = Firestore.firestore().batch()
+                let transactionRef = playerRef
+                    .document(userID)
+                    .collection("transactions")
+                    .document()
+                
+                batch.updateData([
+                    "balance": FieldValue.increment(Int64(amount))
+                ], forDocument: playerRef.document(userID))
+                
+                let transaction = Transaction(
+                    amount: amount, action: "Received Money", subAction: .received, type: .receivedMoneyFromBank
+                )
+                
+                try batch.setData(from: transaction, forDocument: transactionRef)
+                
+                try await batch.commit()
+                
+                return nil
             }
         )
     }

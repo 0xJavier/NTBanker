@@ -18,6 +18,8 @@ struct QuickActionFeature: Reducer {
         case collect200Response(Error?)
         case payBank(Int)
         case payBankResponse(Error?)
+        case receiveMoney(Int)
+        case receiveMoneyResponse(Error?)
     }
     
     @Dependency(\.quickActionClient) var quickActionClient
@@ -46,8 +48,9 @@ struct QuickActionFeature: Reducer {
                     return .none
                     
                 case .receiveMoney:
-                    print("Receive Money Tapped")
-                    return .none
+                    return .run { send in
+                        await send(.receiveMoney(350))
+                    }
                 }
                 
             case .collect200:
@@ -79,6 +82,22 @@ struct QuickActionFeature: Reducer {
                 
                 print("SUCCESS")
                 return .none
+                
+            case .receiveMoney(let amount):
+                return .run { send in
+                    let response = try await self.quickActionClient.receiveMoney(amount)
+                    await send(.receiveMoneyResponse(response))
+                }
+                
+            case .receiveMoneyResponse(let error):
+                if let error {
+                    print("ERROR: \(error.localizedDescription)")
+                    return .none
+                }
+                
+                print("SUCCESS")
+                return .none
+                
             }
         }
     }

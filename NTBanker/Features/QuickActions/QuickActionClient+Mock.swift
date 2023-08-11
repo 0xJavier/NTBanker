@@ -18,6 +18,11 @@ extension QuickActionClient {
             payBank: { _ in
                 try await Task.sleep(for: .milliseconds(500))
                 return nil
+            },
+            
+            receiveMoney: { _ in
+                try await Task.sleep(for: .milliseconds(500))
+                return nil
             }
         )
     }
@@ -26,6 +31,7 @@ extension QuickActionClient {
 extension QuickActionClient {
     static let testValue = Self(
         collect200: unimplemented("\(Self.self).collect200"),
-        payBank: unimplemented("\(Self.self).payBank")
+        payBank: unimplemented("\(Self.self).payBank"),
+        receiveMoney: unimplemented("\(Self.self).receiveMoney")
     )
 }
