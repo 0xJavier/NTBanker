@@ -17,9 +17,19 @@ struct HomeView: View {
                 VStack(spacing: 10) {
                     NTCreditCardView(user: viewStore.user)
                     
-                    QuickActionView(store: store)
+                    QuickActionView(
+                        store: self.store.scope(
+                            state: \.quickActions,
+                            action: HomeFeature.Action.quickActions
+                        )
+                    )
                     
-                    TransactionView(store: store)
+                    TransactionView(
+                        store: self.store.scope(
+                            state: \.transactions,
+                            action: HomeFeature.Action.transactions
+                        )
+                    )
                 }
                 .navigationTitle("Home")
                 .navigationBarTitleDisplayMode(.inline)

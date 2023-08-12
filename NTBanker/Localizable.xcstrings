@@ -4,7 +4,13 @@
     "$%lld" : {
 
     },
+    "Are you sure you want to collect lottery?" : {
+
+    },
     "Balance:" : {
+
+    },
+    "Cancel" : {
 
     },
     "Card Color" : {
@@ -20,6 +26,9 @@
     "Collect" : {
 
     },
+    "Collect lottery" : {
+
+    },
     "Confirm Password" : {
       "localizations" : {
         "es" : {
@@ -29,6 +38,9 @@
           }
         }
       }
+    },
+    "Could not get current user's UID." : {
+
     },
     "Create an account" : {
       "localizations" : {
@@ -125,15 +137,8 @@
         }
       }
     },
-    "NTBank" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "NTBank"
-          }
-        }
-      }
+    "NTBanker" : {
+
     },
     "Password" : {
       "localizations" : {
@@ -163,6 +168,21 @@
           }
         }
       }
+    },
+    "Success!" : {
+
+    },
+    "Successfully collected $200" : {
+
+    },
+    "Successfully paid bank" : {
+
+    },
+    "Successfully paid lottery" : {
+
+    },
+    "Successfully received money" : {
+
     },
     "Welcome to NTBank. Speed up game banking with our easy to use Balance cards." : {
       "localizations" : {

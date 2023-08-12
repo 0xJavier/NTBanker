@@ -9,7 +9,7 @@ import ComposableArchitecture
 import SwiftUI
 
 struct QuickActionView: View {
-    let store: StoreOf<HomeFeature>
+    let store: StoreOf<QuickActionFeature>
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
@@ -32,6 +32,7 @@ struct QuickActionView: View {
                     }
                 }
                 .scrollIndicators(.hidden)
+                .alert(store: self.store.scope(state: \.$alert, action: QuickActionFeature.Action.alert))
             }
         }
     }
@@ -39,8 +40,8 @@ struct QuickActionView: View {
 
 #Preview {
     QuickActionView(
-        store: Store(initialState: HomeFeature.State()) {
-            HomeFeature()
+        store: Store(initialState: QuickActionFeature.State()) {
+            QuickActionFeature()
         }
     )
 }

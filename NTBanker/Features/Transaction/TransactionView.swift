@@ -9,7 +9,7 @@ import ComposableArchitecture
 import SwiftUI
 
 struct TransactionView: View {
-    let store: StoreOf<HomeFeature>
+    let store: StoreOf<TransactionFeature>
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
@@ -24,6 +24,9 @@ struct TransactionView: View {
                 }
                 .listStyle(.plain)
             }
+            .onAppear {
+                viewStore.send(.streamTransactions)
+            }
         }
     }
 }
@@ -33,12 +36,12 @@ struct TransactionCell: View {
     
     var body: some View {
         HStack {
-            NTSymbolView(color: .red, sfSymbol: .dollarSignCircle)
+            NTSymbolView(typeString: transaction.type)
             
             VStack(alignment: .leading) {
                 Text(transaction.action)
                 
-                Text(transaction.subAction)
+                Text(transaction.subAction.capitalized)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -54,8 +57,8 @@ struct TransactionCell: View {
 
 #Preview {
     TransactionView(
-        store: Store(initialState: HomeFeature.State()) {
-            HomeFeature()
+        store: Store(initialState: TransactionFeature.State()) {
+            TransactionFeature()
         }
     )
 }

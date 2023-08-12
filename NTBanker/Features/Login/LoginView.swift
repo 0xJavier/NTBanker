@@ -32,25 +32,10 @@ struct LoginView: View {
                     }
                     .textFieldStyle(NTTextfieldStyle())
 
-                    
-                    
-                    Button(action: {
+                    NTLoadingButton(title: "Login", isLoading: viewStore.isLoading) {
                         viewStore.send(.loginButtonTapped)
-                    }, label: {
-                        if viewStore.isLoading {
-                            ProgressView()
-                                .tint(.primary)
-                                .controlSize(.regular)
-                                .frame(maxWidth: .infinity)
-                        } else {
-                            Text("Sign Up")
-                                .frame(maxWidth: .infinity)
-                        }
-                    })
+                    }
                     .disabled(viewStore.shouldDisableLoginButton)
-                    .buttonStyle(.bordered)
-                    .tint(.blue)
-                    .controlSize(.large)
                 }
                 .padding()
                 

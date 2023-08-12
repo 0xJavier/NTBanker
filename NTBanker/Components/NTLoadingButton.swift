@@ -19,6 +19,7 @@ struct NTLoadingButton: View {
                 ProgressView()
                     .frame(maxWidth: .infinity)
                     .controlSize(.regular)
+                    .tint(.primary)
             } else {
                 Text(title)
                     .frame(maxWidth: .infinity)
@@ -34,6 +35,7 @@ struct NTLoadingButton: View {
     VStack {
         NTLoadingButton(title: "Hello, World!", isLoading: false, action: {})
         NTLoadingButton(title: "Hello, World!", isLoading: true, action: {})
+            .disabled(true)
     }
     .padding()
 }

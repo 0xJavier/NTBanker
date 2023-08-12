@@ -49,6 +49,29 @@
 		30ED62C12A829C6F0016A880 /* HomeClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62C02A829C6F0016A880 /* HomeClient+Live.swift */; };
 		30ED62C32A829CB90016A880 /* HomeClient+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62C22A829CB90016A880 /* HomeClient+Mock.swift */; };
 		30ED62C82A82C4DD0016A880 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62C72A82C4DD0016A880 /* HomeTabView.swift */; };
+		30ED62CB2A82CB9F0016A880 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 30ED62CA2A82CB9F0016A880 /* FirebaseAuth */; };
+		30ED62CD2A82CB9F0016A880 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 30ED62CC2A82CB9F0016A880 /* FirebaseFirestore */; };
+		30ED62CF2A82CB9F0016A880 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 30ED62CE2A82CB9F0016A880 /* FirebaseFirestoreSwift */; };
+		30ED62D32A82DCBB0016A880 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30ED62D22A82DCBB0016A880 /* GoogleService-Info.plist */; };
+		30ED62D52A82E3EC0016A880 /* LoginClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62D42A82E3EC0016A880 /* LoginClient+Live.swift */; };
+		30ED62D72A83C82D0016A880 /* FirebaseCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62D62A83C82D0016A880 /* FirebaseCollectionType.swift */; };
+		30ED62D92A841EB00016A880 /* SignupClient+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62D82A841EB00016A880 /* SignupClient+Mock.swift */; };
+		30ED62DB2A841F070016A880 /* SignupClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62DA2A841F070016A880 /* SignupClient+Live.swift */; };
+		30ED62DD2A85289F0016A880 /* LoginClient+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62DC2A85289F0016A880 /* LoginClient+Mock.swift */; };
+		30ED62E02A852E880016A880 /* OSLogger+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62DF2A852E880016A880 /* OSLogger+Extension.swift */; };
+		30ED62E22A8541B70016A880 /* RankingClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62E12A8541B70016A880 /* RankingClient+Live.swift */; };
+		30ED62E42A8541BE0016A880 /* RankingClient+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62E32A8541BE0016A880 /* RankingClient+Mock.swift */; };
+		30ED62E62A8567EC0016A880 /* LotteryClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62E52A8567EC0016A880 /* LotteryClient+Live.swift */; };
+		30ED62E82A8567F40016A880 /* LotteryClient+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62E72A8567F40016A880 /* LotteryClient+Mock.swift */; };
+		30ED62EA2A8572760016A880 /* NTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62E92A8572760016A880 /* NTError.swift */; };
+		30ED7BC62A8690A500834553 /* TransactionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED7BC52A8690A500834553 /* TransactionFeature.swift */; };
+		30ED7BC82A86911D00834553 /* TransactionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED7BC72A86911D00834553 /* TransactionClient.swift */; };
+		30ED7BCA2A86912500834553 /* TransactionClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED7BC92A86912500834553 /* TransactionClient+Live.swift */; };
+		30ED7BCC2A86912F00834553 /* TransactionClient+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED7BCB2A86912F00834553 /* TransactionClient+Mock.swift */; };
+		30ED7BCE2A86981B00834553 /* QuickActionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED7BCD2A86981B00834553 /* QuickActionFeature.swift */; };
+		30ED7BD02A86982000834553 /* QuickActionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED7BCF2A86982000834553 /* QuickActionClient.swift */; };
+		30ED7BD22A86983200834553 /* QuickActionClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED7BD12A86983200834553 /* QuickActionClient+Live.swift */; };
+		30ED7BD42A86983800834553 /* QuickActionClient+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED7BD32A86983800834553 /* QuickActionClient+Mock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +136,26 @@
 		30ED62C02A829C6F0016A880 /* HomeClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeClient+Live.swift"; sourceTree = "<group>"; };
 		30ED62C22A829CB90016A880 /* HomeClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeClient+Mock.swift"; sourceTree = "<group>"; };
 		30ED62C72A82C4DD0016A880 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
+		30ED62D22A82DCBB0016A880 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		30ED62D42A82E3EC0016A880 /* LoginClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginClient+Live.swift"; sourceTree = "<group>"; };
+		30ED62D62A83C82D0016A880 /* FirebaseCollectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionType.swift; sourceTree = "<group>"; };
+		30ED62D82A841EB00016A880 /* SignupClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignupClient+Mock.swift"; sourceTree = "<group>"; };
+		30ED62DA2A841F070016A880 /* SignupClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignupClient+Live.swift"; sourceTree = "<group>"; };
+		30ED62DC2A85289F0016A880 /* LoginClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginClient+Mock.swift"; sourceTree = "<group>"; };
+		30ED62DF2A852E880016A880 /* OSLogger+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLogger+Extension.swift"; sourceTree = "<group>"; };
+		30ED62E12A8541B70016A880 /* RankingClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RankingClient+Live.swift"; sourceTree = "<group>"; };
+		30ED62E32A8541BE0016A880 /* RankingClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RankingClient+Mock.swift"; sourceTree = "<group>"; };
+		30ED62E52A8567EC0016A880 /* LotteryClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LotteryClient+Live.swift"; sourceTree = "<group>"; };
+		30ED62E72A8567F40016A880 /* LotteryClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LotteryClient+Mock.swift"; sourceTree = "<group>"; };
+		30ED62E92A8572760016A880 /* NTError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTError.swift; sourceTree = "<group>"; };
+		30ED7BC52A8690A500834553 /* TransactionFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFeature.swift; sourceTree = "<group>"; };
+		30ED7BC72A86911D00834553 /* TransactionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionClient.swift; sourceTree = "<group>"; };
+		30ED7BC92A86912500834553 /* TransactionClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionClient+Live.swift"; sourceTree = "<group>"; };
+		30ED7BCB2A86912F00834553 /* TransactionClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionClient+Mock.swift"; sourceTree = "<group>"; };
+		30ED7BCD2A86981B00834553 /* QuickActionFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionFeature.swift; sourceTree = "<group>"; };
+		30ED7BCF2A86982000834553 /* QuickActionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionClient.swift; sourceTree = "<group>"; };
+		30ED7BD12A86983200834553 /* QuickActionClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuickActionClient+Live.swift"; sourceTree = "<group>"; };
+		30ED7BD32A86983800834553 /* QuickActionClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuickActionClient+Mock.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +164,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				306B3E5D2A7954A200B86060 /* ComposableArchitecture in Frameworks */,
+				30ED62CB2A82CB9F0016A880 /* FirebaseAuth in Frameworks */,
+				30ED62CD2A82CB9F0016A880 /* FirebaseFirestore in Frameworks */,
+				30ED62CF2A82CB9F0016A880 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +193,8 @@
 				302159752A7EA8E1008C92A3 /* LotteryView.swift */,
 				302159792A7EC3C3008C92A3 /* LotteryFeature.swift */,
 				3021597B2A7EC3D7008C92A3 /* LotteryClient.swift */,
+				30ED62E52A8567EC0016A880 /* LotteryClient+Live.swift */,
+				30ED62E72A8567F40016A880 /* LotteryClient+Mock.swift */,
 			);
 			path = Lottery;
 			sourceTree = "<group>";
@@ -157,6 +205,8 @@
 				3021597E2A7ED4C9008C92A3 /* RankingView.swift */,
 				30DE664C2A7EDF6100B2525B /* RankingFeature.swift */,
 				30DE664E2A7EE04200B2525B /* RankingClient.swift */,
+				30ED62E12A8541B70016A880 /* RankingClient+Live.swift */,
+				30ED62E32A8541BE0016A880 /* RankingClient+Mock.swift */,
 			);
 			path = Ranking;
 			sourceTree = "<group>";
@@ -189,10 +239,12 @@
 				306B3E682A795EF500B86060 /* Features */,
 				30A7FED02A7BEE2A00912327 /* Models */,
 				30A7FED32A7BEE5100912327 /* Types */,
+				30ED62DE2A852E590016A880 /* Logger */,
 				306B3E6C2A79707400B86060 /* Styles */,
 				306B3E732A79716700B86060 /* Components */,
 				303D81342A79504F0043B6C4 /* Assets.xcassets */,
 				3021596C2A7D8145008C92A3 /* Localizable.xcstrings */,
+				30ED62D22A82DCBB0016A880 /* GoogleService-Info.plist */,
 				303D81362A79504F0043B6C4 /* Preview Content */,
 			);
 			path = NTBanker;
@@ -231,6 +283,8 @@
 				306B3E702A79713300B86060 /* Login */,
 				306B3E7C2A79859B00B86060 /* Signup */,
 				306FF8DA2A7F2D6400A913E5 /* Home */,
+				30ED7BC42A86907A00834553 /* QuickActions */,
+				30ED7BC32A86906800834553 /* Transaction */,
 				3021597D2A7ED476008C92A3 /* Ranking */,
 				302159742A7EA8CE008C92A3 /* Lottery */,
 			);
@@ -259,6 +313,8 @@
 				306B3E712A79713F00B86060 /* LoginView.swift */,
 				30A7FEC42A7B3E2200912327 /* LoginFeature.swift */,
 				30A7FECC2A7B582400912327 /* LoginClient.swift */,
+				30ED62D42A82E3EC0016A880 /* LoginClient+Live.swift */,
+				30ED62DC2A85289F0016A880 /* LoginClient+Mock.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -282,6 +338,8 @@
 				306B3E7D2A7985A800B86060 /* SignupView.swift */,
 				306B3E802A79914E00B86060 /* SignupFeature.swift */,
 				30A7FECE2A7BECFF00912327 /* SignupClient.swift */,
+				30ED62DA2A841F070016A880 /* SignupClient+Live.swift */,
+				30ED62D82A841EB00016A880 /* SignupClient+Mock.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -289,7 +347,6 @@
 		306FF8DA2A7F2D6400A913E5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				30ED62C42A829D450016A880 /* Components */,
 				306FF8DB2A7F2D7200A913E5 /* HomeView.swift */,
 				30ED62BC2A829BAF0016A880 /* HomeFeature.swift */,
 				30ED62BE2A829BDC0016A880 /* HomeClient.swift */,
@@ -305,6 +362,7 @@
 				30A7FED12A7BEE4C00912327 /* User.swift */,
 				309E50BF2A813F2900C5A4F2 /* QuickAction.swift */,
 				309E50C12A81400700C5A4F2 /* Transaction.swift */,
+				30ED62E92A8572760016A880 /* NTError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -314,17 +372,9 @@
 			children = (
 				30A7FED42A7BEE6400912327 /* CardColor.swift */,
 				302159682A7C33B2008C92A3 /* SFSymbols.swift */,
+				30ED62D62A83C82D0016A880 /* FirebaseCollectionType.swift */,
 			);
 			path = Types;
-			sourceTree = "<group>";
-		};
-		30ED62C42A829D450016A880 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				309E50B92A8138FE00C5A4F2 /* QuickActionView.swift */,
-				309E50BB2A813AC300C5A4F2 /* TransactionView.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		30ED62C62A82C49A0016A880 /* HomeTab */ = {
@@ -333,6 +383,38 @@
 				30ED62C72A82C4DD0016A880 /* HomeTabView.swift */,
 			);
 			path = HomeTab;
+			sourceTree = "<group>";
+		};
+		30ED62DE2A852E590016A880 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				30ED62DF2A852E880016A880 /* OSLogger+Extension.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		30ED7BC32A86906800834553 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				309E50BB2A813AC300C5A4F2 /* TransactionView.swift */,
+				30ED7BC52A8690A500834553 /* TransactionFeature.swift */,
+				30ED7BC72A86911D00834553 /* TransactionClient.swift */,
+				30ED7BC92A86912500834553 /* TransactionClient+Live.swift */,
+				30ED7BCB2A86912F00834553 /* TransactionClient+Mock.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		30ED7BC42A86907A00834553 /* QuickActions */ = {
+			isa = PBXGroup;
+			children = (
+				309E50B92A8138FE00C5A4F2 /* QuickActionView.swift */,
+				30ED7BCD2A86981B00834553 /* QuickActionFeature.swift */,
+				30ED7BCF2A86982000834553 /* QuickActionClient.swift */,
+				30ED7BD12A86983200834553 /* QuickActionClient+Live.swift */,
+				30ED7BD32A86983800834553 /* QuickActionClient+Mock.swift */,
+			);
+			path = QuickActions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +435,9 @@
 			name = NTBanker;
 			packageProductDependencies = (
 				306B3E5C2A7954A200B86060 /* ComposableArchitecture */,
+				30ED62CA2A82CB9F0016A880 /* FirebaseAuth */,
+				30ED62CC2A82CB9F0016A880 /* FirebaseFirestore */,
+				30ED62CE2A82CB9F0016A880 /* FirebaseFirestoreSwift */,
 			);
 			productName = NTBanker;
 			productReference = 303D812D2A79504D0043B6C4 /* NTBanker.app */;
@@ -429,6 +514,7 @@
 			mainGroup = 303D81242A79504D0043B6C4;
 			packageReferences = (
 				306B3E5B2A7954A200B86060 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				30ED62C92A82CB9F0016A880 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 303D812E2A79504D0043B6C4 /* Products */;
 			projectDirPath = "";
@@ -447,6 +533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				303D81382A79504F0043B6C4 /* Preview Assets.xcassets in Resources */,
+				30ED62D32A82DCBB0016A880 /* GoogleService-Info.plist in Resources */,
 				303D81352A79504F0043B6C4 /* Assets.xcassets in Resources */,
 				3021596D2A7D8145008C92A3 /* Localizable.xcstrings in Resources */,
 			);
@@ -473,38 +560,57 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30ED62EA2A8572760016A880 /* NTError.swift in Sources */,
 				309E50BE2A813E9000C5A4F2 /* NTSymbolView.swift in Sources */,
 				309E50C02A813F2900C5A4F2 /* QuickAction.swift in Sources */,
 				306B3E7E2A7985A800B86060 /* SignupView.swift in Sources */,
+				30ED62E42A8541BE0016A880 /* RankingClient+Mock.swift in Sources */,
 				30DE664F2A7EE04200B2525B /* RankingClient.swift in Sources */,
 				3021597C2A7EC3D7008C92A3 /* LotteryClient.swift in Sources */,
+				30ED7BC82A86911D00834553 /* TransactionClient.swift in Sources */,
+				30ED7BCE2A86981B00834553 /* QuickActionFeature.swift in Sources */,
 				30A7FECD2A7B582400912327 /* LoginClient.swift in Sources */,
 				30A7FECF2A7BECFF00912327 /* SignupClient.swift in Sources */,
 				30DE66512A7EE7EE00B2525B /* NTCreditCardView.swift in Sources */,
+				30ED7BD02A86982000834553 /* QuickActionClient.swift in Sources */,
 				30A7FED52A7BEE6400912327 /* CardColor.swift in Sources */,
+				30ED62D72A83C82D0016A880 /* FirebaseCollectionType.swift in Sources */,
 				303D81332A79504D0043B6C4 /* ContentView.swift in Sources */,
 				309E50BC2A813AC300C5A4F2 /* TransactionView.swift in Sources */,
 				30A7FEC52A7B3E2200912327 /* LoginFeature.swift in Sources */,
 				3021597A2A7EC3C3008C92A3 /* LotteryFeature.swift in Sources */,
 				302159782A7EB41B008C92A3 /* NTLoadingButton.swift in Sources */,
 				309E50C22A81400700C5A4F2 /* Transaction.swift in Sources */,
+				30ED7BD22A86983200834553 /* QuickActionClient+Live.swift in Sources */,
 				303D81312A79504D0043B6C4 /* NTBankerApp.swift in Sources */,
 				30DE664D2A7EDF6100B2525B /* RankingFeature.swift in Sources */,
+				30ED62D92A841EB00016A880 /* SignupClient+Mock.swift in Sources */,
 				306B3E752A79717900B86060 /* NTLogoHeaderView.swift in Sources */,
+				30ED7BCA2A86912500834553 /* TransactionClient+Live.swift in Sources */,
 				306B3E812A79914E00B86060 /* SignupFeature.swift in Sources */,
 				30ED62BF2A829BDC0016A880 /* HomeClient.swift in Sources */,
 				30A7FED22A7BEE4C00912327 /* User.swift in Sources */,
 				30A7FEBC2A79A03600912327 /* NTCardColorPickerView.swift in Sources */,
 				306B3E792A79754500B86060 /* NTTextfieldStyle.swift in Sources */,
+				30ED62E02A852E880016A880 /* OSLogger+Extension.swift in Sources */,
 				306FF8DE2A7F340200A913E5 /* QuickActionCardView.swift in Sources */,
+				30ED7BCC2A86912F00834553 /* TransactionClient+Mock.swift in Sources */,
+				30ED62DB2A841F070016A880 /* SignupClient+Live.swift in Sources */,
 				302159692A7C33B2008C92A3 /* SFSymbols.swift in Sources */,
 				306B3E722A79713F00B86060 /* LoginView.swift in Sources */,
+				30ED7BD42A86983800834553 /* QuickActionClient+Mock.swift in Sources */,
 				3021597F2A7ED4C9008C92A3 /* RankingView.swift in Sources */,
+				30ED62DD2A85289F0016A880 /* LoginClient+Mock.swift in Sources */,
+				30ED7BC62A8690A500834553 /* TransactionFeature.swift in Sources */,
 				30ED62C32A829CB90016A880 /* HomeClient+Mock.swift in Sources */,
 				306FF8DC2A7F2D7200A913E5 /* HomeView.swift in Sources */,
+				30ED62E82A8567F40016A880 /* LotteryClient+Mock.swift in Sources */,
 				306B3E632A79579F00B86060 /* WelcomeView.swift in Sources */,
+				30ED62E62A8567EC0016A880 /* LotteryClient+Live.swift in Sources */,
+				30ED62E22A8541B70016A880 /* RankingClient+Live.swift in Sources */,
 				309E50BA2A8138FE00C5A4F2 /* QuickActionView.swift in Sources */,
 				30ED62BD2A829BAF0016A880 /* HomeFeature.swift in Sources */,
+				30ED62D52A82E3EC0016A880 /* LoginClient+Live.swift in Sources */,
 				30ED62C82A82C4DD0016A880 /* HomeTabView.swift in Sources */,
 				30ED62C12A829C6F0016A880 /* HomeClient+Live.swift in Sources */,
 				302159762A7EA8E1008C92A3 /* LotteryView.swift in Sources */,
@@ -855,6 +961,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		30ED62C92A82CB9F0016A880 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.13.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -862,6 +976,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 306B3E5B2A7954A200B86060 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		30ED62CA2A82CB9F0016A880 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30ED62C92A82CB9F0016A880 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		30ED62CC2A82CB9F0016A880 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30ED62C92A82CB9F0016A880 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		30ED62CE2A82CB9F0016A880 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30ED62C92A82CB9F0016A880 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

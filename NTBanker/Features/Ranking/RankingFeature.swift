@@ -6,15 +6,20 @@
 //
 
 import ComposableArchitecture
+import OSLog
 
 struct RankingFeature: Reducer {
     struct State: Equatable {
+        /// Current list of all users playing. Retrieved from Firebase in descending order by user's balance.
         var users = [User]()
     }
     
     enum Action {
+        /// Action for when the ranking screen appears. Calls to Firebase for an  up-to-date list of all players.
         case fetchUsers
-        case fetchUsersResponse([User])
+        /// Action for the response from getting a list of users from Firebase.
+        /// Will return a list of users or an error. If an error occurs, we log it and return an empty list of users.
+        case fetchUsersResponse(TaskResult<[User]>)
     }
     
     @Dependency(\.rankingClient) var rankingClient
@@ -24,11 +29,16 @@ struct RankingFeature: Reducer {
             switch action {
             case .fetchUsers:
                 return .run { send in
-                    let users = try await self.rankingClient.fetchUsers()
-                    await send(.fetchUsersResponse(users))
+                    let response = await TaskResult { try await self.rankingClient.fetchUsers() }
+                    await send(.fetchUsersResponse(response))
                 }
-            case .fetchUsersResponse(let users):
+            case .fetchUsersResponse(.success(let users)):
                 state.users = users
+                return .none
+                
+            case .fetchUsersResponse(.failure(let error)):
+                Logger.ranking.error("Could not fetch users for ranking list: \(error.localizedDescription)")
+                state.users = []
                 return .none
             }
         }
