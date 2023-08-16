@@ -28,14 +28,14 @@ struct SignupFeature: Reducer {
         var shouldDisableLoginButton = true
         /// Form's credentials that will be passed to an effect
         var formCredentials: FormCredentials {
-            FormCredentials(name: name, color: selectedCardColor.rawValue)
+            FormCredentials(name: name, color: selectedCardColor)
         }
         /// Object used to pass user info to an effect.
         struct FormCredentials {
             /// Name of the newly created user
             let name: String
             /// Card color in the form of a string for a newly created user
-            let color: String
+            let color: CardColor
         }
     }
     

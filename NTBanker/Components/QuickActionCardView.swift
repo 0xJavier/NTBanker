@@ -13,7 +13,7 @@ struct QuickActionCardView: View {
     
     var body: some View {
         VStack {
-            NTSymbolView(color: action.backgroundColor, sfSymbol: action.image)
+            NTSymbolView(quickAction: action)
             
             Text(action.title)
                 .multilineTextAlignment(.center)

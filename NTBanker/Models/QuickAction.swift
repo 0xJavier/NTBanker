@@ -20,19 +20,19 @@ enum QuickActionType: Equatable, CaseIterable {
     var action: QuickAction {
         switch self {
         case .sendMoney:
-            QuickAction(title: "Send Money", image: .dollarSignCircle, backgroundColor: .blue, action: .sendMoney)
+            QuickAction(title: "Send Money", image: .paperPlane, backgroundColor: .blue, action: .sendMoney)
             
         case .collect200:
-            QuickAction(title: "Collect $200", image: .dollarSignCircle, backgroundColor: .red, action: .collect200)
+            QuickAction(title: "Collect $200", image: .dollarSignSquare, backgroundColor: .red, action: .collect200)
             
         case .payBank:
-            QuickAction(title: "Pay\nBank", image: .dollarSignCircle, backgroundColor: .green, action: .payBank)
+            QuickAction(title: "Pay\nBank", image: .buildingColumn, backgroundColor: .green, action: .payBank)
             
         case .payLottery:
-            QuickAction(title: "Pay Lottery", image: .dollarSignCircle, backgroundColor: .orange, action: .payLottery)
+            QuickAction(title: "Pay Lottery", image: .car, backgroundColor: .orange, action: .payLottery)
             
         case .receiveMoney:
-            QuickAction(title: "Receive Money", image: .dollarSignCircle, backgroundColor: .purple, action: .receiveMoney)
+            QuickAction(title: "Receive Money", image: .person, backgroundColor: .purple, action: .receiveMoney)
         }
     }
 }

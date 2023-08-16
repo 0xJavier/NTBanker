@@ -58,7 +58,7 @@ struct WelcomeView: View {
     
     var headerView: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Image(systemName: SFSymbols.dollarSignCircle.imageString)
+            Image(systemName: SFSymbols.dollarSignCircle.rawValue)
                 .font(.system(size: 60))
                 .foregroundStyle(.blue)
             
