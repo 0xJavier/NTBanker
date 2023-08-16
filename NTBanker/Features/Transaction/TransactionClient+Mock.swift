@@ -11,7 +11,7 @@ extension TransactionClient {
     static var previewValue = Self(
         streamTransactions: {
             AsyncThrowingStream { continuation in
-                continuation.yield(Transaction.mockList)
+                continuation.yield([])
             }
         }
     )

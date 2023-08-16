@@ -23,7 +23,7 @@ extension TransactionClient {
                     }
                     
                     playersRef.document(userID).collection("transactions")
-                        .order(by: TransactionModelType.id.rawValue, descending: true)
+                        .order(by: "createdAt", descending: true)
                         .addSnapshotListener { querySnapshot, error in
                             guard let documents = querySnapshot?.documents else {
                                 print("Could not get documents")
@@ -32,7 +32,7 @@ extension TransactionClient {
                             }
                             
                             let transactions = documents.compactMap {
-                                try? $0.data(as: Transaction.self)
+                                try? $0.data(as: NewTransaction.self)
                             }
                             
                             continuation.yield(transactions)

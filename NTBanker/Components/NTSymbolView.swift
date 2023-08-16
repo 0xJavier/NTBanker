@@ -11,61 +11,31 @@ struct NTSymbolView: View {
     let color: Color
     let sfSymbol: SFSymbols
     
-    init(typeString: String) {
-        guard let type = TransactionActionType(rawValue: typeString) else {
-            print("COULD NOT CONVERT STRING")
-            self.color = .blue
-            self.sfSymbol = .car
-            return
-        }
-        
-        switch type {
-        case .paidPlayer, .receivedMoneyFromPlayer:
-            self.color = .blue
-            self.sfSymbol = .person
-        case .collect200:
-            self.color = .red
-            self.sfSymbol = .dollarSignSquare
-        case .paidBank:
-            self.color = .green
-            self.sfSymbol = .buildingColumn
-        case .paidLottery:
-            self.color = .orange
-            self.sfSymbol = .car
-        case .receivedMoneyFromBank:
-            self.color = .green
-            self.sfSymbol = .buildingColumn
-        case .wonLottery:
-            self.color = .orange
-            self.sfSymbol = .car
-        }
-    }
-    
     init(color: Color, sfSymbol: SFSymbols) {
         self.color = color
         self.sfSymbol = sfSymbol
     }
     
-    init(type: TransactionActionType) {
-        switch type {
-        case .paidPlayer, .receivedMoneyFromPlayer:
-            self.color = .blue
-            self.sfSymbol = .person
-        case .collect200:
+    init(quickAction: QuickAction) {
+        self.color = quickAction.backgroundColor
+        self.sfSymbol = quickAction.image
+    }
+    
+    init(icon: SFSymbols) {
+        self.sfSymbol = icon
+        
+        switch icon {
+        case .dollarSignCircle, .dollarSignSquare:
             self.color = .red
-            self.sfSymbol = .dollarSignSquare
-        case .paidBank:
+        case .person:
+            self.color = .blue
+        case .buildingColumn:
             self.color = .green
-            self.sfSymbol = .buildingColumn
-        case .paidLottery:
+        case .car:
             self.color = .orange
-            self.sfSymbol = .car
-        case .receivedMoneyFromBank:
-            self.color = .green
-            self.sfSymbol = .buildingColumn
-        case .wonLottery:
-            self.color = .orange
-            self.sfSymbol = .car
+        default:
+            print("Symbol not support")
+            self.color = .blue
         }
     }
     
@@ -74,7 +44,7 @@ struct NTSymbolView: View {
             RoundedRectangle(cornerRadius: 10)
                 .foregroundStyle(color)
             
-            Image(systemName: sfSymbol.imageString)
+            Image(systemName: sfSymbol.rawValue)
                 .foregroundStyle(.white)
         }
         .frame(width: 40, height: 40)

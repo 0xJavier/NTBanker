@@ -23,7 +23,7 @@ struct HomeTabView: View {
                     }
                 )
                 .tabItem {
-                    Label("Home", systemImage: SFSymbols.house.imageString)
+                    Label("Home", systemImage: SFSymbols.house.rawValue)
                 }
                 
                 LotteryView(
@@ -32,7 +32,7 @@ struct HomeTabView: View {
                     }
                 )
                 .tabItem {
-                    Label("Lottery", systemImage: SFSymbols.dollarSignSquare.imageString)
+                    Label("Lottery", systemImage: SFSymbols.dollarSignSquare.rawValue)
                 }
                 
                 RankingView(
@@ -41,12 +41,12 @@ struct HomeTabView: View {
                     }
                 )
                 .tabItem {
-                    Label("Ranking", systemImage: SFSymbols.personGroup.imageString)
+                    Label("Ranking", systemImage: SFSymbols.personGroup.rawValue)
                 }
                 
                 Text("Settings")
                     .tabItem {
-                        Label("Settings", systemImage: SFSymbols.gear.imageString)
+                        Label("Settings", systemImage: SFSymbols.gear.rawValue)
                     }
             }
             .toolbarBackground(Color(uiColor: .systemBackground), for: .tabBar)

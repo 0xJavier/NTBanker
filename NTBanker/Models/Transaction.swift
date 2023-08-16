@@ -6,51 +6,99 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
-enum TransactionActionType: String {
-    case paidPlayer
-    case receivedMoneyFromPlayer
-    case collect200
-    case paidBank
-    case paidLottery
-    case receivedMoneyFromBank
-    case wonLottery
-}
-
-enum TransactionModelType: String {
-    case amount, action, subAction, type, id, sent, received
-}
-
-struct Transaction: Codable, Equatable, Identifiable {
-    var id: Int = Int(Date().timeIntervalSince1970)
+struct NewTransaction: Codable, Equatable, Identifiable {
+    var id = UUID().uuidString
+    var createdAt = Timestamp()
+    let title: String
+    let subtitle: String
     let amount: Int
-    let action: String
-    let subAction: String
-    let type: String
-        
-    enum CodingKeys: String, CodingKey {
-        case id, amount, action, subAction, type
-    }
-        
-    init(amount: Int, action: String, subAction: TransactionModelType, type: TransactionActionType) {
-        self.amount = amount
-        self.action = action
-        self.subAction = subAction.rawValue
-        self.type = type.rawValue
+    let icon: SFSymbols
+    
+    enum CodingKeys: CodingKey {
+        case id, createdAt, title, subtitle, amount, icon
     }
 }
 
-extension Transaction {
-    static let mock = Transaction(
-        amount: 200,
-        action: "Collected $200",
-        subAction: .received,
-        type: .collect200
-    )
+extension NewTransaction {
+    init(action: NewTransactionActionType) {
+        switch action {
+        case .paidPlayer(let user, let amount):
+            self.title = "Paid \(user.capitalized)"
+            self.subtitle = "Sent"
+            self.amount = -amount
+            self.icon = .person
+            
+        case .receivedMoneyFromPlayer(let user, let amount):
+            self.title = "Received money from \(user.capitalized)"
+            self.subtitle = "Received"
+            self.amount = amount
+            self.icon = .person
+            
+        case .collect200:
+            self.title = "Collected $200"
+            self.subtitle = "Received"
+            self.amount = 200
+            self.icon = .dollarSignCircle
+            
+        case .paidBank(let amount):
+            self.title = "Paid Bank"
+            self.subtitle = "Sent"
+            self.amount = -amount
+            self.icon = .buildingColumn
+            
+        case .paidLottery(let amount):
+            self.title = "Paid Lottery"
+            self.subtitle = "Sent"
+            self.amount = -amount
+            self.icon = .car
+            
+        case .receivedMoneyFromBank(let amount):
+            self.title = "Received money from Bank"
+            self.subtitle = "Received"
+            self.amount = amount
+            self.icon = .buildingColumn
+            
+        case .wonLottery(let amount):
+            self.title = "Won Lottery"
+            self.subtitle = "Received"
+            self.amount = amount
+            self.icon = .dollarSignSquare
+        }
+    }
+}
+
+extension NewTransaction {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+        createdAt = try container.decode(Timestamp.self, forKey: .createdAt)
+        title = try container.decode(String.self, forKey: .title)
+        subtitle = try container.decode(String.self, forKey: .subtitle)
+        amount = try container.decode(Int.self, forKey: .amount)
+        icon = try container.decode(SFSymbols.self, forKey: .icon)
+    }
+}
+
+extension NewTransaction {
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.id, forKey: .id)
+        try container.encode(self.createdAt, forKey: .createdAt)
+        try container.encode(self.title, forKey: .title)
+        try container.encode(self.subtitle, forKey: .subtitle)
+        try container.encode(self.amount, forKey: .amount)
+        try container.encode(self.icon.rawValue, forKey: .icon)
+    }
+}
+
+extension NewTransaction {
+    static let mock = NewTransaction(title: "Mock Transaction", subtitle: "Sent", amount: 100, icon: .car)
     
-    static let mockList: [Transaction] = [
-        .init(amount: 200, action: "Collected $200", subAction: .received, type: .collect200),
-        .init(amount: -50, action: "Paid Lottery", subAction: .sent, type: .paidLottery),
-        .init(amount: -400, action: "Paid Player", subAction: .sent, type: .paidPlayer)
+    static let mockList: [NewTransaction] = [
+        .init(action: .collect200),
+        .init(action: .paidLottery(200)),
+        .init(action: .paidPlayer("User", 100))
     ]
 }

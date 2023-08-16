@@ -32,16 +32,16 @@ struct TransactionView: View {
 }
 
 struct TransactionCell: View {
-    let transaction: Transaction
+    let transaction: NewTransaction
     
     var body: some View {
         HStack {
-            NTSymbolView(typeString: transaction.type)
+            NTSymbolView(icon: transaction.icon)
             
             VStack(alignment: .leading) {
-                Text(transaction.action)
+                Text(transaction.title)
                 
-                Text(transaction.subAction.capitalized)
+                Text(transaction.subtitle)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
