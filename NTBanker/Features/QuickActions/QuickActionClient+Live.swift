@@ -31,8 +31,7 @@ extension QuickActionClient {
                     "balance": FieldValue.increment(Int64(200))
                 ], forDocument: playerRef.document(userID))
                 
-                //let transaction = Transaction(amount: 200, action: "Collected $200", type: .collect200)
-                let transaction = NewTransaction(action: .collect200)
+                let transaction = Transaction(action: .collect200)
                 
                 try batch.setData(from: transaction, forDocument: transactionRef)
                 
@@ -56,8 +55,7 @@ extension QuickActionClient {
                     "balance": FieldValue.increment(Int64(-amount))
                 ], forDocument: playerRef.document(userID))
                 
-                //let transaction = Transaction(amount: -amount, action: "Paid Bank", type: .paidBank)
-                let transaction = NewTransaction(action: .paidBank(-amount))
+                let transaction = Transaction(action: .paidBank(-amount))
                 
                 try batch.setData(from: transaction, forDocument: transactionRef)
                 
@@ -71,8 +69,8 @@ extension QuickActionClient {
                     throw NTError.noUserID
                 }
                 
-                //let transaction = Transaction(amount: -amount, action: "Paid Lottery", type: .paidLottery)
-                let transaction = NewTransaction(action: .paidLottery(-amount))
+                let transaction = Transaction(action: .paidLottery(-amount))
+                
                 let batch = Firestore.firestore().batch()
                 let transactionRef = playerRef
                     .document(userID)
@@ -109,8 +107,7 @@ extension QuickActionClient {
                     "balance": FieldValue.increment(Int64(amount))
                 ], forDocument: playerRef.document(userID))
                 
-                //let transaction = Transaction(amount: amount, action: "Received Money", type: .receivedMoneyFromBank)
-                let transaction = NewTransaction(action: .receivedMoneyFromBank(amount))
+                let transaction = Transaction(action: .receivedMoneyFromBank(amount))
                 
                 try batch.setData(from: transaction, forDocument: transactionRef)
                 

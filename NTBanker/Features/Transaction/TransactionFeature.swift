@@ -9,12 +9,12 @@ import ComposableArchitecture
 
 struct TransactionFeature: Reducer {
     struct State: Equatable {
-        var transactions = [NewTransaction]()
+        var transactions = [Transaction]()
     }
     
     enum Action {
         case streamTransactions
-        case transactionResponse(TaskResult<[NewTransaction]>)
+        case transactionResponse(TaskResult<[Transaction]>)
     }
     
     @Dependency(\.transactionClient) var transactionClient

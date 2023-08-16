@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestore
 
-struct NewTransaction: Codable, Equatable, Identifiable {
+struct Transaction: Codable, Equatable, Identifiable {
     var id = UUID().uuidString
     var createdAt = Timestamp()
     let title: String
@@ -21,8 +21,8 @@ struct NewTransaction: Codable, Equatable, Identifiable {
     }
 }
 
-extension NewTransaction {
-    init(action: NewTransactionActionType) {
+extension Transaction {
+    init(action: TransactionActionType) {
         switch action {
         case .paidPlayer(let user, let amount):
             self.title = "Paid \(user.capitalized)"
@@ -69,10 +69,10 @@ extension NewTransaction {
     }
 }
 
-extension NewTransaction {
-    static let mock = NewTransaction(title: "Mock Transaction", subtitle: "Sent", amount: 100, icon: .car)
+extension Transaction {
+    static let mock = Transaction(title: "Mock Transaction", subtitle: "Sent", amount: 100, icon: .car)
     
-    static let mockList: [NewTransaction] = [
+    static let mockList: [Transaction] = [
         .init(action: .collect200),
         .init(action: .paidLottery(200)),
         .init(action: .paidPlayer("User", 100))

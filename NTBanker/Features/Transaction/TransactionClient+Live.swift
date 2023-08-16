@@ -32,7 +32,7 @@ extension TransactionClient {
                             }
                             
                             let transactions = documents.compactMap {
-                                try? $0.data(as: NewTransaction.self)
+                                try? $0.data(as: Transaction.self)
                             }
                             
                             continuation.yield(transactions)

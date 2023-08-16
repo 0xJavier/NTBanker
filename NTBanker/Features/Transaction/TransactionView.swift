@@ -32,7 +32,7 @@ struct TransactionView: View {
 }
 
 struct TransactionCell: View {
-    let transaction: NewTransaction
+    let transaction: Transaction
     
     var body: some View {
         HStack {

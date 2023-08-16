@@ -8,7 +8,7 @@
 import ComposableArchitecture
 
 struct TransactionClient: DependencyKey {
-    var streamTransactions: @Sendable () async -> AsyncThrowingStream<[NewTransaction], Error>
+    var streamTransactions: @Sendable () async -> AsyncThrowingStream<[Transaction], Error>
 }
 
 extension DependencyValues {

@@ -45,8 +45,7 @@ extension LotteryClient {
                 .collection("lottery")
                 .document("balance")
             
-            //let transaction = Transaction(amount: amount, action: "Won lottery", type: .wonLottery)
-            let transaction = NewTransaction(action: .wonLottery(amount))
+            let transaction = Transaction(action: .wonLottery(amount))
             
             batch.updateData([
                 "balance": FieldValue.increment(Int64(amount))
