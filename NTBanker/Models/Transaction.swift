@@ -70,30 +70,6 @@ extension NewTransaction {
 }
 
 extension NewTransaction {
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(String.self, forKey: .id)
-        createdAt = try container.decode(Timestamp.self, forKey: .createdAt)
-        title = try container.decode(String.self, forKey: .title)
-        subtitle = try container.decode(String.self, forKey: .subtitle)
-        amount = try container.decode(Int.self, forKey: .amount)
-        icon = try container.decode(SFSymbols.self, forKey: .icon)
-    }
-}
-
-extension NewTransaction {
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(self.id, forKey: .id)
-        try container.encode(self.createdAt, forKey: .createdAt)
-        try container.encode(self.title, forKey: .title)
-        try container.encode(self.subtitle, forKey: .subtitle)
-        try container.encode(self.amount, forKey: .amount)
-        try container.encode(self.icon.rawValue, forKey: .icon)
-    }
-}
-
-extension NewTransaction {
     static let mock = NewTransaction(title: "Mock Transaction", subtitle: "Sent", amount: 100, icon: .car)
     
     static let mockList: [NewTransaction] = [
