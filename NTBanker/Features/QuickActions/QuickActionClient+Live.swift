@@ -55,7 +55,7 @@ extension QuickActionClient {
                     "balance": FieldValue.increment(Int64(-amount))
                 ], forDocument: playerRef.document(userID))
                 
-                let transaction = Transaction(action: .paidBank(-amount))
+                let transaction = Transaction(action: .paidBank(amount))
                 
                 try batch.setData(from: transaction, forDocument: transactionRef)
                 
@@ -69,7 +69,7 @@ extension QuickActionClient {
                     throw NTError.noUserID
                 }
                 
-                let transaction = Transaction(action: .paidLottery(-amount))
+                let transaction = Transaction(action: .paidLottery(amount))
                 
                 let batch = Firestore.firestore().batch()
                 let transactionRef = playerRef
