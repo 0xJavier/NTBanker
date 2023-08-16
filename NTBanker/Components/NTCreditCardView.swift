@@ -29,7 +29,7 @@ struct NTCreditCardView: View {
         .frame(width: 343, height: 192)
         .background(
             RoundedRectangle(cornerRadius: 10)
-                .foregroundStyle(user.colorLiteral)
+                .foregroundStyle(user.color.colorLiteral)
                 .shadow(radius: 10)
         )
     }
