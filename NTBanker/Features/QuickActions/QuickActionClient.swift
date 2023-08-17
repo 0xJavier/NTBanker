@@ -7,7 +7,6 @@
 
 import ComposableArchitecture
 
-
 struct QuickActionClient: DependencyKey {
     var collect200: @Sendable () async throws -> Error?
     var payBank: @Sendable (Int) async throws -> Error?

@@ -14,6 +14,11 @@
 		3021597A2A7EC3C3008C92A3 /* LotteryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302159792A7EC3C3008C92A3 /* LotteryFeature.swift */; };
 		3021597C2A7EC3D7008C92A3 /* LotteryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3021597B2A7EC3D7008C92A3 /* LotteryClient.swift */; };
 		3021597F2A7ED4C9008C92A3 /* RankingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3021597E2A7ED4C9008C92A3 /* RankingView.swift */; };
+		30399D612A8DEBBB0083AC03 /* SendMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30399D602A8DEBBB0083AC03 /* SendMoneyView.swift */; };
+		3039F0ED2A8E9CA900FF9C1A /* SendMoneyFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039F0EC2A8E9CA900FF9C1A /* SendMoneyFeature.swift */; };
+		3039F0EF2A8E9CDE00FF9C1A /* SendMoneyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039F0EE2A8E9CDE00FF9C1A /* SendMoneyClient.swift */; };
+		3039F0F12A8E9D4C00FF9C1A /* SendMoneyClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039F0F02A8E9D4C00FF9C1A /* SendMoneyClient+Live.swift */; };
+		3039F0F32A8E9D5200FF9C1A /* SendMoneyClient+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039F0F22A8E9D5200FF9C1A /* SendMoneyClient+Mock.swift */; };
 		303D81312A79504D0043B6C4 /* NTBankerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D81302A79504D0043B6C4 /* NTBankerApp.swift */; };
 		303D81332A79504D0043B6C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D81322A79504D0043B6C4 /* ContentView.swift */; };
 		303D81352A79504F0043B6C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 303D81342A79504F0043B6C4 /* Assets.xcassets */; };
@@ -100,6 +105,11 @@
 		302159792A7EC3C3008C92A3 /* LotteryFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryFeature.swift; sourceTree = "<group>"; };
 		3021597B2A7EC3D7008C92A3 /* LotteryClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryClient.swift; sourceTree = "<group>"; };
 		3021597E2A7ED4C9008C92A3 /* RankingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingView.swift; sourceTree = "<group>"; };
+		30399D602A8DEBBB0083AC03 /* SendMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyView.swift; sourceTree = "<group>"; };
+		3039F0EC2A8E9CA900FF9C1A /* SendMoneyFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyFeature.swift; sourceTree = "<group>"; };
+		3039F0EE2A8E9CDE00FF9C1A /* SendMoneyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyClient.swift; sourceTree = "<group>"; };
+		3039F0F02A8E9D4C00FF9C1A /* SendMoneyClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SendMoneyClient+Live.swift"; sourceTree = "<group>"; };
+		3039F0F22A8E9D5200FF9C1A /* SendMoneyClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SendMoneyClient+Mock.swift"; sourceTree = "<group>"; };
 		303D812D2A79504D0043B6C4 /* NTBanker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTBanker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		303D81302A79504D0043B6C4 /* NTBankerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTBankerApp.swift; sourceTree = "<group>"; };
 		303D81322A79504D0043B6C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -213,6 +223,18 @@
 			path = Ranking;
 			sourceTree = "<group>";
 		};
+		30399D5F2A8DEBAA0083AC03 /* SendMoney */ = {
+			isa = PBXGroup;
+			children = (
+				30399D602A8DEBBB0083AC03 /* SendMoneyView.swift */,
+				3039F0EC2A8E9CA900FF9C1A /* SendMoneyFeature.swift */,
+				3039F0EE2A8E9CDE00FF9C1A /* SendMoneyClient.swift */,
+				3039F0F02A8E9D4C00FF9C1A /* SendMoneyClient+Live.swift */,
+				3039F0F22A8E9D5200FF9C1A /* SendMoneyClient+Mock.swift */,
+			);
+			path = SendMoney;
+			sourceTree = "<group>";
+		};
 		303D81242A79504D0043B6C4 = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +308,7 @@
 				306B3E7C2A79859B00B86060 /* Signup */,
 				306FF8DA2A7F2D6400A913E5 /* Home */,
 				30ED7BC42A86907A00834553 /* QuickActions */,
+				30399D5F2A8DEBAA0083AC03 /* SendMoney */,
 				30ED7BC32A86906800834553 /* Transaction */,
 				3021597D2A7ED476008C92A3 /* Ranking */,
 				302159742A7EA8CE008C92A3 /* Lottery */,
@@ -564,6 +587,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30ED62EA2A8572760016A880 /* NTError.swift in Sources */,
+				3039F0EF2A8E9CDE00FF9C1A /* SendMoneyClient.swift in Sources */,
 				309E50BE2A813E9000C5A4F2 /* NTSymbolView.swift in Sources */,
 				309E50C02A813F2900C5A4F2 /* QuickAction.swift in Sources */,
 				306B3E7E2A7985A800B86060 /* SignupView.swift in Sources */,
@@ -574,6 +598,7 @@
 				30ED7BCE2A86981B00834553 /* QuickActionFeature.swift in Sources */,
 				30A7FECD2A7B582400912327 /* LoginClient.swift in Sources */,
 				30A7FECF2A7BECFF00912327 /* SignupClient.swift in Sources */,
+				30399D612A8DEBBB0083AC03 /* SendMoneyView.swift in Sources */,
 				30DE66512A7EE7EE00B2525B /* NTCreditCardView.swift in Sources */,
 				30ED7BD02A86982000834553 /* QuickActionClient.swift in Sources */,
 				30A7FED52A7BEE6400912327 /* CardColor.swift in Sources */,
@@ -586,10 +611,13 @@
 				302159782A7EB41B008C92A3 /* NTLoadingButton.swift in Sources */,
 				309E50C22A81400700C5A4F2 /* Transaction.swift in Sources */,
 				30ED7BD22A86983200834553 /* QuickActionClient+Live.swift in Sources */,
+				3039F0F12A8E9D4C00FF9C1A /* SendMoneyClient+Live.swift in Sources */,
 				303D81312A79504D0043B6C4 /* NTBankerApp.swift in Sources */,
 				30DE664D2A7EDF6100B2525B /* RankingFeature.swift in Sources */,
+				3039F0ED2A8E9CA900FF9C1A /* SendMoneyFeature.swift in Sources */,
 				30ED62D92A841EB00016A880 /* SignupClient+Mock.swift in Sources */,
 				306B3E752A79717900B86060 /* NTLogoHeaderView.swift in Sources */,
+				3039F0F32A8E9D5200FF9C1A /* SendMoneyClient+Mock.swift in Sources */,
 				30ED7BCA2A86912500834553 /* TransactionClient+Live.swift in Sources */,
 				306B3E812A79914E00B86060 /* SignupFeature.swift in Sources */,
 				30ED62BF2A829BDC0016A880 /* HomeClient.swift in Sources */,

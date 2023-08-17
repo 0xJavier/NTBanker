@@ -1,7 +1,13 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {
+
+    },
     "$%lld" : {
+
+    },
+    "Amount" : {
 
     },
     "Are you sure you want to collect lottery?" : {
@@ -156,6 +162,9 @@
     "Ranking" : {
 
     },
+    "Send Money" : {
+
+    },
     "Settings" : {
 
     },
@@ -169,19 +178,13 @@
         }
       }
     },
+    "Success" : {
+
+    },
     "Success!" : {
 
     },
-    "Successfully collected $200" : {
-
-    },
-    "Successfully paid bank" : {
-
-    },
-    "Successfully paid lottery" : {
-
-    },
-    "Successfully received money" : {
+    "User" : {
 
     },
     "Welcome to NTBank. Speed up game banking with our easy to use Balance cards." : {
