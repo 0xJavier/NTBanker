@@ -6,18 +6,26 @@
 //
 
 import ComposableArchitecture
+import Foundation
 
 struct QuickActionFeature: Reducer {
     struct State: Equatable {
+        /// List of all available actions a user can do presented as cards
         var quickActions = QuickActionType.actionList
+        /// Flag to show the action section for the user's input
         var showActionSection = false
+        /// Currently selected action user selects
         var selectedAction: QuickActionType?
+        /// State for the amount textfield
         @BindingState var amount = ""
+        /// iOS style alert to show to user for when a action is complete
         @PresentationState var alert: AlertState<Action.Alert>?
+        /// Flag used to show or hide the Send Money sheet
         @PresentationState var sendMoney: SendMoneyFeature.State?
+        /// Flag used to indicate if the feature is loading
         @BindingState var isLoading = false
-        
-        var sectionTitle: String {
+        /// Computed property to determine the action section title string.
+        var sectionTitle: LocalizedStringResource {
             guard let selectedAction = selectedAction else {
                 return "Button"
             }
@@ -34,11 +42,11 @@ struct QuickActionFeature: Reducer {
                 return "Section Title"
             }
         }
-        
+        /// Formatted amount created from user string input to be used for Firebase
         var formattedAmount: Int {
             Int(amount) ?? 0
         }
-        
+        /// Flag used to enable / disable the main action button
         var shouldDisableButton: Bool {
             formattedAmount <= 0
         }
@@ -47,7 +55,7 @@ struct QuickActionFeature: Reducer {
     enum Action: BindableAction {
         /// Actions an alert has available
         enum Alert: Equatable {}
-        ///
+        /// Actions done inside the iOS style alert
         case alert(PresentationAction<Alert>)
         /// Resets the state by hiding the action section and deselecting any action
         case clearActionState
@@ -61,7 +69,9 @@ struct QuickActionFeature: Reducer {
         case actionCellButtonTapped(QuickActionType)
         /// Main button in action section is tapped
         case actionButtonTapped
+        /// Fires an effect to collect $200 from Firebase and update the current user
         case collect200
+        /// Handles the response we receive from Firebase and unwraps the error if not nil
         case actionResponse(Error?)
         /// Action for binding state variables with `BindingState`
         case binding(BindingAction<State>)
@@ -165,18 +175,13 @@ struct QuickActionFeature: Reducer {
                 state.isLoading = false
                 if let error {
                     print("ERROR: \(error.localizedDescription)")
-                    return .run { send in
-                        await send(.clearActionState)
+                } else {
+                    state.alert = AlertState {
+                        TextState("Success")
                     }
                 }
-                
-                state.alert = AlertState {
-                    TextState("Success")
-                }
-                
-                return .run { send in
-                    await send(.clearActionState)
-                }
+
+                return .send(.clearActionState)
             }
         }
         .ifLet(\.$alert, action: /Action.alert)
