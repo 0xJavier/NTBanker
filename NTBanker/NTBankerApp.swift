@@ -5,6 +5,7 @@
 //  Created by Javier Munoz on 8/1/23.
 //
 
+import ComposableArchitecture
 import FirebaseCore
 import SwiftUI
 
@@ -22,10 +23,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct NTBankerApp: App {
     // Register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
+ 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(
+                store: Store(initialState: AppReducer.State()) {
+                    AppReducer()
+                }
+            )
         }
     }
 }

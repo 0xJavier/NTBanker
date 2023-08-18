@@ -5,23 +5,40 @@
 //  Created by Javier Munoz on 8/1/23.
 //
 
-import FirebaseAuth
+import ComposableArchitecture
 import SwiftUI
 
 struct ContentView: View {
-    var isLoggedIn: Bool {
-        Auth.auth().currentUser?.uid != nil
-    }
+    let store: StoreOf<AppReducer>
     
     var body: some View {
-        if isLoggedIn {
-            HomeTabView()
-        } else {
-            WelcomeView()
+        WithViewStore(self.store, observe: \.route) { viewStore in
+            Group {
+                switch viewStore.state {
+                case .empty:
+                    EmptyView()
+                case .welcome:
+                    WelcomeView(
+                        store: store.scope(
+                            state: \.auth,
+                            action: AppReducer.Action.auth
+                        )
+                    )
+                case .home:
+                    HomeTabView()
+                }
+            }
+            .onAppear {
+                viewStore.send(.onAppear)
+            }
         }
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(
+        store: Store(initialState: AppReducer.State()) {
+            AppReducer()
+        }
+    )
 }

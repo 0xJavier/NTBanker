@@ -16,6 +16,9 @@
     "Balance:" : {
 
     },
+    "Button" : {
+
+    },
     "Cancel" : {
 
     },
@@ -156,10 +159,22 @@
         }
       }
     },
+    "Pay Bank" : {
+
+    },
+    "Pay Lottery" : {
+
+    },
     "Quick Actions" : {
 
     },
     "Ranking" : {
+
+    },
+    "Receive Money" : {
+
+    },
+    "Section Title" : {
 
     },
     "Send Money" : {
