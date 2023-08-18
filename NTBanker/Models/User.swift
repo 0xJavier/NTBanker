@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct User: Hashable, Codable {
+struct User: Identifiable ,Equatable, Hashable, Codable {
+    var id = UUID()
     var userID: String = ""
     var name: String = ""
     var email: String = ""
