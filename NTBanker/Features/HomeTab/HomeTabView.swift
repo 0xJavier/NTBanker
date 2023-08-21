@@ -44,10 +44,14 @@ struct HomeTabView: View {
                     Label("Ranking", systemImage: SFSymbols.personGroup.rawValue)
                 }
                 
-                Text("Settings")
-                    .tabItem {
-                        Label("Settings", systemImage: SFSymbols.gear.rawValue)
+                SettingsView(
+                    store: Store(initialState: SettingsFeature.State()) {
+                        SettingsFeature()
                     }
+                )
+                .tabItem {
+                    Label("Settings", systemImage: SFSymbols.gear.rawValue)
+                }
             }
             .toolbarBackground(Color(uiColor: .systemBackground), for: .tabBar)
             .toolbarBackground(.visible, for: .tabBar)

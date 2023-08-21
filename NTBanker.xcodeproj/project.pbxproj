@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3018D29B2A93E7420021EC27 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3018D29A2A93E7420021EC27 /* SettingsView.swift */; };
+		3018D29D2A93EF630021EC27 /* SettingsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3018D29C2A93EF630021EC27 /* SettingsFeature.swift */; };
+		3018D29F2A93EF790021EC27 /* SettingsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3018D29E2A93EF790021EC27 /* SettingsClient.swift */; };
+		3018D2A12A93EF950021EC27 /* SettingsClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3018D2A02A93EF950021EC27 /* SettingsClient+Live.swift */; };
+		3018D2A32A93EFC40021EC27 /* SettingsClient+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3018D2A22A93EFC40021EC27 /* SettingsClient+Mock.swift */; };
 		302159692A7C33B2008C92A3 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302159682A7C33B2008C92A3 /* SFSymbols.swift */; };
 		3021596D2A7D8145008C92A3 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3021596C2A7D8145008C92A3 /* Localizable.xcstrings */; };
 		302159762A7EA8E1008C92A3 /* LotteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302159752A7EA8E1008C92A3 /* LotteryView.swift */; };
@@ -100,6 +105,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3018D29A2A93E7420021EC27 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3018D29C2A93EF630021EC27 /* SettingsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFeature.swift; sourceTree = "<group>"; };
+		3018D29E2A93EF790021EC27 /* SettingsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsClient.swift; sourceTree = "<group>"; };
+		3018D2A02A93EF950021EC27 /* SettingsClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsClient+Live.swift"; sourceTree = "<group>"; };
+		3018D2A22A93EFC40021EC27 /* SettingsClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsClient+Mock.swift"; sourceTree = "<group>"; };
 		302159682A7C33B2008C92A3 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
 		3021596C2A7D8145008C92A3 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		302159752A7EA8E1008C92A3 /* LotteryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryView.swift; sourceTree = "<group>"; };
@@ -347,6 +357,7 @@
 				30ED7BC32A86906800834553 /* Transaction */,
 				3021597D2A7ED476008C92A3 /* Ranking */,
 				302159742A7EA8CE008C92A3 /* Lottery */,
+				308CD2EF2A93E709008B9389 /* Settings */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -393,6 +404,18 @@
 				308CD2ED2A93D52C008B9389 /* AppClient+Mock.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		308CD2EF2A93E709008B9389 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3018D29A2A93E7420021EC27 /* SettingsView.swift */,
+				3018D29C2A93EF630021EC27 /* SettingsFeature.swift */,
+				3018D29E2A93EF790021EC27 /* SettingsClient.swift */,
+				3018D2A02A93EF950021EC27 /* SettingsClient+Live.swift */,
+				3018D2A22A93EFC40021EC27 /* SettingsClient+Mock.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		30A7FED02A7BEE2A00912327 /* Models */ = {
@@ -608,11 +631,13 @@
 				306B3E7E2A7985A800B86060 /* SignupView.swift in Sources */,
 				30ED62E42A8541BE0016A880 /* RankingClient+Mock.swift in Sources */,
 				30DE664F2A7EE04200B2525B /* RankingClient.swift in Sources */,
+				3018D2A32A93EFC40021EC27 /* SettingsClient+Mock.swift in Sources */,
 				3021597C2A7EC3D7008C92A3 /* LotteryClient.swift in Sources */,
 				30ED7BC82A86911D00834553 /* TransactionClient.swift in Sources */,
 				3039F1002A9026EC00FF9C1A /* AuthenticationClient.swift in Sources */,
 				30ED7BCE2A86981B00834553 /* QuickActionFeature.swift in Sources */,
 				30399D612A8DEBBB0083AC03 /* SendMoneyView.swift in Sources */,
+				3018D29D2A93EF630021EC27 /* SettingsFeature.swift in Sources */,
 				30DE66512A7EE7EE00B2525B /* NTCreditCardView.swift in Sources */,
 				308CD2EA2A93D4CE008B9389 /* AppClient+Live.swift in Sources */,
 				30ED7BD02A86982000834553 /* QuickActionClient.swift in Sources */,
@@ -621,6 +646,7 @@
 				303D81332A79504D0043B6C4 /* ContentView.swift in Sources */,
 				309E50BC2A813AC300C5A4F2 /* TransactionView.swift in Sources */,
 				3039F1052A9038C500FF9C1A /* AuthenticationClient+Live.swift in Sources */,
+				3018D29B2A93E7420021EC27 /* SettingsView.swift in Sources */,
 				30D23DCD2A8D6677005F83A9 /* TransactionActionType.swift in Sources */,
 				308CD2E82A93D4AF008B9389 /* AppClient.swift in Sources */,
 				30A7FEC52A7B3E2200912327 /* LoginFeature.swift in Sources */,
@@ -645,6 +671,7 @@
 				306B3E792A79754500B86060 /* NTTextfieldStyle.swift in Sources */,
 				30ED62E02A852E880016A880 /* OSLogger+Extension.swift in Sources */,
 				306FF8DE2A7F340200A913E5 /* QuickActionCardView.swift in Sources */,
+				3018D2A12A93EF950021EC27 /* SettingsClient+Live.swift in Sources */,
 				30ED7BCC2A86912F00834553 /* TransactionClient+Mock.swift in Sources */,
 				302159692A7C33B2008C92A3 /* SFSymbols.swift in Sources */,
 				306B3E722A79713F00B86060 /* LoginView.swift in Sources */,
@@ -657,6 +684,7 @@
 				306B3E632A79579F00B86060 /* WelcomeView.swift in Sources */,
 				30ED62E62A8567EC0016A880 /* LotteryClient+Live.swift in Sources */,
 				30ED62E22A8541B70016A880 /* RankingClient+Live.swift in Sources */,
+				3018D29F2A93EF790021EC27 /* SettingsClient.swift in Sources */,
 				309E50BA2A8138FE00C5A4F2 /* QuickActionView.swift in Sources */,
 				30ED62BD2A829BAF0016A880 /* HomeFeature.swift in Sources */,
 				30ED62C82A82C4DD0016A880 /* HomeTabView.swift in Sources */,
