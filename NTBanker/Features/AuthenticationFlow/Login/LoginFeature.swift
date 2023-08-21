@@ -20,6 +20,8 @@ struct LoginFeature: Reducer {
         @BindingState var isLoading = false
         /// Flag used to disable the login button depending if the form is filled out completely
         var shouldDisableLoginButton = true
+        ///
+        var shouldShowForgotEmailField = false
     }
     
     enum Action: BindableAction {
@@ -35,7 +37,8 @@ struct LoginFeature: Reducer {
         case binding(BindingAction<State>)
     }
     
-    @Dependency(\.loginClient) var loginClient
+    @Dependency(\.authenticationClient)
+    var authClient
     
     var body: some ReducerOf<Self> {
         BindingReducer()
@@ -45,7 +48,7 @@ struct LoginFeature: Reducer {
                 state.isLoading = true
                 state.shouldDisableLoginButton = true
                 return .run { [email = state.emailQuery, password = state.passwordQuery] send in
-                    let result = try await self.loginClient.login(email, password)
+                    let result = try await self.authClient.login(email, password)
                     await send(.loginResponse(result))
                 }
                 

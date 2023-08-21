@@ -19,6 +19,10 @@
 		3039F0EF2A8E9CDE00FF9C1A /* SendMoneyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039F0EE2A8E9CDE00FF9C1A /* SendMoneyClient.swift */; };
 		3039F0F12A8E9D4C00FF9C1A /* SendMoneyClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039F0F02A8E9D4C00FF9C1A /* SendMoneyClient+Live.swift */; };
 		3039F0F32A8E9D5200FF9C1A /* SendMoneyClient+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039F0F22A8E9D5200FF9C1A /* SendMoneyClient+Mock.swift */; };
+		3039F0FE2A90258400FF9C1A /* AuthenticationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039F0FD2A90258400FF9C1A /* AuthenticationFeature.swift */; };
+		3039F1002A9026EC00FF9C1A /* AuthenticationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039F0FF2A9026EC00FF9C1A /* AuthenticationClient.swift */; };
+		3039F1052A9038C500FF9C1A /* AuthenticationClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039F1042A9038C500FF9C1A /* AuthenticationClient+Live.swift */; };
+		3039F1072A9038C900FF9C1A /* AuthenticationClient+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039F1062A9038C900FF9C1A /* AuthenticationClient+Mock.swift */; };
 		303D81312A79504D0043B6C4 /* NTBankerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D81302A79504D0043B6C4 /* NTBankerApp.swift */; };
 		303D81332A79504D0043B6C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D81322A79504D0043B6C4 /* ContentView.swift */; };
 		303D81352A79504F0043B6C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 303D81342A79504F0043B6C4 /* Assets.xcassets */; };
@@ -35,6 +39,10 @@
 		306B3E812A79914E00B86060 /* SignupFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E802A79914E00B86060 /* SignupFeature.swift */; };
 		306FF8DC2A7F2D7200A913E5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306FF8DB2A7F2D7200A913E5 /* HomeView.swift */; };
 		306FF8DE2A7F340200A913E5 /* QuickActionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306FF8DD2A7F340200A913E5 /* QuickActionCardView.swift */; };
+		308CD2E82A93D4AF008B9389 /* AppClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CD2E72A93D4AF008B9389 /* AppClient.swift */; };
+		308CD2EA2A93D4CE008B9389 /* AppClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CD2E92A93D4CE008B9389 /* AppClient+Live.swift */; };
+		308CD2EC2A93D4F5008B9389 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CD2EB2A93D4F5008B9389 /* AppReducer.swift */; };
+		308CD2EE2A93D52C008B9389 /* AppClient+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CD2ED2A93D52C008B9389 /* AppClient+Mock.swift */; };
 		309E50BA2A8138FE00C5A4F2 /* QuickActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309E50B92A8138FE00C5A4F2 /* QuickActionView.swift */; };
 		309E50BC2A813AC300C5A4F2 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309E50BB2A813AC300C5A4F2 /* TransactionView.swift */; };
 		309E50BE2A813E9000C5A4F2 /* NTSymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309E50BD2A813E9000C5A4F2 /* NTSymbolView.swift */; };
@@ -42,8 +50,6 @@
 		309E50C22A81400700C5A4F2 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309E50C12A81400700C5A4F2 /* Transaction.swift */; };
 		30A7FEBC2A79A03600912327 /* NTCardColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FEBB2A79A03600912327 /* NTCardColorPickerView.swift */; };
 		30A7FEC52A7B3E2200912327 /* LoginFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FEC42A7B3E2200912327 /* LoginFeature.swift */; };
-		30A7FECD2A7B582400912327 /* LoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FECC2A7B582400912327 /* LoginClient.swift */; };
-		30A7FECF2A7BECFF00912327 /* SignupClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FECE2A7BECFF00912327 /* SignupClient.swift */; };
 		30A7FED22A7BEE4C00912327 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FED12A7BEE4C00912327 /* User.swift */; };
 		30A7FED52A7BEE6400912327 /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A7FED42A7BEE6400912327 /* CardColor.swift */; };
 		30D23DCD2A8D6677005F83A9 /* TransactionActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D23DCC2A8D6677005F83A9 /* TransactionActionType.swift */; };
@@ -59,11 +65,7 @@
 		30ED62CD2A82CB9F0016A880 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 30ED62CC2A82CB9F0016A880 /* FirebaseFirestore */; };
 		30ED62CF2A82CB9F0016A880 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 30ED62CE2A82CB9F0016A880 /* FirebaseFirestoreSwift */; };
 		30ED62D32A82DCBB0016A880 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30ED62D22A82DCBB0016A880 /* GoogleService-Info.plist */; };
-		30ED62D52A82E3EC0016A880 /* LoginClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62D42A82E3EC0016A880 /* LoginClient+Live.swift */; };
 		30ED62D72A83C82D0016A880 /* FirebaseCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62D62A83C82D0016A880 /* FirebaseCollectionType.swift */; };
-		30ED62D92A841EB00016A880 /* SignupClient+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62D82A841EB00016A880 /* SignupClient+Mock.swift */; };
-		30ED62DB2A841F070016A880 /* SignupClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62DA2A841F070016A880 /* SignupClient+Live.swift */; };
-		30ED62DD2A85289F0016A880 /* LoginClient+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62DC2A85289F0016A880 /* LoginClient+Mock.swift */; };
 		30ED62E02A852E880016A880 /* OSLogger+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62DF2A852E880016A880 /* OSLogger+Extension.swift */; };
 		30ED62E22A8541B70016A880 /* RankingClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62E12A8541B70016A880 /* RankingClient+Live.swift */; };
 		30ED62E42A8541BE0016A880 /* RankingClient+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED62E32A8541BE0016A880 /* RankingClient+Mock.swift */; };
@@ -110,6 +112,10 @@
 		3039F0EE2A8E9CDE00FF9C1A /* SendMoneyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyClient.swift; sourceTree = "<group>"; };
 		3039F0F02A8E9D4C00FF9C1A /* SendMoneyClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SendMoneyClient+Live.swift"; sourceTree = "<group>"; };
 		3039F0F22A8E9D5200FF9C1A /* SendMoneyClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SendMoneyClient+Mock.swift"; sourceTree = "<group>"; };
+		3039F0FD2A90258400FF9C1A /* AuthenticationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFeature.swift; sourceTree = "<group>"; };
+		3039F0FF2A9026EC00FF9C1A /* AuthenticationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationClient.swift; sourceTree = "<group>"; };
+		3039F1042A9038C500FF9C1A /* AuthenticationClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthenticationClient+Live.swift"; sourceTree = "<group>"; };
+		3039F1062A9038C900FF9C1A /* AuthenticationClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthenticationClient+Mock.swift"; sourceTree = "<group>"; };
 		303D812D2A79504D0043B6C4 /* NTBanker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTBanker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		303D81302A79504D0043B6C4 /* NTBankerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTBankerApp.swift; sourceTree = "<group>"; };
 		303D81322A79504D0043B6C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,6 +134,10 @@
 		306B3E802A79914E00B86060 /* SignupFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFeature.swift; sourceTree = "<group>"; };
 		306FF8DB2A7F2D7200A913E5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		306FF8DD2A7F340200A913E5 /* QuickActionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionCardView.swift; sourceTree = "<group>"; };
+		308CD2E72A93D4AF008B9389 /* AppClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppClient.swift; sourceTree = "<group>"; };
+		308CD2E92A93D4CE008B9389 /* AppClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppClient+Live.swift"; sourceTree = "<group>"; };
+		308CD2EB2A93D4F5008B9389 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		308CD2ED2A93D52C008B9389 /* AppClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppClient+Mock.swift"; sourceTree = "<group>"; };
 		309E50B92A8138FE00C5A4F2 /* QuickActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionView.swift; sourceTree = "<group>"; };
 		309E50BB2A813AC300C5A4F2 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
 		309E50BD2A813E9000C5A4F2 /* NTSymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTSymbolView.swift; sourceTree = "<group>"; };
@@ -135,8 +145,6 @@
 		309E50C12A81400700C5A4F2 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		30A7FEBB2A79A03600912327 /* NTCardColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTCardColorPickerView.swift; sourceTree = "<group>"; };
 		30A7FEC42A7B3E2200912327 /* LoginFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
-		30A7FECC2A7B582400912327 /* LoginClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginClient.swift; sourceTree = "<group>"; };
-		30A7FECE2A7BECFF00912327 /* SignupClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupClient.swift; sourceTree = "<group>"; };
 		30A7FED12A7BEE4C00912327 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		30A7FED42A7BEE6400912327 /* CardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardColor.swift; sourceTree = "<group>"; };
 		30D23DCC2A8D6677005F83A9 /* TransactionActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionActionType.swift; sourceTree = "<group>"; };
@@ -149,11 +157,7 @@
 		30ED62C22A829CB90016A880 /* HomeClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeClient+Mock.swift"; sourceTree = "<group>"; };
 		30ED62C72A82C4DD0016A880 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		30ED62D22A82DCBB0016A880 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		30ED62D42A82E3EC0016A880 /* LoginClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginClient+Live.swift"; sourceTree = "<group>"; };
 		30ED62D62A83C82D0016A880 /* FirebaseCollectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionType.swift; sourceTree = "<group>"; };
-		30ED62D82A841EB00016A880 /* SignupClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignupClient+Mock.swift"; sourceTree = "<group>"; };
-		30ED62DA2A841F070016A880 /* SignupClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignupClient+Live.swift"; sourceTree = "<group>"; };
-		30ED62DC2A85289F0016A880 /* LoginClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginClient+Mock.swift"; sourceTree = "<group>"; };
 		30ED62DF2A852E880016A880 /* OSLogger+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLogger+Extension.swift"; sourceTree = "<group>"; };
 		30ED62E12A8541B70016A880 /* RankingClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RankingClient+Live.swift"; sourceTree = "<group>"; };
 		30ED62E32A8541BE0016A880 /* RankingClient+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RankingClient+Mock.swift"; sourceTree = "<group>"; };
@@ -235,6 +239,38 @@
 			path = SendMoney;
 			sourceTree = "<group>";
 		};
+		3039F1012A902FCC00FF9C1A /* AuthenticationFlow */ = {
+			isa = PBXGroup;
+			children = (
+				306B3E622A79579F00B86060 /* WelcomeView.swift */,
+				3039F0FD2A90258400FF9C1A /* AuthenticationFeature.swift */,
+				3039F0FF2A9026EC00FF9C1A /* AuthenticationClient.swift */,
+				3039F1042A9038C500FF9C1A /* AuthenticationClient+Live.swift */,
+				3039F1062A9038C900FF9C1A /* AuthenticationClient+Mock.swift */,
+				3039F1022A9031A100FF9C1A /* Login */,
+				3039F1032A9031A500FF9C1A /* Signup */,
+			);
+			path = AuthenticationFlow;
+			sourceTree = "<group>";
+		};
+		3039F1022A9031A100FF9C1A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				306B3E712A79713F00B86060 /* LoginView.swift */,
+				30A7FEC42A7B3E2200912327 /* LoginFeature.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3039F1032A9031A500FF9C1A /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				306B3E7D2A7985A800B86060 /* SignupView.swift */,
+				306B3E802A79914E00B86060 /* SignupFeature.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
 		303D81242A79504D0043B6C4 = {
 			isa = PBXGroup;
 			children = (
@@ -302,10 +338,9 @@
 		306B3E682A795EF500B86060 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				308CD2E62A93D4A1008B9389 /* App */,
 				30ED62C62A82C49A0016A880 /* HomeTab */,
-				306B3E6F2A79712200B86060 /* Welcome */,
-				306B3E702A79713300B86060 /* Login */,
-				306B3E7C2A79859B00B86060 /* Signup */,
+				3039F1012A902FCC00FF9C1A /* AuthenticationFlow */,
 				306FF8DA2A7F2D6400A913E5 /* Home */,
 				30ED7BC42A86907A00834553 /* QuickActions */,
 				30399D5F2A8DEBAA0083AC03 /* SendMoney */,
@@ -324,26 +359,6 @@
 			path = Styles;
 			sourceTree = "<group>";
 		};
-		306B3E6F2A79712200B86060 /* Welcome */ = {
-			isa = PBXGroup;
-			children = (
-				306B3E622A79579F00B86060 /* WelcomeView.swift */,
-			);
-			path = Welcome;
-			sourceTree = "<group>";
-		};
-		306B3E702A79713300B86060 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				306B3E712A79713F00B86060 /* LoginView.swift */,
-				30A7FEC42A7B3E2200912327 /* LoginFeature.swift */,
-				30A7FECC2A7B582400912327 /* LoginClient.swift */,
-				30ED62D42A82E3EC0016A880 /* LoginClient+Live.swift */,
-				30ED62DC2A85289F0016A880 /* LoginClient+Mock.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		306B3E732A79716700B86060 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,18 +372,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		306B3E7C2A79859B00B86060 /* Signup */ = {
-			isa = PBXGroup;
-			children = (
-				306B3E7D2A7985A800B86060 /* SignupView.swift */,
-				306B3E802A79914E00B86060 /* SignupFeature.swift */,
-				30A7FECE2A7BECFF00912327 /* SignupClient.swift */,
-				30ED62DA2A841F070016A880 /* SignupClient+Live.swift */,
-				30ED62D82A841EB00016A880 /* SignupClient+Mock.swift */,
-			);
-			path = Signup;
-			sourceTree = "<group>";
-		};
 		306FF8DA2A7F2D6400A913E5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,6 +382,17 @@
 				30ED62C22A829CB90016A880 /* HomeClient+Mock.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		308CD2E62A93D4A1008B9389 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				308CD2EB2A93D4F5008B9389 /* AppReducer.swift */,
+				308CD2E72A93D4AF008B9389 /* AppClient.swift */,
+				308CD2E92A93D4CE008B9389 /* AppClient+Live.swift */,
+				308CD2ED2A93D52C008B9389 /* AppClient+Mock.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		30A7FED02A7BEE2A00912327 /* Models */ = {
@@ -590,22 +604,25 @@
 				3039F0EF2A8E9CDE00FF9C1A /* SendMoneyClient.swift in Sources */,
 				309E50BE2A813E9000C5A4F2 /* NTSymbolView.swift in Sources */,
 				309E50C02A813F2900C5A4F2 /* QuickAction.swift in Sources */,
+				3039F0FE2A90258400FF9C1A /* AuthenticationFeature.swift in Sources */,
 				306B3E7E2A7985A800B86060 /* SignupView.swift in Sources */,
 				30ED62E42A8541BE0016A880 /* RankingClient+Mock.swift in Sources */,
 				30DE664F2A7EE04200B2525B /* RankingClient.swift in Sources */,
 				3021597C2A7EC3D7008C92A3 /* LotteryClient.swift in Sources */,
 				30ED7BC82A86911D00834553 /* TransactionClient.swift in Sources */,
+				3039F1002A9026EC00FF9C1A /* AuthenticationClient.swift in Sources */,
 				30ED7BCE2A86981B00834553 /* QuickActionFeature.swift in Sources */,
-				30A7FECD2A7B582400912327 /* LoginClient.swift in Sources */,
-				30A7FECF2A7BECFF00912327 /* SignupClient.swift in Sources */,
 				30399D612A8DEBBB0083AC03 /* SendMoneyView.swift in Sources */,
 				30DE66512A7EE7EE00B2525B /* NTCreditCardView.swift in Sources */,
+				308CD2EA2A93D4CE008B9389 /* AppClient+Live.swift in Sources */,
 				30ED7BD02A86982000834553 /* QuickActionClient.swift in Sources */,
 				30A7FED52A7BEE6400912327 /* CardColor.swift in Sources */,
 				30ED62D72A83C82D0016A880 /* FirebaseCollectionType.swift in Sources */,
 				303D81332A79504D0043B6C4 /* ContentView.swift in Sources */,
 				309E50BC2A813AC300C5A4F2 /* TransactionView.swift in Sources */,
+				3039F1052A9038C500FF9C1A /* AuthenticationClient+Live.swift in Sources */,
 				30D23DCD2A8D6677005F83A9 /* TransactionActionType.swift in Sources */,
+				308CD2E82A93D4AF008B9389 /* AppClient.swift in Sources */,
 				30A7FEC52A7B3E2200912327 /* LoginFeature.swift in Sources */,
 				3021597A2A7EC3C3008C92A3 /* LotteryFeature.swift in Sources */,
 				302159782A7EB41B008C92A3 /* NTLoadingButton.swift in Sources */,
@@ -614,12 +631,14 @@
 				3039F0F12A8E9D4C00FF9C1A /* SendMoneyClient+Live.swift in Sources */,
 				303D81312A79504D0043B6C4 /* NTBankerApp.swift in Sources */,
 				30DE664D2A7EDF6100B2525B /* RankingFeature.swift in Sources */,
+				308CD2EC2A93D4F5008B9389 /* AppReducer.swift in Sources */,
 				3039F0ED2A8E9CA900FF9C1A /* SendMoneyFeature.swift in Sources */,
-				30ED62D92A841EB00016A880 /* SignupClient+Mock.swift in Sources */,
 				306B3E752A79717900B86060 /* NTLogoHeaderView.swift in Sources */,
+				308CD2EE2A93D52C008B9389 /* AppClient+Mock.swift in Sources */,
 				3039F0F32A8E9D5200FF9C1A /* SendMoneyClient+Mock.swift in Sources */,
 				30ED7BCA2A86912500834553 /* TransactionClient+Live.swift in Sources */,
 				306B3E812A79914E00B86060 /* SignupFeature.swift in Sources */,
+				3039F1072A9038C900FF9C1A /* AuthenticationClient+Mock.swift in Sources */,
 				30ED62BF2A829BDC0016A880 /* HomeClient.swift in Sources */,
 				30A7FED22A7BEE4C00912327 /* User.swift in Sources */,
 				30A7FEBC2A79A03600912327 /* NTCardColorPickerView.swift in Sources */,
@@ -627,12 +646,10 @@
 				30ED62E02A852E880016A880 /* OSLogger+Extension.swift in Sources */,
 				306FF8DE2A7F340200A913E5 /* QuickActionCardView.swift in Sources */,
 				30ED7BCC2A86912F00834553 /* TransactionClient+Mock.swift in Sources */,
-				30ED62DB2A841F070016A880 /* SignupClient+Live.swift in Sources */,
 				302159692A7C33B2008C92A3 /* SFSymbols.swift in Sources */,
 				306B3E722A79713F00B86060 /* LoginView.swift in Sources */,
 				30ED7BD42A86983800834553 /* QuickActionClient+Mock.swift in Sources */,
 				3021597F2A7ED4C9008C92A3 /* RankingView.swift in Sources */,
-				30ED62DD2A85289F0016A880 /* LoginClient+Mock.swift in Sources */,
 				30ED7BC62A8690A500834553 /* TransactionFeature.swift in Sources */,
 				30ED62C32A829CB90016A880 /* HomeClient+Mock.swift in Sources */,
 				306FF8DC2A7F2D7200A913E5 /* HomeView.swift in Sources */,
@@ -642,7 +659,6 @@
 				30ED62E22A8541B70016A880 /* RankingClient+Live.swift in Sources */,
 				309E50BA2A8138FE00C5A4F2 /* QuickActionView.swift in Sources */,
 				30ED62BD2A829BAF0016A880 /* HomeFeature.swift in Sources */,
-				30ED62D52A82E3EC0016A880 /* LoginClient+Live.swift in Sources */,
 				30ED62C82A82C4DD0016A880 /* HomeTabView.swift in Sources */,
 				30ED62C12A829C6F0016A880 /* HomeClient+Live.swift in Sources */,
 				302159762A7EA8E1008C92A3 /* LotteryView.swift in Sources */,

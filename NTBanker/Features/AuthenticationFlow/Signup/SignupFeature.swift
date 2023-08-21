@@ -48,7 +48,8 @@ struct SignupFeature: Reducer {
         case binding(BindingAction<State>)
     }
     
-    @Dependency(\.signupClient) var signupClient
+    @Dependency(\.authenticationClient)
+    var authClient
     
     var body: some ReducerOf<Self> {
         BindingReducer()
@@ -60,7 +61,7 @@ struct SignupFeature: Reducer {
                 return .run { [email = state.email,
                                password = state.passwordQuery,
                                formCredentials = state.formCredentials] send in
-                    let result = try await self.signupClient.signup(email, password, formCredentials)
+                    let result = try await self.authClient.signup(email, password, formCredentials)
                     await send(.signupResponse(result))
                 }
                 

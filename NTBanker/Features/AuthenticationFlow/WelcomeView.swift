@@ -9,17 +9,7 @@ import ComposableArchitecture
 import SwiftUI
 
 struct WelcomeView: View {
-    private var welcomeString: AttributedString {
-        var enhanceAttributedString = AttributedString(localized: "Enhance ")
-        enhanceAttributedString.font = UIFont.systemFont(ofSize: 40, weight: .bold)
-        enhanceAttributedString.foregroundColor = .black
-        
-        var familyAttributedString = AttributedString(localized: "Family Game Nights")
-        familyAttributedString.font = UIFont.systemFont(ofSize: 40, weight: .bold)
-        familyAttributedString.foregroundColor = .blue
-                
-        return enhanceAttributedString + familyAttributedString
-    }
+    let store: StoreOf<AuthenticationFeature>
     
     var body: some View {
         NavigationStack {
@@ -37,12 +27,26 @@ struct WelcomeView: View {
                         .frame(height: 125)
                     
                     VStack(spacing: 20) {
-                        NavigationLink(destination: loginView) {
+                        NavigationLink {
+                            LoginView(
+                                store: store.scope(
+                                    state: \.login,
+                                    action: AuthenticationFeature.Action.login
+                                )
+                            )
+                        } label: {
                             Text("Login")
                                 .frame(maxWidth: .infinity)
                         }
                         
-                        NavigationLink(destination: signupView) {
+                        NavigationLink {
+                            SignupView(
+                                store: store.scope(
+                                    state: \.signup,
+                                    action: AuthenticationFeature.Action.signup
+                                )
+                            )
+                        } label: {
                             Text("Sign Up")
                                 .frame(maxWidth: .infinity)
                         }
@@ -68,24 +72,26 @@ struct WelcomeView: View {
                 .font(.system(size: 20, weight: .bold))
         }
     }
-    
-    var loginView: some View {
-        LoginView(
-            store: Store(initialState: LoginFeature.State()) {
-                LoginFeature()
-            }
-        )
-    }
-    
-    var signupView: some View {
-        SignupView(
-            store: Store(initialState: SignupFeature.State()) {
-                SignupFeature()
-            }
-        )
+}
+
+extension WelcomeView {
+    private var welcomeString: AttributedString {
+        var enhanceAttributedString = AttributedString(localized: "Enhance ")
+        enhanceAttributedString.font = UIFont.systemFont(ofSize: 40, weight: .bold)
+        enhanceAttributedString.foregroundColor = .label
+        
+        var familyAttributedString = AttributedString(localized: "Family Game Nights")
+        familyAttributedString.font = UIFont.systemFont(ofSize: 40, weight: .bold)
+        familyAttributedString.foregroundColor = .blue
+                
+        return enhanceAttributedString + familyAttributedString
     }
 }
 
 #Preview {
-    WelcomeView()
+    WelcomeView(
+        store: Store(initialState: AuthenticationFeature.State()) {
+            AuthenticationFeature()
+        }
+    )
 }
