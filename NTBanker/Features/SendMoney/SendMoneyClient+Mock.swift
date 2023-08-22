@@ -8,6 +8,7 @@
 import ComposableArchitecture
 
 extension SendMoneyClient {
+    /// Mock version of `SendMoneyClient` that is used to power SwiftUI previews
     static var previewValue: Self {
         return Self(
             getActiveUsers: {
@@ -23,6 +24,7 @@ extension SendMoneyClient {
 }
 
 extension SendMoneyClient {
+    /// Mock version of `SendMoneyClient` used when running tests.
     static let testValue = Self(
         getActiveUsers: unimplemented("\(Self.self).getActiveUsers"),
         sendMoney: unimplemented("\(Self.self).sendMoney")

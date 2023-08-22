@@ -9,10 +9,12 @@ import ComposableArchitecture
 import Firebase
 import FirebaseAuth
 import FirebaseFirestoreSwift
+import OSLog
 
 extension SendMoneyClient {
+    /// Live version of `SendMoneyClient` that reaches out to Firebase when the app is run
     static var liveValue: Self {
-        let playersRef = Firestore.firestore().collection("players")
+        let playersReference = Firestore.firestore().collection(FirebaseStringType.players.rawValue)
         
         return Self(
             getActiveUsers: {
@@ -20,7 +22,7 @@ extension SendMoneyClient {
                     throw NTError.noUserID
                 }
                 
-                let query = playersRef
+                let query = playersReference
                     .whereField("userID", isNotEqualTo: currentUserID)
                 
                 do {
@@ -29,7 +31,7 @@ extension SendMoneyClient {
                         try $0.data(as: User.self)
                     }
                 } catch {
-                    print("Error fetching users: \(error)")
+                    Logger.sendMoney.error("Error fetching / creating users: \(error.localizedDescription)")
                     return []
                 }
             },
@@ -43,26 +45,31 @@ extension SendMoneyClient {
                 
                 //Sending Transaction
                 let sendingTransaction = Transaction(action: .paidPlayer(user.name, amount))
-                let sendingRef = Firestore.firestore().collection("players").document(currentUserID)
-                let sendingTransactionRef = sendingRef.collection("transactions").document()
+                let sendingReference = playersReference
+                    .document(currentUserID)
+                let sendingTransactionReference = sendingReference
+                    .collection(FirebaseStringType.transactions.rawValue)
+                    .document()
                 
                 batch.updateData([
-                    "balance": FieldValue.increment(Int64(-amount))
-                ], forDocument: sendingRef)
+                    FirebaseStringType.balance.rawValue: FieldValue.increment(Int64(-amount))
+                ], forDocument: sendingReference)
                 
-                try batch.setData(from: sendingTransaction, forDocument: sendingTransactionRef)
+                try batch.setData(from: sendingTransaction, forDocument: sendingTransactionReference)
                 
                 // Receiving Transaction
-                // TODO: Add sending player's name
                 let receivingTransaction = Transaction(action: .receivedMoneyFromPlayer("player", amount))
-                let receivingRef = Firestore.firestore().collection("players").document(user.id)
-                let receivingTransactionRef = receivingRef.collection("transactions").document()
+                let receivingReference = playersReference
+                    .document(user.id)
+                let receivingTransactionReference = receivingReference
+                    .collection(FirebaseStringType.transactions.rawValue)
+                    .document()
                 
                 batch.updateData([
-                    "balance": FieldValue.increment(Int64(amount))
-                ], forDocument: receivingRef)
+                    FirebaseStringType.balance.rawValue: FieldValue.increment(Int64(amount))
+                ], forDocument: receivingReference)
                 
-                try batch.setData(from: receivingTransaction, forDocument: receivingTransactionRef)
+                try batch.setData(from: receivingTransaction, forDocument: receivingTransactionReference)
                 
                 try await batch.commit()
                 
