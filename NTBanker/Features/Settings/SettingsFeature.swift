@@ -8,7 +8,7 @@
 import ComposableArchitecture
 import OSLog
 
-/// Reducer containing state, actions, and the main reducer for `LotteryFeature`
+/// Reducer containing state, actions, and the main reducer for `SettingsFeature`
 struct SettingsFeature: Reducer {
     struct State: Equatable {
         /// Current logged in user. Defaults to placeholder
