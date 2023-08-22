@@ -8,16 +8,18 @@
 import ComposableArchitecture
 
 extension HomeClient {
+    /// Mock version of `HomeClient` that is used to power SwiftUI previews.
     static let previewValue = Self(
         streamUser: {
             AsyncThrowingStream { continuation in
-                continuation.yield(User.placeholder)
+                continuation.yield(User.mockUserList[0])
             }
         }
     )
 }
 
 extension HomeClient {
+    /// Mock version of `HomeClient` used when running tests.
     static let testValue = Self(
         streamUser: unimplemented("\(Self.self).streamUser")
     )

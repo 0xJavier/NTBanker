@@ -8,31 +8,41 @@
 import ComposableArchitecture
 import OSLog
 
-/// Object that holds the Lottery feature's state, actions, and logic in the form of a reducer.
+/// Reducer containing state, actions, and the main reducer for `LotteryFeature`.
 struct LotteryFeature: Reducer {
     struct State: Equatable {
-        /// Represents the dollar amount for the parking lottery.
+        /// Integer representing the lottery amount.
         var lotteryAmount: Int = 0
-        /// Binding boolean that indicates if the view is reaching out to Firebase.
+        /// Flag used to indicate when the feature is fetching data.
         @BindingState var isLoading = false
-        /// Flag used to enable the collect button
+        /// Alert state used to indicate when we show a user-facing alert.
+        @PresentationState var alert: AlertState<Action.Alert>?
+        
+        /// Flag indicating if the main collect button should be disabled.
         var shouldDisableCollectButton: Bool {
             isLoading || lotteryAmount <= 0
         }
-        @PresentationState var alert: AlertState<Action.Alert>?
     }
     
     enum Action {
-        /// Action called before the view is shown. Used to load data from Firebase.
+        /// Action used for the main view to start work when the view appears.
+        case viewOnAppear
+        /// Calls to firebase to get the up-to-date lottery amount to be shown.
         case retrieveLotteryAmount
-        /// Action for when we receive a response when collecting the lottery for the user.
+        /// Handles the response from fetching the lottery amount. If successful, we update the lottery amount state to reflect in the UI.
+        /// Otherwise, we reset the amount to 0, log the error, and present an alert.
         case retrieveLotteryAmountResponse(TaskResult<Int>)
         /// Action for when a user taps the collect button.
         case collectButtonTapped
+        /// Handles the response when a user taps the button. If successful, we show an alert with a success message.
+        /// Otherwise, we reset the amount to 0, log the error, and present an alert.
         case collectButtonTappedResponse(Error?)
+        /// Action responsible for handling user input when it comes to user-facing alerts.
         case alert(PresentationAction<Alert>)
         
+        /// Collection of actions we can do when presenting a user-facing alert.
         enum Alert: Equatable {
+            /// Main action for when a user confirms they want to collect the lottery.
             case collectButtonTapped
         }
     }
@@ -42,16 +52,9 @@ struct LotteryFeature: Reducer {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .alert(.presented(.collectButtonTapped)):
-                state.isLoading = true
-                return .run { [amount = state.lotteryAmount] send in
-                    let response = try await self.lotteryClient.collectLottery(amount)
-                    await send(.collectButtonTappedResponse(response))
-                }
-                
-            case .alert:
-                return .none
-                
+            case .viewOnAppear:
+                return .send(.retrieveLotteryAmount)
+                                
             case .retrieveLotteryAmount:
                 state.isLoading = true
                 return .run { send in
@@ -66,7 +69,11 @@ struct LotteryFeature: Reducer {
                 
             case .retrieveLotteryAmountResponse(.failure(let error)):
                 state.isLoading = false
+                state.lotteryAmount = 0
                 Logger.lottery.error("Could not retrieve lottery amount: \(error.localizedDescription)")
+                state.alert = AlertState {
+                    TextState("Could not get lottery amount at this time. Please try again.")
+                }
                 return .none
                 
             case .collectButtonTapped:
@@ -81,7 +88,7 @@ struct LotteryFeature: Reducer {
                         TextState("Collect")
                     }
                 } message: {
-                    TextState("Are you sure you want to collect lottery?")
+                    TextState("Are you sure you want to collect the lottery?")
                 }
                 
                 return .none
@@ -89,15 +96,28 @@ struct LotteryFeature: Reducer {
             case .collectButtonTappedResponse(let error):
                 state.isLoading = false
                 if let error {
+                    state.lotteryAmount = 0
                     Logger.lottery.error("Could not collect lottery: \(error.localizedDescription)")
+                    state.alert = AlertState {
+                        TextState("Could not collect the lottery at this time. Please try again")
+                    }
                     return .none
                 }
                 
+                state.lotteryAmount = 0
                 state.alert = AlertState {
                     TextState("Success!")
                 }
+                return .none
                 
-                state.lotteryAmount = 0
+            case .alert(.presented(.collectButtonTapped)):
+                state.isLoading = true
+                return .run { [amount = state.lotteryAmount] send in
+                    let response = try await self.lotteryClient.collectLottery(amount)
+                    await send(.collectButtonTappedResponse(response))
+                }
+                
+            case .alert:
                 return .none
             }
         }

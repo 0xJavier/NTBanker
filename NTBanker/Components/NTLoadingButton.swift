@@ -28,14 +28,14 @@ struct NTLoadingButton: View {
         .tint(.blue)
         .buttonStyle(.bordered)
         .controlSize(.large)
+        .disabled(isLoading)
     }
 }
 
 #Preview {
     VStack {
-        NTLoadingButton(title: "Hello, World!", isLoading: false, action: {})
-        NTLoadingButton(title: "Hello, World!", isLoading: true, action: {})
-            .disabled(true)
+        NTLoadingButton(title: "Preview Placeholder", isLoading: false, action: {})
+        NTLoadingButton(title: "Preview Placeholder", isLoading: true, action: {})
     }
     .padding()
 }

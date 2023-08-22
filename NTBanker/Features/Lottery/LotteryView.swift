@@ -41,7 +41,7 @@ struct LotteryView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .padding(.horizontal)
                 .onAppear {
-                    self.store.send(.retrieveLotteryAmount)
+                    self.store.send(.viewOnAppear)
                 }
             }
             .alert(

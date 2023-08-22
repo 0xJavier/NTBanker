@@ -8,12 +8,19 @@
 import Foundation
 import FirebaseFirestore
 
+/// Object representing actions a user has take over the course of a game
 struct Transaction: Codable, Equatable, Identifiable {
+    /// Unique string identifier
     var id = UUID().uuidString
+    /// Firebase time stamp used to order transactions
     var createdAt = Timestamp()
+    /// Main title for the transaction. Created when initialized from a `TransactionActionType`
     let title: String
+    /// Subtitle for the transaction. Will either be 'Sent' or 'Received'
     let subtitle: String
+    /// Cost of the transaction. Can be positive or negative based on the action
     let amount: Int
+    /// icon that will be displayed in the transaction list
     let icon: SFSymbols
     
     enum CodingKeys: CodingKey {
@@ -22,6 +29,10 @@ struct Transaction: Codable, Equatable, Identifiable {
 }
 
 extension Transaction {
+    /// Creates a `Transaction` from a `TransactionActionType` and sets its field based on the type.
+    ///
+    /// - Parameter action: `TransactionActionType` enum dictating the action taken. Amount fields should only be positive
+    /// as the initializer determines negative amounts based on the action.
     init(action: TransactionActionType) {
         switch action {
         case .paidPlayer(let user, let amount):
@@ -70,8 +81,10 @@ extension Transaction {
 }
 
 extension Transaction {
+    /// Single mocked transaction for previews.
     static let mock = Transaction(title: "Mock Transaction", subtitle: "Sent", amount: 100, icon: .car)
     
+    /// List of placeholder transactions for previews.
     static let mockList: [Transaction] = [
         .init(action: .collect200),
         .init(action: .paidLottery(200)),

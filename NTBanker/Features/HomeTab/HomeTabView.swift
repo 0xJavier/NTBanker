@@ -10,10 +10,6 @@ import FirebaseAuth
 import SwiftUI
 
 struct HomeTabView: View {
-    init() {
-        UITabBar.appearance().backgroundColor = .systemTeal
-    }
-    
     var body: some View {
         TabView {
             Group {

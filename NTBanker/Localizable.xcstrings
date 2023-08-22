@@ -10,7 +10,7 @@
     "Amount" : {
 
     },
-    "Are you sure you want to collect lottery?" : {
+    "Are you sure you want to collect the lottery?" : {
 
     },
     "Balance:" : {
@@ -35,6 +35,9 @@
     "Collect" : {
 
     },
+    "Collect $200" : {
+
+    },
     "Collect lottery" : {
 
     },
@@ -48,7 +51,19 @@
         }
       }
     },
-    "Could not get current user's UID." : {
+    "Could not collect the lottery at this time. Please try again" : {
+
+    },
+    "Could not create user from Data" : {
+
+    },
+    "Could not get current user's UID" : {
+
+    },
+    "Could not get document(s) from querySnapshot" : {
+
+    },
+    "Could not get lottery amount at this time. Please try again." : {
 
     },
     "Create an account" : {
@@ -81,6 +96,18 @@
         }
       }
     },
+    "Error" : {
+
+    },
+    "Error sending money" : {
+
+    },
+    "Error signing out" : {
+
+    },
+    "Error signing up" : {
+
+    },
     "Family Game Nights" : {
       "localizations" : {
         "es" : {
@@ -102,9 +129,6 @@
       }
     },
     "Free Parking Lottery" : {
-
-    },
-    "Hello, World!" : {
 
     },
     "Home" : {
@@ -159,10 +183,16 @@
         }
       }
     },
+    "Pay\nBank" : {
+
+    },
     "Pay Bank" : {
 
     },
     "Pay Lottery" : {
+
+    },
+    "Preview Placeholder" : {
 
     },
     "Quick Actions" : {
@@ -197,6 +227,9 @@
 
     },
     "Success!" : {
+
+    },
+    "Successfully sent!" : {
 
     },
     "User" : {

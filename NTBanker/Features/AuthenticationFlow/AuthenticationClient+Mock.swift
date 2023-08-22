@@ -11,6 +11,7 @@ import FirebaseAuth
 import FirebaseFirestoreSwift
 
 extension AuthenticationClient {
+    /// Mock version of `AuthenticationClient` that is used to power SwiftUI previews
     static var previewValue: Self {
         return Self(
             login: { email, password in
@@ -32,6 +33,7 @@ extension AuthenticationClient {
 }
 
 extension AuthenticationClient {
+    /// Mock version of `AuthenticationClient` used when running tests.
     static let testValue = Self(
         login: unimplemented("\(Self.self).login"),
         forgotPassword: unimplemented("\(Self.self).forgotPassword"),

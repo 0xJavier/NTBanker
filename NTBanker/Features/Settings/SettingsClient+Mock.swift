@@ -8,6 +8,7 @@
 import ComposableArchitecture
 
 extension SettingsClient {
+    /// Mock version of `SettingsClient` that is used to power SwiftUI previews
     static var previewValue = Self(
         fetchUser: {
             try await Task.sleep(for: .milliseconds(500))
@@ -22,6 +23,7 @@ extension SettingsClient {
 }
 
 extension SettingsClient {
+    /// Mock version of `SettingsClient` used when running tests
     static let testValue = Self(
         fetchUser: unimplemented("\(Self.self).fetchUser"),
         signOut: unimplemented("\(Self.self).signOut")

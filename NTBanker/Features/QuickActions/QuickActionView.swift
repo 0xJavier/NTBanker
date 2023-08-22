@@ -26,7 +26,10 @@ struct QuickActionView: View {
                                 QuickActionCardView(action: action)
                                     .padding(.horizontal, 10)
                                     .onTapGesture {
-                                        viewStore.send(.actionCellButtonTapped(action.action), animation: .bouncy)
+                                        viewStore.send(
+                                            .actionCellButtonTapped(action.action),
+                                            animation: .bouncy
+                                        )
                                     }
                             }
                         }

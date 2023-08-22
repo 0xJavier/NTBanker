@@ -25,7 +25,7 @@ struct TransactionView: View {
                 .listStyle(.plain)
             }
             .onAppear {
-                viewStore.send(.streamTransactions)
+                viewStore.send(.viewOnAppear)
             }
         }
     }
@@ -33,6 +33,9 @@ struct TransactionView: View {
 
 struct TransactionCell: View {
     let transaction: Transaction
+    var amountColor: Color {
+        transaction.amount >= 0 ? Color.primary : Color.red
+    }
     
     var body: some View {
         HStack {
@@ -50,7 +53,7 @@ struct TransactionCell: View {
             
             Text("$\(transaction.amount)")
                 .font(.title3)
-                .foregroundStyle(transaction.amount >= 0 ? Color.primary : Color.red)
+                .foregroundStyle(amountColor)
         }
     }
 }

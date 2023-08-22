@@ -7,14 +7,11 @@
 
 import SwiftUI
 
+/// Custom type used to determine a user's selected card color.
 enum CardColor: String, CaseIterable, Codable {
-    case blue
-    case red
-    case green
-    case pink
-    case purple
-    case orange
+    case blue, red, green, pink, purple, orange
     
+    /// SwiftUI representation of a given type.
     var colorLiteral: Color {
         switch self {
         case .blue:

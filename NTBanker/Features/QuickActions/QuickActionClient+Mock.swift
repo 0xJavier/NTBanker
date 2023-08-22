@@ -8,6 +8,7 @@
 import ComposableArchitecture
 
 extension QuickActionClient {
+    /// Mock version of `QuickActionClient` that is used to power SwiftUI previews
     static var previewValue: Self {
         return Self(
             collect200: {
@@ -34,6 +35,7 @@ extension QuickActionClient {
 }
 
 extension QuickActionClient {
+    /// Mock version of `QuickActionClient` used when running tests.
     static let testValue = Self(
         collect200: unimplemented("\(Self.self).collect200"),
         payBank: unimplemented("\(Self.self).payBank"),

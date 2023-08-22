@@ -8,6 +8,7 @@
 import ComposableArchitecture
 
 extension LotteryClient {
+    /// Mock version of `LotteryClient` that is used to power SwiftUI previews.
     static let previewValue = Self(
         retrieveLottery: {
             try await Task.sleep(for: .milliseconds(500))
@@ -21,6 +22,7 @@ extension LotteryClient {
 }
 
 extension LotteryClient {
+    /// Mock version of `LotteryClient` used when running tests.
     static let testValue = Self(
         retrieveLottery: unimplemented("\(Self.self).retrieveLottery"),
         collectLottery: unimplemented("\(Self.self).collectLottery")
