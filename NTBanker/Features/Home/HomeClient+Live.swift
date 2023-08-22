@@ -11,8 +11,9 @@ import FirebaseAuth
 import FirebaseFirestoreSwift
 
 extension HomeClient {
+    /// Live version of `HomeClient` that reaches out to Firebase when the app is run.
     static var liveValue: Self {
-        let playersRef = Firestore.firestore().collection("players")
+        let playersReference = Firestore.firestore().collection(FirebaseStringType.players.rawValue)
         
         return Self(
             streamUser: {
@@ -22,17 +23,21 @@ extension HomeClient {
                         return
                     }
                     
-                    playersRef.document(userID).addSnapshotListener { documentSnapshot, error in
-                        guard let document = documentSnapshot else { return }
-                        
-                        do {
-                            let user = try document.data(as: User.self)
-                            continuation.yield(user)
-                        } catch {
-                            print("Could not unwrap user")
-                            continuation.finish(throwing: NTError.noUserID)
+                    playersReference
+                        .document(userID)
+                        .addSnapshotListener { documentSnapshot, error in
+                            guard let document = documentSnapshot else {
+                                continuation.finish(throwing: NTError.documentError)
+                                return
+                            }
+
+                            do {
+                                let user = try document.data(as: User.self)
+                                continuation.yield(user)
+                            } catch {
+                                continuation.finish(throwing: NTError.userDecodeError)
+                            }
                         }
-                    }
                 }
             }
         )

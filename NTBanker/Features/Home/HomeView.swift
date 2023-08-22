@@ -12,10 +12,11 @@ struct HomeView: View {
     let store: StoreOf<HomeFeature>
 
     var body: some View {
-        WithViewStore(self.store, observe: { $0 }) { viewStore in
+        WithViewStore(self.store, observe: \.user) { viewStore in
             NavigationStack {
                 VStack(spacing: 10) {
-                    NTCreditCardView(user: viewStore.user)
+                    NTCreditCardView(user: viewStore.state)
+                        .redacted(reason: viewStore.state == .placeholder ? .placeholder : [])
                     
                     QuickActionView(
                         store: self.store.scope(
@@ -35,7 +36,7 @@ struct HomeView: View {
                 .navigationBarTitleDisplayMode(.inline)
             }
             .onAppear {
-                viewStore.send(.streamUser)
+                viewStore.send(.viewOnAppear)
             }
         }
     }

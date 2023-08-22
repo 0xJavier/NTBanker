@@ -16,6 +16,8 @@ extension Logger {
     static let login = Logger(subsystem: subsystem, category: "login")
     /// Logs emitted from the SignupFeature
     static let signup = Logger(subsystem: subsystem, category: "signup")
+    /// Logs emitted from the Home
+    static let home = Logger(subsystem: subsystem, category: "home")
     /// Logs emitted from the Transaction Feature
     static let transaction = Logger(subsystem: subsystem, category: "transaction")
     /// Logs emitted from the LotteryFeature

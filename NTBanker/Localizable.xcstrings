@@ -10,7 +10,7 @@
     "Amount" : {
 
     },
-    "Are you sure you want to collect lottery?" : {
+    "Are you sure you want to collect the lottery?" : {
 
     },
     "Balance:" : {
@@ -48,7 +48,16 @@
         }
       }
     },
+    "Could not collect the lottery at this time. Please try again" : {
+
+    },
     "Could not get current user's UID." : {
+
+    },
+    "Could not get documents from querySnapshot" : {
+
+    },
+    "Could not get lottery amount at this time. Please try again." : {
 
     },
     "Create an account" : {
