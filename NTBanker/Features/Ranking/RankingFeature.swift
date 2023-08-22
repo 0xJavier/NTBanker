@@ -8,17 +8,21 @@
 import ComposableArchitecture
 import OSLog
 
+/// Reducer containing state, actions, and the main reducer for `RankingFeature`.
 struct RankingFeature: Reducer {
     struct State: Equatable {
-        /// Current list of all users playing. Retrieved from Firebase in descending order by user's balance.
+        /// Current list of all active users. Retrieved from Firebase in descending order by user's balance.
         var users = [User]()
     }
     
     enum Action {
-        /// Action for when the ranking screen appears. Calls to Firebase for an  up-to-date list of all players.
+        /// Action used for the main view to start work when the view appears. Created to make the call site in the view more generic versus
+        /// calling a specific action, allowing us to modify one action in future PRs.
+        case viewOnAppear
+        /// Action for when the ranking screen appears. Calls to Firebase for an up-to-date list of all players.
         case fetchUsers
         /// Action for the response from getting a list of users from Firebase.
-        /// Will return a list of users or an error. If an error occurs, we log it and return an empty list of users.
+        /// Will return a TaskResult of either a list of users or an error. If an error occurs, we return an empty list and log the error.
         case fetchUsersResponse(TaskResult<[User]>)
     }
     
@@ -27,11 +31,15 @@ struct RankingFeature: Reducer {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+            case .viewOnAppear:
+                return .send(.fetchUsers)
+                
             case .fetchUsers:
                 return .run { send in
                     let response = await TaskResult { try await self.rankingClient.fetchUsers() }
                     await send(.fetchUsersResponse(response))
                 }
+                
             case .fetchUsersResponse(.success(let users)):
                 state.users = users
                 return .none

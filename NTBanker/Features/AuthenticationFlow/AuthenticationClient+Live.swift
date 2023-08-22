@@ -29,7 +29,7 @@ extension AuthenticationClient {
                                    email: email, color: formCredentials.color)
                 try Firestore
                     .firestore()
-                    .collection(FirebaseCollectionType.players.rawValue)
+                    .collection(FirebaseStringType.players.rawValue)
                     .document(authResult.user.uid)
                     .setData(from: newUser)
                 return nil

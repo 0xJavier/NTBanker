@@ -16,7 +16,7 @@ extension LotteryClient {
         retrieveLottery: {
             let lotteryRef = Firestore
                 .firestore()
-                .collection(FirebaseCollectionType.lottery.rawValue)
+                .collection(FirebaseStringType.lottery.rawValue)
                 .document("balance")
             
             let document = try await lotteryRef.getDocument()

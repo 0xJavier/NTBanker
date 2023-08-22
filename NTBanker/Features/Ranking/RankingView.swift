@@ -15,7 +15,7 @@ struct RankingView: View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             NavigationStack {
                 List {
-                    ForEach(viewStore.users, id: \.self) { user in
+                    ForEach(viewStore.users) { user in
                         RankingCell(user: user)
                     }
                 }
@@ -23,7 +23,7 @@ struct RankingView: View {
                 .navigationBarTitleDisplayMode(.inline)
             }
             .onAppear {
-                viewStore.send(.fetchUsers)
+                viewStore.send(.viewOnAppear)
             }
         }
     }
