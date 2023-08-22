@@ -38,7 +38,7 @@ struct QuickActionFeature: Reducer {
             case .receiveMoney:
                 return "Receive Money"
             case .sendMoney, .collect200:
-                print("SHOULD BE HANDLED OUTSIDE OF SECTION")
+                Logger.quickAction.warning("These actions should not be shown in action section")
                 return "Section Title"
             }
         }
