@@ -6,7 +6,7 @@
 //
 
 import ComposableArchitecture
-import Foundation
+import OSLog
 
 struct QuickActionFeature: Reducer {
     struct State: Equatable {
@@ -20,11 +20,11 @@ struct QuickActionFeature: Reducer {
         @BindingState var amount = ""
         /// iOS style alert to show to user for when a action is complete
         @PresentationState var alert: AlertState<Action.Alert>?
-        /// Flag used to show or hide the Send Money sheet
+        /// Flag used to show or hide the `SendMoneyFeature` sheet
         @PresentationState var sendMoney: SendMoneyFeature.State?
         /// Flag used to indicate if the feature is loading
         @BindingState var isLoading = false
-        /// Computed property to determine the action section title string.
+        /// Computed property to determine the action section title string
         var sectionTitle: LocalizedStringResource {
             guard let selectedAction = selectedAction else {
                 return "Button"
@@ -114,13 +114,13 @@ struct QuickActionFeature: Reducer {
                 
             case .actionButtonTapped:
                 guard let action = state.selectedAction else {
-                    print("Could not get action")
+                    Logger.quickAction.error("Action button tapped but state.selectedAction is not valid.")
                     return .none
                 }
                 
                 switch action {
                 case .sendMoney, .collect200:
-                    print("ACTION SHOULD BE TAKEN CARE OF ELSEWHERE")
+                    // Should be handled in the scoped domain.
                     return .none
 
                 case .payBank:
@@ -158,11 +158,12 @@ struct QuickActionFeature: Reducer {
                 }
                 
             case .fetchUserListResponse(.success(let users)):
-                state.sendMoney = SendMoneyFeature.State(userList: users, selectedUser: users.first!)                
+                state.sendMoney = SendMoneyFeature.State(userList: users, selectedUser: users.first!)
                 return .none
                 
             case .fetchUserListResponse(.failure(let error)):
-                print("ERROR FETCHING USERS: \(error.localizedDescription)")
+                Logger.quickAction.error("Error fetching current user list: \(error.localizedDescription)")
+                state.sendMoney = nil
                 return .none
                 
             case .collect200:
@@ -174,7 +175,13 @@ struct QuickActionFeature: Reducer {
             case .actionResponse(let error):
                 state.isLoading = false
                 if let error {
-                    print("ERROR: \(error.localizedDescription)")
+                    Logger.quickAction.error("Could not complete action: \(error.localizedDescription)")
+                    
+                    state.alert = AlertState {
+                        TextState("Error")
+                    } message: {
+                        TextState(error.localizedDescription)
+                    }
                 } else {
                     state.alert = AlertState {
                         TextState("Success")

@@ -11,9 +11,14 @@ import FirebaseAuth
 import FirebaseFirestoreSwift
 
 extension QuickActionClient {
+    /// Live version of `QuickActionClient` that reaches out to Firebase when the app is run
     static var liveValue: Self {
-        let playerRef = Firestore.firestore().collection("players")
-        let lotteryRef = Firestore.firestore().collection("lottery").document("balance")
+        let playerReference = Firestore.firestore()
+            .collection(FirebaseStringType.players.rawValue)
+        
+        let lotteryReference = Firestore.firestore()
+            .collection(FirebaseStringType.lottery.rawValue)
+            .document(FirebaseStringType.balance.rawValue)
         
         return Self(
             collect200: {
@@ -22,18 +27,18 @@ extension QuickActionClient {
                 }
                 
                 let batch = Firestore.firestore().batch()
-                let transactionRef = playerRef
+                let transactionReference = playerReference
                     .document(userID)
-                    .collection("transactions")
+                    .collection(FirebaseStringType.transactions.rawValue)
                     .document()
                 
                 batch.updateData([
-                    "balance": FieldValue.increment(Int64(200))
-                ], forDocument: playerRef.document(userID))
+                    FirebaseStringType.balance.rawValue: FieldValue.increment(Int64(200))
+                ], forDocument: playerReference.document(userID))
                 
                 let transaction = Transaction(action: .collect200)
                 
-                try batch.setData(from: transaction, forDocument: transactionRef)
+                try batch.setData(from: transaction, forDocument: transactionReference)
                 
                 try await batch.commit()
                 
@@ -46,18 +51,18 @@ extension QuickActionClient {
                 }
                 
                 let batch = Firestore.firestore().batch()
-                let transactionRef = playerRef
+                let transactionReference = playerReference
                     .document(userID)
-                    .collection("transactions")
+                    .collection(FirebaseStringType.transactions.rawValue)
                     .document()
                 
                 batch.updateData([
-                    "balance": FieldValue.increment(Int64(-amount))
-                ], forDocument: playerRef.document(userID))
+                    FirebaseStringType.balance.rawValue: FieldValue.increment(Int64(-amount))
+                ], forDocument: playerReference.document(userID))
                 
                 let transaction = Transaction(action: .paidBank(amount))
                 
-                try batch.setData(from: transaction, forDocument: transactionRef)
+                try batch.setData(from: transaction, forDocument: transactionReference)
                 
                 try await batch.commit()
                 
@@ -72,20 +77,20 @@ extension QuickActionClient {
                 let transaction = Transaction(action: .paidLottery(amount))
                 
                 let batch = Firestore.firestore().batch()
-                let transactionRef = playerRef
+                let transactionReference = playerReference
                     .document(userID)
-                    .collection("transactions")
+                    .collection(FirebaseStringType.transactions.rawValue)
                     .document()
                 
                 batch.updateData([
-                    "balance": FieldValue.increment(Int64(-amount))
-                ], forDocument: playerRef.document(userID))
+                    FirebaseStringType.balance.rawValue: FieldValue.increment(Int64(-amount))
+                ], forDocument: playerReference.document(userID))
                 
                 batch.updateData([
-                    "amount": FieldValue.increment(Int64(amount))
-                ], forDocument: lotteryRef)
+                    FirebaseStringType.amount.rawValue: FieldValue.increment(Int64(amount))
+                ], forDocument: lotteryReference)
                 
-                try batch.setData(from: transaction, forDocument: transactionRef)
+                try batch.setData(from: transaction, forDocument: transactionReference)
                 
                 try await batch.commit()
                 
@@ -98,18 +103,18 @@ extension QuickActionClient {
                 }
                 
                 let batch = Firestore.firestore().batch()
-                let transactionRef = playerRef
+                let transactionReference = playerReference
                     .document(userID)
-                    .collection("transactions")
+                    .collection(FirebaseStringType.transactions.rawValue)
                     .document()
                 
                 batch.updateData([
-                    "balance": FieldValue.increment(Int64(amount))
-                ], forDocument: playerRef.document(userID))
+                    FirebaseStringType.balance.rawValue: FieldValue.increment(Int64(amount))
+                ], forDocument: playerReference.document(userID))
                 
                 let transaction = Transaction(action: .receivedMoneyFromBank(amount))
                 
-                try batch.setData(from: transaction, forDocument: transactionRef)
+                try batch.setData(from: transaction, forDocument: transactionReference)
                 
                 try await batch.commit()
                 

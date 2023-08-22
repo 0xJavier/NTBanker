@@ -96,7 +96,16 @@
         }
       }
     },
-    "Error singing up" : {
+    "Error" : {
+
+    },
+    "Error sending money" : {
+
+    },
+    "Error signing out" : {
+
+    },
+    "Error signing up" : {
 
     },
     "Family Game Nights" : {
@@ -218,6 +227,9 @@
 
     },
     "Success!" : {
+
+    },
+    "Successfully sent!" : {
 
     },
     "User" : {
