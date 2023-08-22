@@ -38,7 +38,7 @@ struct RankingFeature: Reducer {
                     let response = await TaskResult { try await self.rankingClient.fetchUsers() }
                     await send(.fetchUsersResponse(response))
                 }
-                
+
             case .fetchUsersResponse(.success(let users)):
                 state.users = users
                 return .none
