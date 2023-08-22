@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Custom app error which can be thrown in app features / reducers or clients.
 enum NTError: Error, LocalizedError {
     /// Thrown when trying to get the current logged in userID.
     case noUserID

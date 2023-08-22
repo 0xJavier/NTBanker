@@ -35,6 +35,9 @@
     "Collect" : {
 
     },
+    "Collect $200" : {
+
+    },
     "Collect lottery" : {
 
     },
@@ -51,10 +54,13 @@
     "Could not collect the lottery at this time. Please try again" : {
 
     },
-    "Could not get current user's UID." : {
+    "Could not create user from Data" : {
 
     },
-    "Could not get documents from querySnapshot" : {
+    "Could not get current user's UID" : {
+
+    },
+    "Could not get document(s) from querySnapshot" : {
 
     },
     "Could not get lottery amount at this time. Please try again." : {
@@ -113,9 +119,6 @@
     "Free Parking Lottery" : {
 
     },
-    "Hello, World!" : {
-
-    },
     "Home" : {
 
     },
@@ -168,10 +171,16 @@
         }
       }
     },
+    "Pay\nBank" : {
+
+    },
     "Pay Bank" : {
 
     },
     "Pay Lottery" : {
+
+    },
+    "Preview Placeholder" : {
 
     },
     "Quick Actions" : {
