@@ -11,8 +11,9 @@ import FirebaseAuth
 import FirebaseFirestoreSwift
 
 extension TransactionClient {
+    /// Live version of `TransactionClient` that reaches out to Firebase when the app is run.
     static var liveValue: Self {
-        let playersRef = Firestore.firestore().collection("players")
+        let playersReference = Firestore.firestore().collection(FirebaseStringType.players.rawValue)
         
         return Self(
             streamTransactions: {
@@ -22,12 +23,13 @@ extension TransactionClient {
                         return
                     }
                     
-                    playersRef.document(userID).collection("transactions")
+                    playersReference
+                        .document(userID)
+                        .collection(FirebaseStringType.transactions.rawValue)
                         .order(by: "createdAt", descending: true)
                         .addSnapshotListener { querySnapshot, error in
                             guard let documents = querySnapshot?.documents else {
-                                print("Could not get documents")
-                                continuation.finish(throwing: NTError.noUserID)
+                                continuation.finish(throwing: NTError.documentError)
                                 return
                             }
                             

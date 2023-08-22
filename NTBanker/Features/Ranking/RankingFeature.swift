@@ -16,8 +16,7 @@ struct RankingFeature: Reducer {
     }
     
     enum Action {
-        /// Action used for the main view to start work when the view appears. Created to make the call site in the view more generic versus
-        /// calling a specific action, allowing us to modify one action in future PRs.
+        /// Action used for the main view to start work when the view appears.
         case viewOnAppear
         /// Action for when the ranking screen appears. Calls to Firebase for an up-to-date list of all players.
         case fetchUsers

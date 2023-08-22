@@ -8,6 +8,7 @@
 import ComposableArchitecture
 
 extension TransactionClient {
+    /// Mock version of `TransactionClient` that is used to power SwiftUI previews.
     static var previewValue = Self(
         streamTransactions: {
             AsyncThrowingStream { continuation in
@@ -18,6 +19,7 @@ extension TransactionClient {
 }
 
 extension TransactionClient {
+    /// Mock version of `RankingClient` used when running tests.
     static let testValue = Self(
         streamTransactions: unimplemented("\(Self.self).streamTransactions")
     )

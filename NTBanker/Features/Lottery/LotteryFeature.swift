@@ -25,8 +25,7 @@ struct LotteryFeature: Reducer {
     }
     
     enum Action {
-        /// Action used for the main view to start work when the view appears. Created to make the call site in the view more generic versus
-        /// calling a specific action, allowing us to modify one action in future PRs.
+        /// Action used for the main view to start work when the view appears.
         case viewOnAppear
         /// Calls to firebase to get the up-to-date lottery amount to be shown.
         case retrieveLotteryAmount
