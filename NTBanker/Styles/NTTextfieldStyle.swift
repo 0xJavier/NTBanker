@@ -24,11 +24,12 @@ private struct NTTextfieldTestView: View {
     @State private var query = ""
     
     var body: some View {
-        TextField("Hello, World!", text: $query)
+        TextField("Preview Placeholder", text: $query)
             .textFieldStyle(NTTextfieldStyle())
     }
 }
 
 #Preview {
     NTTextfieldTestView()
+        .padding()
 }
