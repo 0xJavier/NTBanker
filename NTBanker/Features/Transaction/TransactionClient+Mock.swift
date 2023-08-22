@@ -19,7 +19,7 @@ extension TransactionClient {
 }
 
 extension TransactionClient {
-    /// Mock version of `RankingClient` used when running tests.
+    /// Mock version of `TransactionClient` used when running tests.
     static let testValue = Self(
         streamTransactions: unimplemented("\(Self.self).streamTransactions")
     )
