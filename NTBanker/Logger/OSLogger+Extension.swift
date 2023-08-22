@@ -26,4 +26,6 @@ extension Logger {
     static let lottery = Logger(subsystem: subsystem, category: "lottery")
     /// Logs emitted from the `RankingFeature`
     static let ranking = Logger(subsystem: subsystem, category: "ranking")
+    /// Logs emitted from the `SettingsFeature`
+    static let settings = Logger(subsystem: subsystem, category: "settings")
 }

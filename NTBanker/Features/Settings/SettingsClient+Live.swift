@@ -11,6 +11,7 @@ import FirebaseAuth
 import FirebaseFirestoreSwift
 
 extension SettingsClient {
+    /// Live version of `SettingsClient` that reaches out to Firebase when the app is run
     static var liveValue: Self {
         return Self(
             fetchUser: {
@@ -20,7 +21,7 @@ extension SettingsClient {
                 
                 let snapshot = try await Firestore
                     .firestore()
-                    .collection("players")
+                    .collection(FirebaseStringType.players.rawValue)
                     .document(userID)
                     .getDocument()
                 

@@ -38,6 +38,7 @@ struct SendMoneyView: View {
                 .navigationTitle("Send Money")
                 .navigationBarTitleDisplayMode(.inline)
             }
+            .alert(store: self.store.scope(state: \.$alert, action: SendMoneyFeature.Action.alert))
         }
     }
 }

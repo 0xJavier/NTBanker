@@ -18,4 +18,5 @@ enum SFSymbols: String, Codable {
     case buildingColumn = "building.columns.fill"
     case car = "car.fill"
     case paperPlane = "paperplane.fill"
+    case chevronRight = "chevron.right"
 }

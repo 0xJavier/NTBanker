@@ -15,7 +15,7 @@ struct SettingsView: View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             NavigationStack {
                 Form {
-                    // User Header
+                    // MARK: - User Header
                     Section {
                         HStack {
                             ZStack {
@@ -35,7 +35,7 @@ struct SettingsView: View {
                         }
                     }
                     
-                    // Actions
+                    // MARK: - Actions
                     Section {
                         SettingsCell(title: "Sign Out") {
                             viewStore.send(.signOut)
@@ -47,8 +47,9 @@ struct SettingsView: View {
                 .redacted(reason: viewStore.user == .placeholder ? .placeholder : [])
                 
             }
+            .alert(store: self.store.scope(state: \.$alert, action: SettingsFeature.Action.alert))
             .onAppear {
-                viewStore.send(.fetchUser)
+                viewStore.send(.viewOnAppear)
             }
         }
     }
@@ -65,7 +66,7 @@ struct SettingsCell: View {
                 
                 Spacer()
                 
-                Image(systemName: "chevron.right")
+                Image(systemName: SFSymbols.chevronRight.rawValue)
                     .foregroundStyle(.secondary)
             }
         }
