@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Custom type containing string values associated with SFSymbols to avoid stringly-typed variables.
 enum SFSymbols: String, Codable {
     case dollarSignCircle = "dollarsign.circle.fill"
     case dollarSignSquare = "dollarsign.square.fill"
