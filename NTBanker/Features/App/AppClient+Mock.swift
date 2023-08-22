@@ -8,6 +8,7 @@
 import ComposableArchitecture
 
 extension AppClient {
+    /// Mock version of `AppClient` that is used to power SwiftUI previews
     static var previewValue = Self(
         streamAuthStatus: {
             AsyncStream { continuation in
@@ -18,6 +19,7 @@ extension AppClient {
 }
 
 extension AppClient {
+    /// Mock version of `AppClient` used when running tests
     static let testValue = Self(
         streamAuthStatus: unimplemented("\(Self.self).streamAuthStatus")
     )

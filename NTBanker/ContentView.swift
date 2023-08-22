@@ -29,7 +29,7 @@ struct ContentView: View {
                 }
             }
             .onAppear {
-                viewStore.send(.onAppear)
+                viewStore.send(.viewOnAppear)
             }
         }
     }
