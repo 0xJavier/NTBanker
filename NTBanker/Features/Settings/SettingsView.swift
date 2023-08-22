@@ -30,7 +30,7 @@ struct SettingsView: View {
                             VStack(alignment: .leading) {
                                 Text(viewStore.user.name)
                                 
-                                Text(viewStore.user.email)
+                                Text("$\(viewStore.user.balance)")
                             }
                         }
                     }

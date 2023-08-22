@@ -55,7 +55,7 @@ extension SendMoneyClient {
                 // Receiving Transaction
                 // TODO: Add sending player's name
                 let receivingTransaction = Transaction(action: .receivedMoneyFromPlayer("player", amount))
-                let receivingRef = Firestore.firestore().collection("players").document(user.userID)
+                let receivingRef = Firestore.firestore().collection("players").document(user.id)
                 let receivingTransactionRef = receivingRef.collection("transactions").document()
                 
                 batch.updateData([
