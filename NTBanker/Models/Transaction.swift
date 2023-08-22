@@ -15,9 +15,9 @@ struct Transaction: Codable, Equatable, Identifiable {
     /// Firebase time stamp used to order transactions
     var createdAt = Timestamp()
     /// Main title for the transaction. Created when initialized from a `TransactionActionType`
-    let title: String
+    let title: LocalizedStringResource
     /// Subtitle for the transaction. Will either be 'Sent' or 'Received'
-    let subtitle: String
+    let subtitle: LocalizedStringResource
     /// Cost of the transaction. Can be positive or negative based on the action
     let amount: Int
     /// icon that will be displayed in the transaction list

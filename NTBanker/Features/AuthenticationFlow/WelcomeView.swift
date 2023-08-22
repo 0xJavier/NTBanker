@@ -68,7 +68,7 @@ struct WelcomeView: View {
             
             Text(welcomeString)
             
-            Text("Welcome to NTBank. Speed up game banking with our easy to use Balance cards.")
+            Text("Welcome to NTBanker. Speed up game banking with our easy to use Balance cards.")
                 .font(.system(size: 20, weight: .bold))
         }
     }
