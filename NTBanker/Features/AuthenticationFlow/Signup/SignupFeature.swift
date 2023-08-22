@@ -9,7 +9,7 @@ import ComposableArchitecture
 import Foundation
 import OSLog
 
-/// Object that holds the Signup feature's state, actions, and logic in the form of a reducer.
+/// Reducer containing state, actions, and the main reducer for `SignupFeature`
 struct SignupFeature: Reducer {
     struct State: Equatable {
         /// Query used to represent user's name
@@ -26,35 +26,44 @@ struct SignupFeature: Reducer {
         @BindingState var isLoading = false
         /// Flag used to disable the login button depending if the form is filled out completely
         var shouldDisableLoginButton = true
-        /// Form's credentials that will be passed to an effect
+        /// State used to indicate when we show a user-facing alert
+        @PresentationState var alert: AlertState<Action.Alert>?
+        /// Form's current credentials that will be passed to an effect
         var formCredentials: FormCredentials {
             FormCredentials(name: name, color: selectedCardColor)
         }
-        /// Object used to pass user info to an effect.
+        /// Object used to pass form fields to an effect
         struct FormCredentials {
             /// Name of the newly created user
             let name: String
-            /// Card color in the form of a string for a newly created user
+            /// User's selected card color
             let color: CardColor
         }
     }
     
     enum Action: BindableAction {
+        /// Actions an alert has available
+        enum Alert: Equatable {}
+        /// Actions done inside the iOS style alert
+        case alert(PresentationAction<Alert>)
         /// Action for when the user taps the create account button
         case createButtonTapped
-        /// Action for the response from the client for creating an account
+        /// Handles the response when a user sign ups. If successful, `AppReducer` will return the home route and display the home view.
+        /// Otherwise, we log and present the error.
         case signupResponse(Error?)
         /// Action for binding state variables with `BindingState`
         case binding(BindingAction<State>)
     }
     
-    @Dependency(\.authenticationClient)
-    var authClient
+    @Dependency(\.authenticationClient) var authClient
     
     var body: some ReducerOf<Self> {
         BindingReducer()
         Reduce { state, action in
             switch action {
+            case .alert:
+                return .none
+                
             case .createButtonTapped:
                 state.isLoading = true
                 state.shouldDisableLoginButton = true
@@ -63,6 +72,8 @@ struct SignupFeature: Reducer {
                                formCredentials = state.formCredentials] send in
                     let result = try await self.authClient.signup(email, password, formCredentials)
                     await send(.signupResponse(result))
+                } catch: { error, send in
+                    await send(.signupResponse(error))
                 }
                 
             case .signupResponse(let error):
@@ -71,10 +82,15 @@ struct SignupFeature: Reducer {
                 
                 if let error {
                     Logger.signup.error("Could not create new user: \(error.localizedDescription)")
+                    state.alert = AlertState {
+                        TextState("Error signing up")
+                    } message: {
+                        TextState(error.localizedDescription)
+                    }
                     return .none
                 }
                 
-                print("SUCCESS")
+                Logger.signup.log("Successfully created / signed up new user.")
                 return .none
                 
             case .binding:
@@ -85,5 +101,6 @@ struct SignupFeature: Reducer {
                 return .none
             }
         }
+        .ifLet(\.$alert, action: /Action.alert)
     }
 }

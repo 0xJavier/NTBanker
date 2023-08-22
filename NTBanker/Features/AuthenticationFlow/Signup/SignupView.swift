@@ -41,6 +41,7 @@ struct SignupView: View {
                 .textFieldStyle(NTTextfieldStyle())
                 .padding()
             }
+            .alert(store: self.store.scope(state: \.$alert, action: SignupFeature.Action.alert))
         }
     }
 }

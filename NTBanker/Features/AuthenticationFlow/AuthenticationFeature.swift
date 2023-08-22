@@ -7,14 +7,19 @@
 
 import ComposableArchitecture
 
+/// Reducer containing state, actions, and the main reducer for `AuthenticationFeature`.
 struct AuthenticationFeature: Reducer {
     struct State: Equatable {
+        /// State for the `LoginFeature`
         var login = LoginFeature.State()
+        /// State for the `SignupFeature`
         var signup = SignupFeature.State()
     }
     
     enum Action {
+        /// Actions associated with the `LoginFeature`
         case login(LoginFeature.Action)
+        /// Actions associated with the `SignupFeature`
         case signup(SignupFeature.Action)
     }
     

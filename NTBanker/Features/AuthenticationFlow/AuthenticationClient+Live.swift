@@ -11,6 +11,7 @@ import FirebaseAuth
 import FirebaseFirestoreSwift
 
 extension AuthenticationClient {
+    /// Live version of `AuthenticationClient` that reaches out to Firebase when the app is run.
     static var liveValue: Self {
         return Self(
             login: { email, password in

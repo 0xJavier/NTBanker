@@ -48,6 +48,7 @@ struct LoginView: View {
                 
                 Spacer()
             }
+            .alert(store: self.store.scope(state: \.$alert, action: LoginFeature.Action.alert))
         }
     }
 }
