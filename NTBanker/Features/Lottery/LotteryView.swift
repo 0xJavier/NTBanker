@@ -16,6 +16,7 @@ struct LotteryView: View {
             NavigationStack {
                 VStack {
                     Text("Free Parking Lottery")
+                        .multilineTextAlignment(.center)
                         .padding(.top, 85)
                         .font(.title2)
                         .bold()

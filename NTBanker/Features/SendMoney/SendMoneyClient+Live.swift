@@ -23,7 +23,7 @@ extension SendMoneyClient {
                 }
                 
                 let query = playersReference
-                    .whereField("userID", isNotEqualTo: currentUserID)
+                    .whereField("id", isNotEqualTo: currentUserID)
                 
                 do {
                     let snapshot = try await query.getDocuments()

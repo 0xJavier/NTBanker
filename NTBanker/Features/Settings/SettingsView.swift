@@ -56,7 +56,7 @@ struct SettingsView: View {
 }
 
 struct SettingsCell: View {
-    var title: String
+    var title: LocalizedStringResource
     var action: () -> Void
     
     var body: some View {

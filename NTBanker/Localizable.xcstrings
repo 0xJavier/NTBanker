@@ -2,25 +2,74 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%@" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
     },
     "$%lld" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "$%lld"
+          }
+        }
+      }
     },
     "Amount" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cantidad"
+          }
+        }
+      }
     },
     "Are you sure you want to collect the lottery?" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Estás seguro de que quieres recoger la lotería?"
+          }
+        }
+      }
     },
     "Balance:" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saldo:"
+          }
+        }
+      }
     },
     "Button" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Botón"
+          }
+        }
+      }
     },
     "Cancel" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        }
+      }
     },
     "Card Color" : {
       "localizations" : {
@@ -33,13 +82,44 @@
       }
     },
     "Collect" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recolectar"
+          }
+        }
+      }
     },
     "Collect $200" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recoge $200"
+          }
+        }
+      }
     },
     "Collect lottery" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recoger lotería"
+          }
+        }
+      }
+    },
+    "Collected $200" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "$200 recaudados"
+          }
+        }
+      }
     },
     "Confirm Password" : {
       "localizations" : {
@@ -52,19 +132,54 @@
       }
     },
     "Could not collect the lottery at this time. Please try again" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo cobrar la lotería en este momento. Inténtalo de nuevo"
+          }
+        }
+      }
     },
     "Could not create user from Data" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo crear un usuario a partir de datos"
+          }
+        }
+      }
     },
     "Could not get current user's UID" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo obtener el UID del usuario actual"
+          }
+        }
+      }
     },
     "Could not get document(s) from querySnapshot" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudieron obtener los documentos de querySnapshot"
+          }
+        }
+      }
     },
     "Could not get lottery amount at this time. Please try again." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo obtener el monto de la lotería en este momento. Inténtalo de nuevo."
+          }
+        }
+      }
     },
     "Create an account" : {
       "localizations" : {
@@ -97,16 +212,44 @@
       }
     },
     "Error" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        }
+      }
     },
     "Error sending money" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error al enviar dinero"
+          }
+        }
+      }
     },
     "Error signing out" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error al cerrar sesión"
+          }
+        }
+      }
     },
     "Error signing up" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error al registrarse"
+          }
+        }
+      }
     },
     "Family Game Nights" : {
       "localizations" : {
@@ -129,13 +272,34 @@
       }
     },
     "Free Parking Lottery" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lotería de estacionamiento gratuito"
+          }
+        }
+      }
     },
     "Home" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicio"
+          }
+        }
+      }
     },
     "Latest Transactions" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Últimas transacciones"
+          }
+        }
+      }
     },
     "Log in to your account" : {
       "localizations" : {
@@ -158,7 +322,24 @@
       }
     },
     "Lottery" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lotería"
+          }
+        }
+      }
+    },
+    "Mock Transaction" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mock Transaction"
+          }
+        }
+      }
     },
     "Name" : {
       "localizations" : {
@@ -171,7 +352,44 @@
       }
     },
     "NTBanker" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NTBanker"
+          }
+        }
+      }
+    },
+    "Paid %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pagado %@"
+          }
+        }
+      }
+    },
+    "Paid Bank" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Banco pagado"
+          }
+        }
+      }
+    },
+    "Paid Lottery" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lotería Pagada"
+          }
+        }
+      }
     },
     "Password" : {
       "localizations" : {
@@ -184,34 +402,154 @@
       }
     },
     "Pay\nBank" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pagar\nBanco"
+          }
+        }
+      }
     },
     "Pay Bank" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pagar Banco"
+          }
+        }
+      }
     },
     "Pay Lottery" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pagar Lotería"
+          }
+        }
+      }
     },
     "Preview Placeholder" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preview Placeholder"
+          }
+        }
+      }
     },
     "Quick Actions" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acciones rápidas"
+          }
+        }
+      }
     },
     "Ranking" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clasificación"
+          }
+        }
+      }
     },
     "Receive Money" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recibir dinero"
+          }
+        }
+      }
+    },
+    "Received" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recibido"
+          }
+        }
+      }
+    },
+    "Received money from %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recibió dinero de %@"
+          }
+        }
+      }
+    },
+    "Received money from Bank" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinero recibido del banco"
+          }
+        }
+      }
     },
     "Section Title" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Section Title"
+          }
+        }
+      }
     },
     "Send Money" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviar dinero"
+          }
+        }
+      }
+    },
+    "Sent" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviado"
+          }
+        }
+      }
     },
     "Settings" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
+          }
+        }
+      }
+    },
+    "Sign Out" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desconectar"
+          }
+        }
+      }
     },
     "Sign Up" : {
       "localizations" : {
@@ -224,23 +562,61 @@
       }
     },
     "Success" : {
-
-    },
-    "Success!" : {
-
-    },
-    "Successfully sent!" : {
-
-    },
-    "User" : {
-
-    },
-    "Welcome to NTBank. Speed up game banking with our easy to use Balance cards." : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bienvenido a NTBank. Acelere la banca de juegos con nuestras tarjetas Balance fáciles de usar."
+            "value" : "Éxito"
+          }
+        }
+      }
+    },
+    "Success!" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Éxito!"
+          }
+        }
+      }
+    },
+    "Successfully sent!" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Enviado exitosamente!"
+          }
+        }
+      }
+    },
+    "User" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuario"
+          }
+        }
+      }
+    },
+    "Welcome to NTBanker. Speed up game banking with our easy to use Balance cards." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bienvenido a NTBanker. Acelere la banca de juegos con nuestras tarjetas Balance fáciles de usar."
+          }
+        }
+      }
+    },
+    "Won Lottery" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lotería ganada"
           }
         }
       }
