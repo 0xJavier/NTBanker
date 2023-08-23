@@ -12,13 +12,13 @@ NTBanker aims to streamline the Monopoly experience by removing the need for pap
   <tbody>
     <tr>
         <td>
-            <img src="https://github.com/0xJavier/NTBanker/assets/20247642/f384115d-9dc9-494e-8223-c4441404ba6a" height="600"/>
+            <img src="https://github.com/0xJavier/NTBanker/assets/20247642/f384115d-9dc9-494e-8223-c4441404ba6a" height="550"/>
         </td>
         <td>
-            <img src="https://github.com/0xJavier/NTBanker/assets/20247642/ae8f5ae1-6ce1-4a73-ab9a-6d7f057f01ed" height="600"/>
+            <img src="https://github.com/0xJavier/NTBanker/assets/20247642/ae8f5ae1-6ce1-4a73-ab9a-6d7f057f01ed" height="550"/>
         </td>
         <td>
-            <img src="https://github.com/0xJavier/NTBanker/assets/20247642/59af0336-1bb1-486c-be8d-cef816b5b92c" height="600"/>
+            <img src="https://github.com/0xJavier/NTBanker/assets/20247642/59af0336-1bb1-486c-be8d-cef816b5b92c" height="550"/>
         </td>
     </tr>
   </tbody>
@@ -33,13 +33,13 @@ NTBanker aims to streamline the Monopoly experience by removing the need for pap
   <tbody>
     <tr>
         <td>
-            <img src="https://github.com/0xJavier/NTBanker/assets/20247642/ca8532d4-a086-4e05-9e9b-82e8f96d845a" height="600"/>
+            <img src="https://github.com/0xJavier/NTBanker/assets/20247642/ca8532d4-a086-4e05-9e9b-82e8f96d845a" height="550"/>
         </td>
         <td>
-            <img src="https://github.com/0xJavier/NTBanker/assets/20247642/fc22527f-ea50-497b-a7fe-eb48d6786a7c" height="600"/>
+            <img src="https://github.com/0xJavier/NTBanker/assets/20247642/fc22527f-ea50-497b-a7fe-eb48d6786a7c" height="550"/>
         </td>
         <td>
-            <img src="https://github.com/0xJavier/NTBanker/assets/20247642/cc745bda-3df3-4c7b-ac94-3823b7e2c816" height="600"/>
+            <img src="https://github.com/0xJavier/NTBanker/assets/20247642/cc745bda-3df3-4c7b-ac94-3823b7e2c816" height="550"/>
         </td>
     </tr>
   </tbody>
