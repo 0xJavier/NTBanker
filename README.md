@@ -2,6 +2,10 @@
 
 NTBanker aims to streamline the Monopoly experience by removing the need for paper money and a dedicated banker. Each player now has a customizable card that displays their current balance and allows users to send money to other players, react to in-game events, and keep up-to-date rankings.
 
+
+This is a rewrite for the original version which used UIKit + MVVM. The goal with this project was to create an updated version using my newly acquired experience from Lyft plus use newer technologies like SwiftUI + The Composable Architecture. This resulted in a more modern codebase that follows a coding style, comments to help fellow teammates, and isolated features that are unit tested. I am very happy with this rewrite and will make future additions to this project a breeze.
+
+
 ## Screenshots
 <table>
   <thead>
