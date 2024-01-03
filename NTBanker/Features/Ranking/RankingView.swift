@@ -12,19 +12,17 @@ struct RankingView: View {
     let store: StoreOf<RankingFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: { $0 }) { viewStore in
-            NavigationStack {
-                List {
-                    ForEach(viewStore.users) { user in
-                        RankingCell(user: user)
-                    }
+        NavigationStack {
+            List {
+                ForEach(store.users) { user in
+                    RankingCell(user: user)
                 }
-                .navigationTitle("Ranking")
-                .navigationBarTitleDisplayMode(.inline)
             }
-            .onAppear {
-                viewStore.send(.viewOnAppear)
-            }
+            .navigationTitle("Ranking")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+        .onAppear {
+            store.send(.viewOnAppear)
         }
     }
 }

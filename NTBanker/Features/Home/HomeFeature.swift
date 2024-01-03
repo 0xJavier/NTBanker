@@ -8,9 +8,10 @@
 import ComposableArchitecture
 import OSLog
 
-struct HomeFeature: Reducer {
+@Reducer
+struct HomeFeature {
+    @ObservableState
     struct State: Equatable {
-        /// Currently logged in user.
         var user = User.placeholder
         /// State for the `QuickActionFeature`.
         var quickActions = QuickActionFeature.State()
@@ -19,11 +20,8 @@ struct HomeFeature: Reducer {
     }
     
     enum Action {
-        /// Action used for the main view to start work when the view appears.
         case viewOnAppear
-        /// Starts a stream from Firebase to listen to any updates to the logged in user.
         case streamUser
-        /// Handles the response for each update from the user stream. Will either receive an updated user or an error.
         case userResponse(TaskResult<User>)
         /// Actions associated with the `QuickActionFeature`.
         case quickActions(QuickActionFeature.Action)
@@ -57,16 +55,15 @@ struct HomeFeature: Reducer {
                 return .none
                 
             case .quickActions, .transactions:
-                // Should be handled in the scoped domain.
                 return .none
             }
         }
         
-        Scope(state: \.quickActions, action: /Action.quickActions) {
+        Scope(state: \.quickActions, action: \.quickActions) {
             QuickActionFeature()
         }
         
-        Scope(state: \.transactions, action: /Action.transactions) {
+        Scope(state: \.transactions, action: \.transactions) {
             TransactionFeature()
         }
     }

@@ -9,37 +9,35 @@ import ComposableArchitecture
 import SwiftUI
 
 struct SendMoneyView: View {
-    let store: StoreOf<SendMoneyFeature>
+    @Bindable var store: StoreOf<SendMoneyFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: { $0 }) { viewStore in
-            NavigationStack {
-                Form {
-                    Section {
-                        Picker("User", selection: viewStore.$selectedUser) {
-                            ForEach(viewStore.userList) { user in
-                                Text(user.name)
-                                    .tag(user)
-                            }
+        NavigationStack {
+            Form {
+                Section {
+                    Picker("User", selection: $store.selectedUser) {
+                        ForEach(store.userList) { user in
+                            Text(user.name)
+                                .tag(user)
                         }
-                     
-                        TextField("Amount", text: viewStore.$amount)
-                            .keyboardType(.numberPad)
                     }
-
-                    Section {
-                        Button("Send Money") {
-                            viewStore.send(.sendMoneyButtonTapped)
-                        }
-                        .disabled(viewStore.amount.isEmpty)
-                    }
+                    
+                    TextField("Amount", text: $store.amount)
+                        .keyboardType(.numberPad)
                 }
-                .pickerStyle(.navigationLink)
-                .navigationTitle("Send Money")
-                .navigationBarTitleDisplayMode(.inline)
+                
+                Section {
+                    Button("Send Money") {
+                        store.send(.sendMoneyButtonTapped)
+                    }
+                    .disabled(store.amount.isEmpty)
+                }
             }
-            .alert(store: self.store.scope(state: \.$alert, action: SendMoneyFeature.Action.alert))
+            .pickerStyle(.navigationLink)
+            .navigationTitle("Send Money")
+            .navigationBarTitleDisplayMode(.inline)
         }
+        .alert($store.scope(state: \.alert, action: \.alert))
     }
 }
 

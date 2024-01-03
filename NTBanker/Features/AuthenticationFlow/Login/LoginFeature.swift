@@ -6,24 +6,19 @@
 //
 
 import ComposableArchitecture
-import Foundation
 import OSLog
 
-/// Reducer containing state, actions, and the main reducer for `LoginFeature`
-struct LoginFeature: Reducer {
+@Reducer
+struct LoginFeature {
+    @ObservableState
     struct State: Equatable {
-        /// Binding string representing user's email
-        @BindingState var emailQuery = ""
-        /// Binding string representing user's password
-        @BindingState var passwordQuery = ""
-        /// Flag used to show a progress indicator when reaching out to Firebase
-        @BindingState var isLoading = false
-        /// Flag used to disable the login button depending if the form is filled out completely
+        var emailQuery = ""
+        var passwordQuery = ""
+        var isLoading = false
         var shouldDisableLoginButton = true
-        /// Flag used to indicate if the form should show fields to allow a user to reset their password
         var shouldShowForgotEmailField = false
         /// State used to indicate when we show a user-facing alert
-        @PresentationState var alert: AlertState<Action.Alert>?
+        @Presents var alert: AlertState<Action.Alert>?
     }
     
     enum Action: BindableAction {
@@ -31,16 +26,10 @@ struct LoginFeature: Reducer {
         enum Alert: Equatable {}
         /// Actions done inside the iOS style alert
         case alert(PresentationAction<Alert>)
-        /// Action for when a user taps the login button
         case loginButtonTapped
-        /// Action for when a user wants to reset their password
         case forgotPasswordButtonTapped
-        /// Handles the response from attempting to login. If successful, `AppClient` will return the home route and show the main app tab view.
-        /// Otherwise, we log and show a user facing error.
         case loginResponse(Error?)
-        /// Handles the response for attempting to reset the user's password
         case forgotPasswordResponse(Error?)
-        /// Action for binding state variables with `BindingState`
         case binding(BindingAction<State>)
     }
     
@@ -88,6 +77,6 @@ struct LoginFeature: Reducer {
                 return .none
             }
         }
-        .ifLet(\.$alert, action: /Action.alert)
+        .ifLet(\.$alert, action: \.alert)
     }
 }

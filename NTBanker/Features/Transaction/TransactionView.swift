@@ -12,21 +12,19 @@ struct TransactionView: View {
     let store: StoreOf<TransactionFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: { $0 }) { viewStore in
-            VStack(alignment: .leading) {
-                Text("Latest Transactions")
-                    .font(.title2)
-                    .bold()
-                    .padding(.leading)
-                
-                List(viewStore.transactions) { transaction in
-                    TransactionCell(transaction: transaction)
-                }
-                .listStyle(.plain)
+        VStack(alignment: .leading) {
+            Text("Latest Transactions")
+                .font(.title2)
+                .bold()
+                .padding(.leading)
+            
+            List(store.transactions) { transaction in
+                TransactionCell(transaction: transaction)
             }
-            .onAppear {
-                viewStore.send(.viewOnAppear)
-            }
+            .listStyle(.plain)
+        }
+        .onAppear {
+            store.send(.viewOnAppear)
         }
     }
 }

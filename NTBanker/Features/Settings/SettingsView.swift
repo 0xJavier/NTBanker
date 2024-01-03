@@ -9,48 +9,46 @@ import ComposableArchitecture
 import SwiftUI
 
 struct SettingsView: View {
-    let store: StoreOf<SettingsFeature>
+    @Bindable var store: StoreOf<SettingsFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: { $0 }) { viewStore in
-            NavigationStack {
-                Form {
-                    // MARK: - User Header
-                    Section {
-                        HStack {
-                            ZStack {
-                                Circle()
-                                    .frame(width: 50, height: 50)
-                                    .foregroundStyle(viewStore.user.color.colorLiteral)
-                                
-                                Image(systemName: SFSymbols.person.rawValue)
-                                    .foregroundStyle(.white)
-                            }
+        NavigationStack {
+            Form {
+                // MARK: - User Header
+                Section {
+                    HStack {
+                        ZStack {
+                            Circle()
+                                .frame(width: 50, height: 50)
+                                .foregroundStyle(store.user.color.colorLiteral)
                             
-                            VStack(alignment: .leading) {
-                                Text(viewStore.user.name)
-                                
-                                Text("$\(viewStore.user.balance)")
-                            }
+                            Image(systemName: SFSymbols.person.rawValue)
+                                .foregroundStyle(.white)
                         }
-                    }
-                    
-                    // MARK: - Actions
-                    Section {
-                        SettingsCell(title: "Sign Out") {
-                            viewStore.send(.signOut)
+                        
+                        VStack(alignment: .leading) {
+                            Text(store.user.name)
+                            
+                            Text("$\(store.user.balance)")
                         }
                     }
                 }
-                .navigationTitle("Settings")
-                .navigationBarTitleDisplayMode(.inline)
-                .redacted(reason: viewStore.user == .placeholder ? .placeholder : [])
                 
+                // MARK: - Actions
+                Section {
+                    SettingsCell(title: "Sign Out") {
+                        store.send(.signOut)
+                    }
+                }
             }
-            .alert(store: self.store.scope(state: \.$alert, action: SettingsFeature.Action.alert))
-            .onAppear {
-                viewStore.send(.viewOnAppear)
-            }
+            .navigationTitle("Settings")
+            .navigationBarTitleDisplayMode(.inline)
+            .redacted(reason: store.user == .placeholder ? .placeholder : [])
+            
+        }
+        .alert($store.scope(state: \.alert, action: \.alert))
+        .onAppear {
+            store.send(.viewOnAppear)
         }
     }
 }

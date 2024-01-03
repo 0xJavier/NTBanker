@@ -8,38 +8,27 @@
 import ComposableArchitecture
 import OSLog
 
-/// Reducer containing state, actions, and the main reducer for `LotteryFeature`.
-struct LotteryFeature: Reducer {
+@Reducer
+struct LotteryFeature {
+    @ObservableState
     struct State: Equatable {
-        /// Integer representing the lottery amount.
         var lotteryAmount: Int = 0
-        /// Flag used to indicate when the feature is fetching data.
-        @BindingState var isLoading = false
-        /// Alert state used to indicate when we show a user-facing alert.
-        @PresentationState var alert: AlertState<Action.Alert>?
-        
-        /// Flag indicating if the main collect button should be disabled.
+        var isLoading = false
         var shouldDisableCollectButton: Bool {
             isLoading || lotteryAmount <= 0
         }
+        /// Alert state used to indicate when we show a user-facing alert.
+        @Presents var alert: AlertState<Action.Alert>?
     }
     
     enum Action {
-        /// Action used for the main view to start work when the view appears.
         case viewOnAppear
-        /// Calls to firebase to get the up-to-date lottery amount to be shown.
         case retrieveLotteryAmount
-        /// Handles the response from fetching the lottery amount. If successful, we update the lottery amount state to reflect in the UI.
-        /// Otherwise, we reset the amount to 0, log the error, and present an alert.
         case retrieveLotteryAmountResponse(TaskResult<Int>)
-        /// Action for when a user taps the collect button.
         case collectButtonTapped
-        /// Handles the response when a user taps the button. If successful, we show an alert with a success message.
-        /// Otherwise, we reset the amount to 0, log the error, and present an alert.
         case collectButtonTappedResponse(Error?)
         /// Action responsible for handling user input when it comes to user-facing alerts.
         case alert(PresentationAction<Alert>)
-        
         /// Collection of actions we can do when presenting a user-facing alert.
         enum Alert: Equatable {
             /// Main action for when a user confirms they want to collect the lottery.
@@ -121,6 +110,6 @@ struct LotteryFeature: Reducer {
                 return .none
             }
         }
-        .ifLet(\.$alert, action: /Action.alert)
+        .ifLet(\.$alert, action: \.alert)
     }
 }

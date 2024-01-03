@@ -8,20 +8,16 @@
 import ComposableArchitecture
 import OSLog
 
-/// Reducer containing state, actions, and the main reducer for `RankingFeature`.
-struct RankingFeature: Reducer {
+@Reducer
+struct RankingFeature {
+    @ObservableState
     struct State: Equatable {
-        /// Current list of all active users. Retrieved from Firebase in descending order by user's balance.
         var users = [User]()
     }
     
     enum Action {
-        /// Action used for the main view to start work when the view appears.
         case viewOnAppear
-        /// Action for when the ranking screen appears. Calls to Firebase for an up-to-date list of all players.
         case fetchUsers
-        /// Action for the response from getting a list of users from Firebase.
-        /// Will return a TaskResult of either a list of users or an error. If an error occurs, we return an empty list and log the error.
         case fetchUsersResponse(TaskResult<[User]>)
     }
     

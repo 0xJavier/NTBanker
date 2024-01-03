@@ -9,46 +9,42 @@ import ComposableArchitecture
 import SwiftUI
 
 struct LotteryView: View {
-    let store: StoreOf<LotteryFeature>
+    @Bindable var store: StoreOf<LotteryFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: { $0 }) { viewStore in
-            NavigationStack {
-                VStack {
-                    Text("Free Parking Lottery")
-                        .multilineTextAlignment(.center)
-                        .padding(.top, 85)
-                        .font(.title2)
-                        .bold()
+        NavigationStack {
+            VStack {
+                Text("Free Parking Lottery")
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 85)
+                    .font(.title2)
+                    .bold()
+                
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(height: 95)
+                        .foregroundStyle(Color(uiColor: .secondarySystemBackground))
                     
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(height: 95)
-                            .foregroundStyle(Color(uiColor: .secondarySystemBackground))
-                        
-                        Text("$\(viewStore.lotteryAmount)")
-                            .foregroundStyle(.blue)
-                            .font(.system(size: 50, weight: .bold))
-                    }
-                    
-                    NTLoadingButton(title: "Collect", isLoading: viewStore.isLoading) {
-                        viewStore.send(.collectButtonTapped)
-                    }
-                    .disabled(viewStore.shouldDisableCollectButton)
-                    
-                    Spacer()
+                    Text("$\(store.lotteryAmount)")
+                        .foregroundStyle(.blue)
+                        .font(.system(size: 50, weight: .bold))
                 }
-                .navigationTitle("Lottery")
-                .navigationBarTitleDisplayMode(.inline)
-                .padding(.horizontal)
-                .onAppear {
-                    self.store.send(.viewOnAppear)
+                
+                NTLoadingButton(title: "Collect", isLoading: store.isLoading) {
+                    store.send(.collectButtonTapped)
                 }
+                .disabled(store.shouldDisableCollectButton)
+                
+                Spacer()
             }
-            .alert(
-              store: self.store.scope(state: \.$alert, action: { .alert($0) })
-            )
+            .navigationTitle("Lottery")
+            .navigationBarTitleDisplayMode(.inline)
+            .padding(.horizontal)
+            .onAppear {
+                store.send(.viewOnAppear)
+            }
         }
+        .alert($store.scope(state: \.alert, action: \.alert))
     }
 }
 

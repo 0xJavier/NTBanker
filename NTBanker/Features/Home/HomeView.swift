@@ -10,34 +10,32 @@ import SwiftUI
 
 struct HomeView: View {
     let store: StoreOf<HomeFeature>
-
+    
     var body: some View {
-        WithViewStore(self.store, observe: \.user) { viewStore in
-            NavigationStack {
-                VStack(spacing: 10) {
-                    NTCreditCardView(user: viewStore.state)
-                        .redacted(reason: viewStore.state == .placeholder ? .placeholder : [])
-                    
-                    QuickActionView(
-                        store: self.store.scope(
-                            state: \.quickActions,
-                            action: HomeFeature.Action.quickActions
-                        )
+        NavigationStack {
+            VStack(spacing: 10) {
+                NTCreditCardView(user: store.user)
+                    .redacted(reason: store.user == .placeholder ? .placeholder : [])
+                
+                QuickActionView(
+                    store: self.store.scope(
+                        state: \.quickActions,
+                        action: \.quickActions
                     )
-                    
-                    TransactionView(
-                        store: self.store.scope(
-                            state: \.transactions,
-                            action: HomeFeature.Action.transactions
-                        )
+                )
+                
+                TransactionView(
+                    store: self.store.scope(
+                        state: \.transactions,
+                        action: \.transactions
                     )
-                }
-                .navigationTitle("Home")
-                .navigationBarTitleDisplayMode(.inline)
+                )
             }
-            .onAppear {
-                viewStore.send(.viewOnAppear)
-            }
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+        .onAppear {
+            store.send(.viewOnAppear)
         }
     }
 }

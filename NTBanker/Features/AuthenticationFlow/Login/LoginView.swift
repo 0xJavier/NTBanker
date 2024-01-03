@@ -9,47 +9,45 @@ import ComposableArchitecture
 import SwiftUI
 
 struct LoginView: View {
-    let store: StoreOf<LoginFeature>
+    @Bindable var store: StoreOf<LoginFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: { $0 }) { viewStore in
-            VStack {
-                NTLogoHeaderView()
-                    .padding(.top, 20)
-                
-                Text("Log in to your account")
-                    .font(.system(size: 28, weight: .bold))
-                    .padding(.bottom, 10)
-                
-                
-                VStack(spacing: 10) {
-                    Group {
-                        TextField("Email", text: viewStore.$emailQuery)
-                            .keyboardType(.emailAddress)
-                            .autocorrectionDisabled(true)
-                        
-                        SecureField("Password", text: viewStore.$passwordQuery)
-                    }
-                    .textFieldStyle(NTTextfieldStyle())
-
-                    NTLoadingButton(title: "Login", isLoading: viewStore.isLoading) {
-                        viewStore.send(.loginButtonTapped)
-                    }
-                    .disabled(viewStore.shouldDisableLoginButton)
+        VStack {
+            NTLogoHeaderView()
+                .padding(.top, 20)
+            
+            Text("Log in to your account")
+                .font(.system(size: 28, weight: .bold))
+                .padding(.bottom, 10)
+            
+            
+            VStack(spacing: 10) {
+                Group {
+                    TextField("Email", text: $store.emailQuery)
+                        .keyboardType(.emailAddress)
+                        .autocorrectionDisabled(true)
+                    
+                    SecureField("Password", text: $store.passwordQuery)
                 }
-                .padding()
+                .textFieldStyle(NTTextfieldStyle())
                 
-                Divider()
-                
-                Button("Forgot your password?") {
-                    viewStore.send(.forgotPasswordButtonTapped)
+                NTLoadingButton(title: "Login", isLoading: store.isLoading) {
+                    store.send(.loginButtonTapped)
                 }
-                .padding()
-                
-                Spacer()
+                .disabled(store.shouldDisableLoginButton)
             }
-            .alert(store: self.store.scope(state: \.$alert, action: LoginFeature.Action.alert))
+            .padding()
+            
+            Divider()
+            
+            Button("Forgot your password?") {
+                store.send(.forgotPasswordButtonTapped)
+            }
+            .padding()
+            
+            Spacer()
         }
+        .alert($store.scope(state: \.alert, action: \.alert))
     }
 }
 

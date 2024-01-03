@@ -8,13 +8,13 @@
 import ComposableArchitecture
 import OSLog
 
-/// Reducer containing state, actions, and the main reducer for `SettingsFeature`
-struct SettingsFeature: Reducer {
+@Reducer
+struct SettingsFeature {
+    @ObservableState
     struct State: Equatable {
-        /// Current logged in user. Defaults to placeholder
         var user: User = .placeholder
         /// State used to indicate when we show a user-facing alert
-        @PresentationState var alert: AlertState<Action.Alert>?
+        @Presents var alert: AlertState<Action.Alert>?
     }
     
     enum Action {
@@ -22,17 +22,10 @@ struct SettingsFeature: Reducer {
         enum Alert: Equatable {}
         /// Actions done inside the iOS style alert
         case alert(PresentationAction<Alert>)
-        /// Action used for the main view to start work when the view appears
         case viewOnAppear
-        /// Calls to Firebase and attempts to retrieve the current logged in user
         case fetchUser
-        /// Handles the response from fetching the current user. If successful, we set the sate the present the UI. Otherwise, we set the user
-        /// as a placeholder and present a user-facing alert
         case fetchUserResponse(TaskResult<User>)
-        /// Attempts to sign out of the current session.
         case signOut
-        /// Handles the response from attempting to sign out. If successful, `AppReducer` will return a new route and show the welcome screen.
-        /// Otherwise, we present a user-facing alert.
         case signOutResponse(Error?)
     }
     
@@ -84,6 +77,6 @@ struct SettingsFeature: Reducer {
                 return .none
             }
         }
-        .ifLet(\.$alert, action: /Action.alert)
+        .ifLet(\.$alert, action: \.alert)
     }
 }

@@ -31,7 +31,7 @@ struct WelcomeView: View {
                             LoginView(
                                 store: store.scope(
                                     state: \.login,
-                                    action: AuthenticationFeature.Action.login
+                                    action: \.login
                                 )
                             )
                         } label: {
@@ -43,7 +43,7 @@ struct WelcomeView: View {
                             SignupView(
                                 store: store.scope(
                                     state: \.signup,
-                                    action: AuthenticationFeature.Action.signup
+                                    action: \.signup
                                 )
                             )
                         } label: {

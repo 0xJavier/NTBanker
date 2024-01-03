@@ -21,7 +21,7 @@ struct ContentView: View {
                     WelcomeView(
                         store: store.scope(
                             state: \.auth,
-                            action: AppReducer.Action.auth
+                            action: \.auth
                         )
                     )
                 case .home:
