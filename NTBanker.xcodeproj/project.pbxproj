@@ -44,6 +44,7 @@
 		306B3E812A79914E00B86060 /* SignupFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306B3E802A79914E00B86060 /* SignupFeature.swift */; };
 		306FF8DC2A7F2D7200A913E5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306FF8DB2A7F2D7200A913E5 /* HomeView.swift */; };
 		306FF8DE2A7F340200A913E5 /* QuickActionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306FF8DD2A7F340200A913E5 /* QuickActionCardView.swift */; };
+		3081563C2B44F68700A1F8F4 /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3081563B2B44F68700A1F8F4 /* AppScreen.swift */; };
 		308CD2E82A93D4AF008B9389 /* AppClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CD2E72A93D4AF008B9389 /* AppClient.swift */; };
 		308CD2EA2A93D4CE008B9389 /* AppClient+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CD2E92A93D4CE008B9389 /* AppClient+Live.swift */; };
 		308CD2EC2A93D4F5008B9389 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CD2EB2A93D4F5008B9389 /* AppReducer.swift */; };
@@ -144,6 +145,7 @@
 		306B3E802A79914E00B86060 /* SignupFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFeature.swift; sourceTree = "<group>"; };
 		306FF8DB2A7F2D7200A913E5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		306FF8DD2A7F340200A913E5 /* QuickActionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionCardView.swift; sourceTree = "<group>"; };
+		3081563B2B44F68700A1F8F4 /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
 		308CD2E72A93D4AF008B9389 /* AppClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppClient.swift; sourceTree = "<group>"; };
 		308CD2E92A93D4CE008B9389 /* AppClient+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppClient+Live.swift"; sourceTree = "<group>"; };
 		308CD2EB2A93D4F5008B9389 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 		30ED62C62A82C49A0016A880 /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
+				3081563B2B44F68700A1F8F4 /* AppScreen.swift */,
 				30ED62C72A82C4DD0016A880 /* HomeTabView.swift */,
 			);
 			path = HomeTab;
@@ -662,6 +665,7 @@
 				306B3E752A79717900B86060 /* NTLogoHeaderView.swift in Sources */,
 				308CD2EE2A93D52C008B9389 /* AppClient+Mock.swift in Sources */,
 				3039F0F32A8E9D5200FF9C1A /* SendMoneyClient+Mock.swift in Sources */,
+				3081563C2B44F68700A1F8F4 /* AppScreen.swift in Sources */,
 				30ED7BCA2A86912500834553 /* TransactionClient+Live.swift in Sources */,
 				306B3E812A79914E00B86060 /* SignupFeature.swift in Sources */,
 				3039F1072A9038C900FF9C1A /* AuthenticationClient+Mock.swift in Sources */,

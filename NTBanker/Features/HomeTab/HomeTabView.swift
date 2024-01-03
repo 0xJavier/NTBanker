@@ -5,48 +5,18 @@
 //  Created by Javier Munoz on 8/8/23.
 //
 
-import ComposableArchitecture
-import FirebaseAuth
 import SwiftUI
 
 struct HomeTabView: View {
+    @State private var selection: AppScreen = .home
+    
     var body: some View {
-        TabView {
+        TabView(selection: $selection) {
             Group {
-                HomeView(
-                    store: Store(initialState: HomeFeature.State()) {
-                        HomeFeature()
-                    }
-                )
-                .tabItem {
-                    Label("Home", systemImage: SFSymbols.house.rawValue)
-                }
-                
-                LotteryView(
-                    store: Store(initialState: LotteryFeature.State()) {
-                        LotteryFeature()
-                    }
-                )
-                .tabItem {
-                    Label("Lottery", systemImage: SFSymbols.dollarSignSquare.rawValue)
-                }
-                
-                RankingView(
-                    store: Store(initialState: RankingFeature.State()) {
-                        RankingFeature()
-                    }
-                )
-                .tabItem {
-                    Label("Ranking", systemImage: SFSymbols.personGroup.rawValue)
-                }
-                
-                SettingsView(
-                    store: Store(initialState: SettingsFeature.State()) {
-                        SettingsFeature()
-                    }
-                )
-                .tabItem {
-                    Label("Settings", systemImage: SFSymbols.gear.rawValue)
+                ForEach(AppScreen.allCases) { screen in
+                    screen.destination
+                        .tag(screen as AppScreen?)
+                        .tabItem { screen.label }
                 }
             }
             .toolbarBackground(Color(uiColor: .systemBackground), for: .tabBar)
