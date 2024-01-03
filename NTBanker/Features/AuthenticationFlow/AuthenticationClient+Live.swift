@@ -26,7 +26,7 @@ extension AuthenticationClient {
             
             signup: { email, password, formCredentials in
                 let authResult = try await Auth.auth().createUser(withEmail: email, password: password)
-                let newUser = User(id: authResult.user.uid, name: formCredentials.name,
+                let newUser = User(id: authResult.user.uid, name: formCredentials.name, email: email,
                                    balance: 1500, color: formCredentials.color)
                 try Firestore
                     .firestore()
