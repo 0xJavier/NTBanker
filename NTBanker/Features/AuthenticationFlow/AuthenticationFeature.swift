@@ -7,8 +7,9 @@
 
 import ComposableArchitecture
 
-/// Reducer containing state, actions, and the main reducer for `AuthenticationFeature`.
-struct AuthenticationFeature: Reducer {
+@Reducer
+struct AuthenticationFeature {
+    @ObservableState
     struct State: Equatable {
         /// State for the `LoginFeature`
         var login = LoginFeature.State()
@@ -24,11 +25,11 @@ struct AuthenticationFeature: Reducer {
     }
     
     var body: some ReducerOf<Self> {
-        Scope(state: \.login, action: /Action.login) {
+        Scope(state: \.login, action: \.login) {
             LoginFeature()
         }
         
-        Scope(state: \.signup, action: /Action.signup) {
+        Scope(state: \.signup, action: \.signup) {
             SignupFeature()
         }
     }

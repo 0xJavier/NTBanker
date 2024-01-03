@@ -8,18 +8,16 @@
 import ComposableArchitecture
 import OSLog
 
-struct TransactionFeature: Reducer {
+@Reducer
+struct TransactionFeature {
+    @ObservableState
     struct State: Equatable {
-        /// A list of all transactions for the current user.
         var transactions = [Transaction]()
     }
     
     enum Action {
-        /// Action used for the main view to start work when the view appears.
         case viewOnAppear
-        /// Starts a stream from Firebase to listen to any updates for a user's transactions.
         case streamTransactions
-        /// Handles the response for each update from the transaction stream. Will either receive a list of transactions or an error.
         case transactionResponse(TaskResult<[Transaction]>)
     }
     

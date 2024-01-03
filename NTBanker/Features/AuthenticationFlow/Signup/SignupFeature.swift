@@ -6,37 +6,28 @@
 //
 
 import ComposableArchitecture
-import Foundation
 import OSLog
 
-/// Reducer containing state, actions, and the main reducer for `SignupFeature`
-struct SignupFeature: Reducer {
+@Reducer
+struct SignupFeature {
+    @ObservableState
     struct State: Equatable {
-        /// Query used to represent user's name
-        @BindingState var name = ""
-        /// Query used to represent user's email
-        @BindingState var email = ""
-        /// Holds the user's selected card color from a form
-        @BindingState var selectedCardColor: CardColor = .blue
-        /// Query used to represent user's  password input
-        @BindingState var passwordQuery = ""
-        /// Query used to represent user's confirm password
-        @BindingState var confirmPasswordQuery = ""
-        /// Flag used to show a progress indicator when reaching out to Firebase
-        @BindingState var isLoading = false
-        /// Flag used to disable the login button depending if the form is filled out completely
+        var name = ""
+        var email = ""
+        var selectedCardColor: CardColor = .blue
+        var passwordQuery = ""
+        var confirmPasswordQuery = ""
+        var isLoading = false
         var shouldDisableLoginButton = true
         /// State used to indicate when we show a user-facing alert
-        @PresentationState var alert: AlertState<Action.Alert>?
+        @Presents var alert: AlertState<Action.Alert>?
         /// Form's current credentials that will be passed to an effect
         var formCredentials: FormCredentials {
             FormCredentials(name: name, color: selectedCardColor)
         }
         /// Object used to pass form fields to an effect
         struct FormCredentials {
-            /// Name of the newly created user
             let name: String
-            /// User's selected card color
             let color: CardColor
         }
     }
@@ -46,10 +37,7 @@ struct SignupFeature: Reducer {
         enum Alert: Equatable {}
         /// Actions done inside the iOS style alert
         case alert(PresentationAction<Alert>)
-        /// Action for when the user taps the create account button
         case createButtonTapped
-        /// Handles the response when a user sign ups. If successful, `AppReducer` will return the home route and display the home view.
-        /// Otherwise, we log and present the error.
         case signupResponse(Error?)
         /// Action for binding state variables with `BindingState`
         case binding(BindingAction<State>)
@@ -101,6 +89,6 @@ struct SignupFeature: Reducer {
                 return .none
             }
         }
-        .ifLet(\.$alert, action: /Action.alert)
+        .ifLet(\.$alert, action: \.alert)
     }
 }

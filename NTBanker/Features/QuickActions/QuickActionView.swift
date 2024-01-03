@@ -9,66 +9,64 @@ import ComposableArchitecture
 import SwiftUI
 
 struct QuickActionView: View {
-    let store: StoreOf<QuickActionFeature>
+    @Bindable var store: StoreOf<QuickActionFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: { $0 }) { viewStore in
-            VStack(alignment: .leading) {
-                if !viewStore.showActionSection {
-                    Text("Quick Actions")
-                        .font(.title2)
-                        .bold()
-                        .padding(.leading)
-                    
-                    ScrollView(.horizontal) {
-                        HStack(spacing: 0) {
-                            ForEach(viewStore.quickActions) { action in
-                                QuickActionCardView(action: action)
-                                    .padding(.horizontal, 10)
-                                    .onTapGesture {
-                                        viewStore.send(
-                                            .actionCellButtonTapped(action.action),
-                                            animation: .bouncy
-                                        )
-                                    }
-                            }
-                        }
-                    }
-                    .scrollIndicators(.hidden)
-                }
+        VStack(alignment: .leading) {
+            if !store.showActionSection {
+                Text("Quick Actions")
+                    .font(.title2)
+                    .bold()
+                    .padding(.leading)
                 
-                if viewStore.showActionSection {
-                    VStack(spacing: 10) {
-                        HStack {
-                            Text(viewStore.sectionTitle)
-                                .font(.title2)
-                                .bold()
-                            
-                            Spacer()
-                            
-                            Button("Cancel") {
-                                viewStore.send(.clearActionState, animation: .bouncy)
-                            }
+                ScrollView(.horizontal) {
+                    HStack(spacing: 0) {
+                        ForEach(store.quickActions) { action in
+                            QuickActionCardView(action: action)
+                                .padding(.horizontal, 10)
+                                .onTapGesture {
+                                    store.send(
+                                        .actionCellButtonTapped(action.action),
+                                        animation: .bouncy
+                                    )
+                                }
                         }
-                        
-                        TextField("Amount", text: viewStore.$amount)
-                            .textFieldStyle(NTTextfieldStyle())
-                            .keyboardType(.numberPad)
-                        
-                        NTLoadingButton(title: "\(viewStore.sectionTitle)", isLoading: viewStore.isLoading) {
-                            viewStore.send(.actionButtonTapped)
-                        }
-                        .disabled(viewStore.shouldDisableButton)
                     }
-                    .padding()
                 }
+                .scrollIndicators(.hidden)
             }
-            .alert(store: self.store.scope(state: \.$alert, action: QuickActionFeature.Action.alert))
-            .sheet(store: self.store.scope(state: \.$sendMoney, action: { .sendMoney($0) })) { store in
-                SendMoneyView(store: store)
-                    .presentationDragIndicator(.visible)
-                    .presentationDetents([.fraction(0.5)])
+            
+            if store.showActionSection {
+                VStack(spacing: 10) {
+                    HStack {
+                        Text(store.sectionTitle)
+                            .font(.title2)
+                            .bold()
+                        
+                        Spacer()
+                        
+                        Button("Cancel") {
+                            store.send(.clearActionState, animation: .bouncy)
+                        }
+                    }
+                    
+                    TextField("Amount", text: $store.amount)
+                        .textFieldStyle(NTTextfieldStyle())
+                        .keyboardType(.numberPad)
+                    
+                    NTLoadingButton(title: "\(store.sectionTitle)", isLoading: store.isLoading) {
+                        store.send(.actionButtonTapped)
+                    }
+                    .disabled(store.shouldDisableButton)
+                }
+                .padding()
             }
+        }
+        .alert($store.scope(state: \.alert, action: \.alert))
+        .sheet(item: $store.scope(state: \.sendMoney, action: \.sendMoney)) { store in
+            SendMoneyView(store: store)
+                .presentationDragIndicator(.visible)
+                .presentationDetents([.fraction(0.5)])
         }
     }
 }

@@ -9,40 +9,38 @@ import ComposableArchitecture
 import SwiftUI
 
 struct SignupView: View {
-    let store: StoreOf<SignupFeature>
+    @Bindable var store: StoreOf<SignupFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: { $0 }) { viewStore in
-            ScrollView {
-                NTLogoHeaderView()
-                    .padding(.top, 20)
+        ScrollView {
+            NTLogoHeaderView()
+                .padding(.top, 20)
+            
+            Text("Create an account")
+                .font(.system(size: 28, weight: .bold))
+                .padding(.bottom, 10)
+            
+            VStack(spacing: 10) {
+                TextField("Name", text: $store.name)
                 
-                Text("Create an account")
-                    .font(.system(size: 28, weight: .bold))
-                    .padding(.bottom, 10)
+                TextField("Email", text: $store.email)
+                    .keyboardType(.emailAddress)
                 
-                VStack(spacing: 10) {
-                    TextField("Name", text: viewStore.$name)
-                    
-                    TextField("Email", text: viewStore.$email)
-                        .keyboardType(.emailAddress)
-                    
-                    NTCardColorPickerView(selectedColor: viewStore.$selectedCardColor)
-                    
-                    SecureField("Password", text: viewStore.$passwordQuery)
-                    
-                    SecureField("Confirm Password", text: viewStore.$confirmPasswordQuery)
-                    
-                    NTLoadingButton(title: "Sign Up", isLoading: viewStore.isLoading) {
-                        viewStore.send(.createButtonTapped)
-                    }
-                    .disabled(viewStore.shouldDisableLoginButton)
+                NTCardColorPickerView(selectedColor: $store.selectedCardColor)
+                
+                SecureField("Password", text: $store.passwordQuery)
+                
+                SecureField("Confirm Password", text: $store.confirmPasswordQuery)
+                
+                NTLoadingButton(title: "Sign Up", isLoading: store.isLoading) {
+                    store.send(.createButtonTapped)
                 }
-                .textFieldStyle(NTTextfieldStyle())
-                .padding()
+                .disabled(store.shouldDisableLoginButton)
             }
-            .alert(store: self.store.scope(state: \.$alert, action: SignupFeature.Action.alert))
+            .textFieldStyle(NTTextfieldStyle())
+            .padding()
         }
+        .alert($store.scope(state: \.alert, action: \.alert))
     }
 }
 

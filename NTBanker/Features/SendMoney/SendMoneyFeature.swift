@@ -8,23 +8,19 @@
 import ComposableArchitecture
 import OSLog
 
-/// Reducer containing state, actions, and the main reducer for `SendMoneyFeature`
-struct SendMoneyFeature: Reducer {
+@Reducer
+struct SendMoneyFeature {
+    @ObservableState
     struct State: Equatable {
-        /// Current list of all active users excluding the logged in user
         var userList = [User]()
-        /// Currently selected user to send money to
-        @BindingState var selectedUser = User.placeholder
-        /// Amount the user wish to sends in string form. Used in textfields
-        @BindingState var amount = ""
-        /// Flag indicating if the view is fetching / sending data to Firebase
-        @BindingState var isLoading = false
-        /// State used to indicate when we show a user-facing alert
-        @PresentationState var alert: AlertState<Action.Alert>?
-        /// Amount string transformed to integer to use in Firebase
+        var selectedUser = User.placeholder
+        var amount = ""
         var amountInt: Int {
             Int(amount) ?? 0
         }
+        var isLoading = false
+        /// State used to indicate when we show a user-facing alert
+        @Presents var alert: AlertState<Action.Alert>?
     }
     
     enum Action: BindableAction {
@@ -32,9 +28,7 @@ struct SendMoneyFeature: Reducer {
         enum Alert: Equatable {}
         /// Actions done inside the iOS style alert
         case alert(PresentationAction<Alert>)
-        /// Action that fires an effect to send money to a user in Firebase
         case sendMoneyButtonTapped
-        /// Handles the response when sending money. If this fails, we present a user-facing alert
         case sendMoneyButtonTappedResponse(Error?)
         /// Action for binding state variables with `BindingState`
         case binding(BindingAction<State>)
