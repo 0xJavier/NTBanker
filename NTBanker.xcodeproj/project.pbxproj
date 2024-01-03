@@ -1033,8 +1033,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = "observation-beta";
+				kind = branch;
 			};
 		};
 		30ED62C92A82CB9F0016A880 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
